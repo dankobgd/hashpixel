@@ -1,4 +1,1 @@
-### server
-
-- nodejs
-- nodemailer to send emails
+### nodejs server
