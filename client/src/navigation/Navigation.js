@@ -37,7 +37,7 @@ class Navigation extends Component {
     return ReactDOM.createPortal(
       <div>
         <Desktop fpState={fpState} fpApi={fpApi} footerUILogic={footerUILogic} navigationUILogic={navigationUILogic} />
-        <Mobile {...navigationUILogic} />
+        <Mobile fpState={fpState} fpApi={fpApi} footerUILogic={footerUILogic} navigationUILogic={navigationUILogic}/>
       </div>,
       document.getElementById('nav')
     );

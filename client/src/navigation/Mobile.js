@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import Hamburger from './Hamburger';
 import items from './items';
+import { moveToSection } from '../helpers'
 
 const ToggleBox = styled.div`
   width: 60px;
@@ -88,22 +89,29 @@ const Item = styled.li`
   }
 `;
 
-const Mobile = ({ isMenuOpen, handleClick }) => (
-  <>
-    <ToggleBox isMenuOpen={isMenuOpen} onClick={handleClick}>
-      <Hamburger isMenuOpen={isMenuOpen} horizontal animated />
-    </ToggleBox>
+const Mobile = props => {
+  const { navigationUILogic: { isMenuOpen, handleClick } } = props;
 
-    <Overlay isMenuOpen={isMenuOpen}>
-      <Nav>
-        <List isMenuOpen={isMenuOpen}>
-          {items.map(i => (
-            <Item key={i.page}>{i.page}</Item>
-          ))}
-        </List>
-      </Nav>
-    </Overlay>
-  </>
-);
+  return (
+    <>
+      <ToggleBox isMenuOpen={isMenuOpen} onClick={handleClick}>
+        <Hamburger isMenuOpen={isMenuOpen} horizontal animated />
+      </ToggleBox>
+
+      <Overlay isMenuOpen={isMenuOpen}>
+        <Nav>
+          <List isMenuOpen={isMenuOpen}>
+            {items.map((item, indx) => (
+              <Item key={item.page} onClick={() => {
+                moveToSection(props, indx)
+                handleClick();
+              }}>{item.page}</Item>
+            ))}
+          </List>
+        </Nav>
+      </Overlay>
+    </>
+  );
+}
 
 export default Mobile;
