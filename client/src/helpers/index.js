@@ -2,19 +2,45 @@
 export function moveToSection(obj, indx) {
   const { fpState, fpApi, footerUILogic: { setFooterHidden, setFooterVisible } } = obj;
   const index = indx + 1;
-
-  if (index === 6) {
-    setFooterVisible();
-  }
-
   const dest = { ...fpState.destination };
   const last = dest.isLast;
+  const { isResponsive } = fpState;
+  const footerElm = document.querySelector('footer');
 
-  if (last === true) {
-    setFooterHidden();
+  // for desktop screen size menu
+  if (!isResponsive) {
+    if (index === 6) {
+      setFooterVisible();
+    }
+
+    if (last === true) {
+      setFooterHidden();
+    }
+
+    fpApi.moveTo(index);
   }
 
-  fpApi.moveTo(index);
+  // for mobile screen size menu
+  if (isResponsive) {
+    if (index === 1) {
+      fpApi.moveTo(index);
+    } else if (index === 2) {
+      fpApi.moveTo(index);
+    } else if (index === 3) {
+      fpApi.moveTo(index);
+    } else if (index === 4) {
+      fpApi.moveTo(index);
+    } else if (index === 5) {
+      fpApi.moveTo(index);
+    } else if (index === 6) {
+      setFooterVisible();
+      footerElm.scrollIntoView({ block: 'end',  behavior: 'smooth' });
+    }
+
+    if (last === true) {
+      setFooterHidden();
+    }
+  }
 }
 
 
