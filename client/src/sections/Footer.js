@@ -10,8 +10,8 @@ const Wrapper = styled.footer`
   background: -webkit-linear-gradient(-90deg, rgba(30, 6, 51, 1) 0%, rgba(14, 6, 20, 1) 60%);
   background: -moz-linear-gradient(-90deg, rgba(30, 6, 51, 1) 0%, rgba(14, 6, 20, 1) 60%);
   background: -o-linear-gradient(-90deg, rgba(30, 6, 51, 1) 0%, rgba(14, 6, 20, 1) 60%);
-  width: 100vw;
-  height: 75vh;
+  width: 100%;
+  height: 75%;
   top: 100%;
   transition: all 500ms;
   font-size: 24px;
@@ -39,7 +39,7 @@ const Wrapper = styled.footer`
   }
 
   ${props =>
-    props.isFooterOpen &&
+    props.isFooterOpen && (!props.isResponsive) &&
     css`
       transition: all 500ms;
       transform: translateY(-100%);
@@ -182,8 +182,8 @@ const Squares = ({ num }) => {
   return <SquareWrapper>{boxes}</SquareWrapper>;
 };
 
-const Footer = ({ fpApi, isFooterOpen }) => (
-  <Wrapper isFooterOpen={isFooterOpen}>
+const Footer = ({ fpState, fpApi, isFooterOpen }) => (
+  <Wrapper isFooterOpen={isFooterOpen} isResponsive={fpState.isResponsive}>
     <FooterHashBackground />
 
     <BackToTop onClick={() => fpApi.moveTo(1)}>

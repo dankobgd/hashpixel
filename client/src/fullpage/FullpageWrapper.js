@@ -18,7 +18,7 @@ const Sections = ({ fpState, fpApi, footerUILogic }) => {
       <ServicesSection />
       <ContactSection />
       <Empty />
-      <Footer fpApi={fpApi} isFooterOpen={footerUILogic.isFooterOpen}/>
+      <Footer fpState={fpState} fpApi={fpApi} isFooterOpen={footerUILogic.isFooterOpen}/>
     </div>
   )
 }
