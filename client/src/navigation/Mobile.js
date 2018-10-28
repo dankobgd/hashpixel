@@ -74,7 +74,7 @@ const List = styled.ul`
 
 const Item = styled.li`
   color: #fff;
-  font-size: 45px;
+  font-size: 32px;
   cursor: pointer;
   opacity: 0.7;
   margin-top: 0.5rem;
