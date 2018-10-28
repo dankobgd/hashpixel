@@ -169,7 +169,7 @@ const Image = styled.img`
 `;
 
 const Title = styled.h1`
-  font-size: 75px;
+  font-size: 45px;
   font-weight: 900;
   color: #f8f8f8;
   text-align: center;
