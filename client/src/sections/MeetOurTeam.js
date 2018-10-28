@@ -180,7 +180,7 @@ const Title = styled.h1`
 const MeetOurTeamSection = () => (
   <SectionWrapper>
     <Container>
-      <Title>Meet Our Team</Title>
+      <Title>Upoznajte naš tim</Title>
 
       <Grid>
         {team.map(({ avatar, name, job }) => (
