@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 0 15px;
+  padding: 15px;
   margin-right: auto;
   margin-left: auto;
 
@@ -18,5 +18,5 @@ export const Container = styled.div`
 `;
 
 export const Section = styled.section.attrs({
-  className: 'section',
+  className: 'section fp-responsive-auto-height',
 })``;

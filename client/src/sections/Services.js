@@ -45,6 +45,7 @@ const MainBox = styled.div`
 `;
 
 const Card = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
