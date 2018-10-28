@@ -61,6 +61,7 @@ const Card = styled.div`
     margin: 0;
     font-size: 30px;
     font-weight: 600;
+    text-align: center;
   }
 
   & > span {
