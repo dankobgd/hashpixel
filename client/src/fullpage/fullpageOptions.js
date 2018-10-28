@@ -1,15 +1,16 @@
 import items from '../navigation/items';
 
+// get menu items
 const anchors = items.map(item => item.name);
 
 export default {
-  callbacks: ['onLeave', 'afterResponsive'],
-  licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
   anchors,
-  menu: '.dotsList',
+  licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
+  callbacks: ['onLeave', 'afterResponsive'],
+  menu: '.dots-list',
   navigation: false,
   navigationPosition: 'left',
   scrollOverflow: true,
-  responsiveWidth: 980,
   scrollingSpeed: 600,
+  responsiveWidth: 980,
 };

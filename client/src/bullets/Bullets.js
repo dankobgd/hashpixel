@@ -12,7 +12,7 @@ class Bullets extends Component {
     /* eslint jsx-a11y/no-noninteractive-element-interactions: 0 */
     return ReactDOM.createPortal(
       <div className="dotstyle dotstyle-dotmove">
-        <ul className="dotsList">
+        <ul className="dots-list">
           {items.map((item, indx) => (
             <li
               key={item.name}
