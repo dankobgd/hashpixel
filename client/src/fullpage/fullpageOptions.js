@@ -11,4 +11,5 @@ export default {
   navigationPosition: 'left',
   scrollOverflow: true,
   responsiveWidth: 980,
+  scrollingSpeed: 600,
 };

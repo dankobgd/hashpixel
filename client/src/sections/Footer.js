@@ -13,7 +13,7 @@ const Wrapper = styled.footer`
   width: 100%;
   height: 75%;
   top: 100%;
-  transition: all 500ms;
+  transition: all 300ms;
   font-size: 24px;
   font-weight: 400;
   position: relative;
@@ -41,7 +41,7 @@ const Wrapper = styled.footer`
   ${props =>
     props.isFooterOpen && (!props.isResponsive) &&
     css`
-      transition: all 500ms;
+      transition: all 300ms;
       transform: translateY(-100%);
 
       &::before {
