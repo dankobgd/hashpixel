@@ -23,7 +23,7 @@ const Overlay = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #23577d;
+  background-color: ${props => props.theme.darker};
   z-index: 555;
   display: flex;
   justify-content: center;
@@ -74,10 +74,9 @@ const List = styled.ul`
 `;
 
 const Item = styled.li`
-  color: #fff;
+  color: ${props => props.theme.white};
   font-size: 32px;
   cursor: pointer;
-  opacity: 0.7;
   margin-top: 0.5rem;
 
   &:first-child {
@@ -85,7 +84,7 @@ const Item = styled.li`
   }
 
   &:hover {
-    opacity: 1;
+    color: ${props => props.theme.cyan};
   }
 `;
 

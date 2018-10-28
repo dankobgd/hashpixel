@@ -112,12 +112,16 @@ const List = styled.ul`
 `;
 
 const Item = styled.li`
-  color: #fff;
+  color: ${props => props.theme.white};
   padding: 4px 0.5rem;
   font-size: 16px;
   font-weight: 400;
   cursor: pointer;
   text-transform: uppercase;
+
+  &:hover {
+    color: ${props => props.theme.cyan};
+  }
 `;
 
 const SideButton = styled.a`
