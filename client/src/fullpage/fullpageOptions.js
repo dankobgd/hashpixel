@@ -10,5 +10,8 @@ export default {
   navigation: false,
   navigationPosition: 'left',
   scrollOverflow: true,
-  responsiveWidth: 980
+  responsiveWidth: 980,
+  afterResponsive: (isResponsive) => {
+    console.log(`Is responsive: ${isResponsive}`);
+  }
 };
