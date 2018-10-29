@@ -6,7 +6,7 @@ module.exports = class EmailService {
 
     this.mailOptions = {
       from: '<office@hashpixel.com>',
-      to: this.body.email,
+      to: 'dp24031995@gmail.com',
       subject: 'Hello ✔',
       text: 'Hello world?',
       html: `
