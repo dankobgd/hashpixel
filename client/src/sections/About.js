@@ -41,15 +41,20 @@ const MainBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 
-  @media screen and (max-width: 768px) {
-    flex-wrap: wrap;
+  & > div {
+    flex: 1;
+  }
+
+  @media screen and (max-width: 800px) {
+    & > div {
+      flex-basis: auto;
+    }
   }
 `;
 
 const Card = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
