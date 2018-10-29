@@ -89,7 +89,7 @@ const Button = styled.button`
   border-radius: 4px;
   text-transform: uppercase;
   &:hover {
-    background-color: ${props => (props.disabled ? '#ccc' : props.theme.primaryHover)};
+    background-color: ${props => (props.disabled ? '#ccc' : props.theme.primaryActive)};
   }
 `;
 
