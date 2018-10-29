@@ -34,16 +34,18 @@ const LogoWrap = styled.div`
 
 const Slogan = styled.span`
   color: #fff;
-  font-size: 1.5em;
+  font-size: 1.6em;
   z-index: 999;
   position: absolute;
-  top: 100%;
+  top: 85%;
   right: 0;
   transition: all 500ms;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 
-  @media screen and (max-width: 600px) {
-    top: 140%;
+  @media screen and (max-width: 400px) {
     text-align: center;
+    font-size: 1rem;
   }
 `;
 
@@ -69,7 +71,7 @@ const ScrollDown = styled.div`
     color: #ccc;
     font-size: 10px;
     text-transform: uppercase;
-    margin-top: 4px;
+    margin-top: 8px;
     letter-spacing: 1px;
   }
 `;
@@ -106,7 +108,7 @@ const HeroSection = ({ fpApi }) => (
       <Banner>
         <LogoWrap>
           <Logo />
-          <Slogan>Pixel your vision!</Slogan>
+          <Slogan>Pixel your vision</Slogan>
         </LogoWrap>
       </Banner>
 

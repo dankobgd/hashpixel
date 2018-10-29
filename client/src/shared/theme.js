@@ -15,7 +15,7 @@ export const mainTheme = {
   success: '#2f9e5d',
   // special
   cyan: '#00bcd4',
-  cyan2: '#68acdd',
+  cyan2: '#97d1d1',
   // gradients
   purple: '#2b193d',
   pinkline: '#6d2e4c',

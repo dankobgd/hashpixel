@@ -47,7 +47,7 @@ const Nav = styled.nav`
     display: block;
     height: 100%;
     width: 3px;
-    background-color: #97d1d1;
+    background-color: ${props => props.theme.cyan2};
     top: 0;
     left: ${props => props.position === 'right' && '0'};
     right: ${props => props.position === 'left' && '0'};
