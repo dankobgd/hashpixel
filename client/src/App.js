@@ -9,9 +9,7 @@ import './App.css';
 
 
 class App extends Component {
-  state = {
-    loading: true
-  }
+  state = { loading: true }
 
   componentDidMount(){
     this.setState({ loading: false })
