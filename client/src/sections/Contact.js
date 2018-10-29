@@ -152,7 +152,7 @@ const Content = styled.div`
   & > form {
     flex: 1;
     padding-left: 4rem;
-    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   @media screen and (max-width: 1200px) {
