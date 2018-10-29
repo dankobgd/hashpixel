@@ -81,7 +81,7 @@ const Label = styled.label`
 const Button = styled.button`
   outline: none;
   border: none;
-  color: #fff;
+  color: ${props => props.theme.white};
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   background-color: ${props => (props.disabled ? props.theme.grey : props.theme.primary)};
   width: 100%;
@@ -135,6 +135,7 @@ const MainTitle = styled.h1`
   color: #fff;
   margin: 0.5rem;
   text-align: center;
+  text-transform: uppercase;
 `;
 
 const Content = styled.div`
@@ -185,6 +186,10 @@ const LeftText = styled.div`
     color: #fff;
   }
 
+  & > span {
+    line-height: 1.75;
+  }
+
   @media screen and (max-width: 980px) {
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -206,7 +211,7 @@ const ContactSection = () => (
 
         <Content>
           <LeftText>
-            <h1>Hajde da radimo zajedno!</h1>
+            <h1>Želite li da započnete projekat?</h1>
             <span>
             Ukoliko želite da Vašu ideju pretvorimo u realnost, popunite sledeću formu, a mi ćemo
             Vam se javiti u najkraćem mogućem roku.

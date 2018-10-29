@@ -1,7 +1,7 @@
 export const mainTheme = {
   // primary
   primary: '#00448d',
-  primaryActive: '#34668d',
+  primaryActive: '#175597',
   // dark
   black: '#070707',
   darker: '#202225',
@@ -11,7 +11,7 @@ export const mainTheme = {
   lightGrey: '#f5f5f5',
   white: '#fff',
   // alerts
-  danger: '#9e3039',
+  danger: '#c13444',
   success: '#2f9e5d',
   // special
   cyan: '#00bcd4',

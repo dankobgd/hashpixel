@@ -8,7 +8,7 @@ const Svg = styled.svg`
 `;
 
 const Quality = () => (
-<Svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="150px" height="150px"
+<Svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="175px" height="175px"
 	 viewBox="0 0 301.7 300" style={{enableBackground:"new 0 0 301.7 300"}}>
 
 <linearGradient id="quality_1_" gradientUnits="userSpaceOnUse" x1="78.4999" y1="236.1128" x2="223.5395" y2="91.0731">

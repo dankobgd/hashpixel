@@ -35,6 +35,7 @@ const Subtext = styled.span`
   text-align: center;
   color: ${props => props.theme.primary};
   margin: 1rem 0;
+  line-height: 1.75;
 `;
 
 const MainBox = styled.div`
@@ -92,28 +93,16 @@ const AboutSection = () => (
         <Card>
           <Quality />
           <h1>Kvalitet</h1>
-          <span>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus nisi quos architecto consequatur
-            laudantium exercitationem, adipisci exercitationem, adipisci adipisci exercitationem, adipisci.
-          </span>
         </Card>
 
         <Card>
           <Security />
           <h1>Sigurnost</h1>
-          <span>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus nisi quos architecto consequatur
-            laudantium exercitationem, adipisci exercitationem, adipisci adipisci exercitationem, adipisci.
-          </span>
         </Card>
 
         <Card>
           <Simplify />
           <h1>Jednostavnost</h1>
-          <span>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus nisi quos architecto consequatur
-            laudantium exercitationem, adipisci exercitationem, adipisci adipisci exercitationem, adipisci.
-          </span>
         </Card>
       </MainBox>
     </Container>
