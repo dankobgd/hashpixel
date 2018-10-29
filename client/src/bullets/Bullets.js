@@ -10,6 +10,7 @@ class Bullets extends Component {
   render() {
     /* eslint jsx-a11y/click-events-have-key-events: 0 */
     /* eslint jsx-a11y/no-noninteractive-element-interactions: 0 */
+    /* eslint jsx-a11y/anchor-is-valid: 0 */
     return ReactDOM.createPortal(
       <div className="dotstyle dotstyle-dotmove">
         <ul className="dots-list">
