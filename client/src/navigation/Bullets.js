@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import items from '../navigation/items';
-import './BulletStyles.css';
-import { moveToSection } from '../helpers';
 import styled from 'styled-components';
+import items from './items';
+import { moveToSection } from '../helpers';
 
 const DotsWrapper = styled.div`
   @media screen and (max-width: 980px) {

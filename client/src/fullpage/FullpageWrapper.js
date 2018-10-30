@@ -4,7 +4,7 @@ import '../../node_modules/fullpage.js/vendors/scrolloverflow';
 import fullpageOptions from './fullpageOptions';
 import Navigation from '../navigation/Navigation';
 import Sections from '../sections';
-import Bullets from '../bullets/Bullets'
+import Bullets from '../navigation/Bullets';
 
 class FullPageWrapper extends Component {
   state = {
