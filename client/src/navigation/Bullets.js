@@ -95,8 +95,8 @@ const A = styled.a`
   width: 100%;
   height: 100%;
   outline: none;
-  background-color: #d7d7d7;
-  border: 1px solid #d1d1d1;
+  background-color: rgba(100, 100, 100, 0.3);
+  border: 1px solid rgba(100, 100, 100, 0.2);
   text-indent: -999em;
   cursor: pointer;
   position: absolute;
