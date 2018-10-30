@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import FullPageWrapper from './fullpage/FullpageWrapper'
 import PageNotFound from './pages/PageNotFound';
