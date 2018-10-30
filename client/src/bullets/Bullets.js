@@ -105,6 +105,10 @@ const A = styled.a`
   &:focus {
     outline: none;
   }
+
+  &:hover,:focus {
+    background-color: #fff;
+  }
 `;
 
 
@@ -126,27 +130,10 @@ class Bullets extends Component {
               <A>{item.name}</A>
             </Item>
           ))}
-          <li />
+          <Item />
         </DotsList>
       </DotsWrapper>,
       document.getElementById('nav')
-
-
-      // <div className="dotstyle dotstyle-dotmove">
-      //   <ul className="dots-list">
-      //     {items.map((item, indx) => (
-      //       <li
-      //         key={item.name}
-      //         data-menuanchor={item.name}
-      //         onClick={() => moveToSection(this.props, indx)}
-      //       >
-      //         <a>{item.name}</a>
-      //       </li>
-      //     ))}
-      //     <li />
-      //   </ul>
-      // </div>,
-      // document.getElementById('nav')
     );
   }
 }
