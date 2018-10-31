@@ -8,7 +8,7 @@ const Svg = styled.svg`
 `;
 
 const Simplify = () => (
-<Svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="175px" height="175px"
+<Svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="150px" height="150px"
 	 viewBox="0 0 301.7 300" style={{enableBackground:"new 0 0 301.7 300"}}>
 
 <linearGradient id="simplify_1_" gradientUnits="userSpaceOnUse" x1="49.175" y1="251.675" x2="252.525" y2="48.325">

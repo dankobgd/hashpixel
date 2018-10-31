@@ -8,7 +8,7 @@ const Svg = styled.svg`
 `;
 
 const Security = () => (
-  <Svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="175px" height="175px"
+  <Svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="150px" height="150px"
 	 viewBox="0 0 301.7 300" style={{enableBackground:"new 0 0 301.7 300"}}>
 
 <linearGradient id="security_1_" gradientUnits="userSpaceOnUse" x1="75.2219" y1="253.5969" x2="226.5594" y2="102.2594">
