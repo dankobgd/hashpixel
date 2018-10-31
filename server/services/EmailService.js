@@ -7,10 +7,11 @@ module.exports = class EmailService {
     this.mailOptions = {
       from: '<office@hashpixel.com>',
       to: 'dp24031995@gmail.com',
-      subject: 'Hello ✔',
-      text: 'Hello world?',
+      subject: 'Hashpixel - New Contact',
       html: `
-      <span><strong>Hashpixel</strong> - new contact message</span>
+      <p><strong>Hashpixel</strong> - new contact message</p>
+      <br />
+      <p>Information about the user</p>
       <br />
       <ul>
         <p><strong>From</strong>: ${this.body.name}</p>
@@ -18,6 +19,16 @@ module.exports = class EmailService {
         <p><strong>Phone</strong>: ${this.body.phone}</p>
         <p><strong>Message</strong>: ${this.body.message}</p>
       </ul>
+      `
+    };
+
+    this.mailOptions2 = {
+      from: '<office@hashpixel.com>',
+      to: this.body.email,
+      subject: 'Confirmation email',
+      html: `
+      Hello ${this.body.name}, thanks for contacting us!
+      We will reply as soon as possible!
       `
     };
 
@@ -43,9 +54,14 @@ module.exports = class EmailService {
       if (error) {
           console.log(error);
       }
+      console.log(info);
+    })
 
-      console.log('Message sent: %s', info.messageId);
-      console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+    this.transporter.sendMail(this.mailOptions2, (error, info) => {
+      if (error) {
+          console.log(error);
+      }
+      console.log(info);
     })
 
   }
