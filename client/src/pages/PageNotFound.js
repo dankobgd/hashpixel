@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Triangle404Svg from './Triangle404Svg';
 import { Container } from '../shared/style';
+import { FormattedMessage } from 'react-intl'
 
 const Wrapper = styled.div`
   background: #136a8a;
@@ -112,7 +113,7 @@ const Btn = styled.button`
 const GoBack = () => (
   <Btn>
     <span>
-      Go Back
+      <FormattedMessage id='PageNotFound.GoBack' defaultMessage='Go Back'/>
       <Svg height="512px" id="Layer_1" version="1.0" viewBox="0 0 512 512" width="512px">
         <g>
           <g>
@@ -133,12 +134,11 @@ const PageNotFound = () => (
   <Wrapper>
     <Container>
       <MessageBox>
-        <Title>404</Title>
+        <Title><FormattedMessage id='PageNotFound.Title' defaultMessage='404'/></Title>
         <Paragraph>
-          oops, sorry we can
-          {`'`}t find the page!
+          <FormattedMessage id='PageNotFound.Paragraph' defaultMessage="oops, sorry we can't find the page!"/>
         </Paragraph>
-        <Small>Either something went wrong or the page doesn’t exist anymore</Small>
+        <Small><FormattedMessage id='PageNotFound.Small' defaultMessage='Either something went wrong or the page doesn’t exist anymore'/></Small>
       </MessageBox>
 
       <Link to="/">

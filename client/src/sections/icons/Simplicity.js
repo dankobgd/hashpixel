@@ -7,7 +7,7 @@ const Svg = styled.svg`
   }
 `;
 
-const Simplify = () => (
+const Simplicity = () => (
 <Svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="150px" height="150px"
 	 viewBox="0 0 301.7 300" style={{enableBackground:"new 0 0 301.7 300"}}>
 
@@ -24,4 +24,4 @@ const Simplify = () => (
 
 );
 
-export default Simplify;
+export default Simplicity;

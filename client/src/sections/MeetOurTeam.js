@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container, Section } from '../shared/style';
+import { FormattedMessage } from 'react-intl';
 
 const team = [
   {
@@ -180,7 +181,7 @@ const Title = styled.h1`
 const MeetOurTeamSection = () => (
   <SectionWrapper>
     <Container>
-      <Title>Upoznajte naš tim</Title>
+      <Title><FormattedMessage id='Team.Title' defaultMessage='Meet Our Team'/></Title>
 
       <Grid>
         {team.map(({ avatar, name, job }) => (

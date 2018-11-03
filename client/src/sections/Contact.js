@@ -3,6 +3,8 @@ import * as Yup from 'yup';
 import styled, { css } from 'styled-components';
 import { Formik } from 'formik';
 import { Container, Section } from '../shared/style';
+import { FormattedMessage } from 'react-intl';
+
 
 const SectionWrapper = styled(Section)`
   background: -webkit-radial-gradient(-0% 150%, circle, rgba(14, 6, 20, 1), transparent 100%),
@@ -207,16 +209,13 @@ const ContactSection = () => (
   <SectionWrapper>
     <Container>
       <Outer>
-        <MainTitle>Hajde da radimo:</MainTitle>
+        <MainTitle><FormattedMessage id='Contact.MainTitle' defaultMessage="Let's work"/></MainTitle>
 
         <Content>
           <LeftText>
-            <h1>Želite li da započnete projekat?</h1>
+            <h1><FormattedMessage id='Contact.ContentTitle' defaultMessage='Want to start a new project?'/></h1>
             <span>
-            Ukoliko želite da Vašu ideju pretvorimo u realnost, popunite sledeću formu, a mi ćemo
-            Vam se javiti u najkraćem mogućem roku.
-            Radujemo se zajedničkoj saradnji!
-
+            <FormattedMessage id='Contact.ContentText' defaultMessage='If you want to make your idea into reality, fill the next form, and we will contact you as soon as possible. We look forward to our cooperation!'/>
             </span>
           </LeftText>
 

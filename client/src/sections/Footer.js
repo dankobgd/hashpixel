@@ -6,6 +6,7 @@ import { Container } from '../shared/style';
 import Logo from '../images/Logo';
 import FooterHashBackground from './FooterHashBackground';
 
+
 const Wrapper = styled.footer`
   background: -webkit-linear-gradient(-90deg, rgba(30, 6, 51, 1) 0%, rgba(14, 6, 20, 1) 60%);
   background: -moz-linear-gradient(-90deg, rgba(30, 6, 51, 1) 0%, rgba(14, 6, 20, 1) 60%);

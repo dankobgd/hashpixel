@@ -8,6 +8,8 @@ import Seo from './icons/Seo';
 import Identity from './icons/Identity';
 import { Container, Section } from '../shared/style';
 import bgImage from '../images/bg-whatwedo.jpg'
+import { FormattedMessage } from 'react-intl';
+
 
 const SectionWrapper = styled(Section)`
   background-image: url(${bgImage});
@@ -78,31 +80,31 @@ const ServicesSection = () => (
   <SectionWrapper>
     <Container style={{ maxWidth: '980px' }}>
       <TopBox>
-        <Title>Čime se bavimo</Title>
+        <Title><FormattedMessage id='Services.Title' defaultMessage='What we do'/></Title>
       </TopBox>
 
       <MainBox>
         <Card>
           <Design />
-          <h1>Web Dizajn</h1>
+          <h1><FormattedMessage id='Services.DesignTitle' defaultMessage='Web Design' /></h1>
           <span>
-          Na brz, jednostavan i kvalitetan način kreiramo sajtove pristupačnog i interaktivnog sadražaja u skladu sa Vašim potrebama.
+          <FormattedMessage id='Services.DesignText' defaultMessage='In a fast, simple and quality way, we create accesible and interactive websites in accordance with Your needs.'/>
           </span>
         </Card>
 
         <Card>
           <Identity />
-          <h1>Vizuelni identitet</h1>
+          <h1><FormattedMessage id='Services.IdentityTitle' defaultMessage='Visual Identity'/></h1>
           <span>
-          Koristeći najsavremenije tehnologije, uz saradnju i konsultacije zajednički stvaramo idejno rešenje koje će doprineti prepoznatljivosti i autentičnosti Vašeg proizvoda.
+            <FormattedMessage id='Services.IdentityText' defaultMessage='By using modern technologies, with the cooperation and consulting, we create ideal solution which will contribute to the recognition and authenticity of Your product.'/>
           </span>
         </Card>
 
         <Card>
           <Development />
-          <h1>Web development</h1>
+          <h1><FormattedMessage id='Services.DevelopmentTitle' defaultMessage='Web Development'/></h1>
           <span>
-          Održavanje internet stranica, unapređenje i reorganizacija postojećih i osmišljavanje inovativnih strategija za poboljšanje deo su našeg širokog portfolija kada je u pitanju web development.
+            <FormattedMessage id='Services.DevelopmentText' defaultMessage='Maintenance of internet pages, promotion and reorganization of existing ones and designing of the innovative strategies for improvement are the part of our large portfolio when it comes to web development.'/>
           </span>
         </Card>
       </MainBox>
@@ -110,25 +112,25 @@ const ServicesSection = () => (
       <MainBox>
         <Card>
           <Hosting />
-          <h1>Web hosting</h1>
+          <h1><FormattedMessage id='Services.HostingTitle' defaultMessage='Web Hosting'/></h1>
           <span>
-          Održavanje internet stranica, unapređenje i reorganizacija postojećih i osmišljavanje inovativnih strategija za poboljšanje deo su našeg širokog portfolija kada je u pitanju web development.
+            <FormattedMessage id='Services.HostingText' defaultMessage='Maintenance and setting up web pages on servers, creating an official e-mail, creating and maintaining database are just some of solutions we offer You when it comes to maintaining and upgrading Your everyday buisness.'/>
           </span>
         </Card>
 
         <Card>
           <Marketing />
-          <h1>Digialni marketing</h1>
+          <h1><FormattedMessage id='Services.MarketingTitle' defaultMessage='Digital Marketing'/></h1>
           <span>
-          Održavanje internet stranica, unapređenje i reorganizacija postojećih i osmišljavanje inovativnih strategija za poboljšanje deo su našeg širokog portfolija kada je u pitanju web development.
+            <FormattedMessage id='Services.MarketingText' defaultMessage='How to position your brand on market, how to maintain social media as well as which types of content and their ways of presentations are the most suitable today are just some of the questions that our team will gladly answer and offer adequate solution. '/>
           </span>
         </Card>
 
         <Card>
           <Seo />
-          <h1>SEO Optimizacija</h1>
+          <h1><FormattedMessage id='Services.SeoTitle' defaultMessage='SEO Optimization'/></h1>
           <span>
-          Održavanje internet stranica, unapređenje i reorganizacija postojećih i osmišljavanje inovativnih strategija za poboljšanje deo su našeg širokog portfolija kada je u pitanju web development.
+            <FormattedMessage id='Services.SeoText' defaultMessage='With the help from our modern technologies we offer You a chance to be among the first from your area of work that will answer the needs of your clients by taking the top positions at search results.'/>
           </span>
         </Card>
       </MainBox>

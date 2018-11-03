@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import Logo from '../images/Logo';
 import { Container, Section } from '../shared/style';
 import bgImage from '../images/bg-home.png'
+import { FormattedMessage } from 'react-intl';
 
 const SectionWrapper = styled(Section)`
   background-image: url(${bgImage});
@@ -108,13 +109,13 @@ const HeroSection = ({ fpApi }) => (
       <Banner>
         <LogoWrap>
           <Logo />
-          <Slogan>Pixel your vision</Slogan>
+          <Slogan><FormattedMessage id='Hero.Slogan' defaultMessage='Pixel your vision'/></Slogan>
         </LogoWrap>
       </Banner>
 
       <ScrollDown onClick={() => fpApi.moveSectionDown()}>
         <Mouse />
-        <span>scroll</span>
+        <span><FormattedMessage id='Hero.Scroll' defaultMessage='scroll'/></span>
       </ScrollDown>
     </Container>
   </SectionWrapper>

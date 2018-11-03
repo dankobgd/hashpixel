@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Quality from './icons/Quality';
 import Security from './icons/Security';
-import Simplify from './icons/Simplify';
+import Simplicity from './icons/Simplicity';
 import { Container, Section } from '../shared/style';
-import bgImage from '../images/bg-whoarewe.jpg'
+import bgImage from '../images/bg-whoarewe.jpg';
+import { FormattedMessage } from 'react-intl';
 
 const SectionWrapper = styled(Section)`
   background-image: url(${bgImage});
@@ -83,26 +84,26 @@ const AboutSection = () => (
   <SectionWrapper>
     <Container style={{ maxWidth: '980px' }}>
       <TopBox>
-        <Title>Ko smo mi?</Title>
+        <Title><FormattedMessage id='About.Title' defaultMessage='Who are we?'/></Title>
         <Subtext>
-        #Pixel je start-up osnovan 2018. godine od strane mladih IT stručnjaka sa misijom da na domaćem tržištu obezbedi najbolja i najnovija rešenja u oblasti IT tehnologija. Mi pretvaramo Vaše ideje u realnost na pravi način i u pravo vreme. Koristeći najsavremenije programe, inovativan pristup i adekvatne tehnologije odgovaramo na gotovo sve potrebe svojih klijenata pružajući im pomoć i podršku kroz:
+        <FormattedMessage id='About.Subtext' defaultMessage='#Pixel is a start-up founded in 2018. by young IT experts with the mission of providing the best new solutions in the area of IT. We turn Your ideas into reality in the right way at the right time. By using modern programs, innovative approach and adequate technologies, we answer on just about every need of our clients, offering them help and support through:'/>
         </Subtext>
       </TopBox>
 
       <MainBox>
         <Card>
           <Quality />
-          <h1>Kvalitet</h1>
+          <h1><FormattedMessage id='About.Quality' defaultMessage='Quality'/></h1>
         </Card>
 
         <Card>
           <Security />
-          <h1>Sigurnost</h1>
+          <h1><FormattedMessage id='About.Security' defaultMessage='Security'/></h1>
         </Card>
 
         <Card>
-          <Simplify />
-          <h1>Jednostavnost</h1>
+          <Simplicity />
+          <h1><FormattedMessage id='About.Simplicity' defaultMessage='Simplicity'/></h1>
         </Card>
       </MainBox>
     </Container>
