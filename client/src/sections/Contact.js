@@ -278,53 +278,65 @@ const ContactForm = () => (
         <Label htmlFor="name">
           <FormattedMessage id='Contact.FormName' defaultMessage='Name' />
         </Label>
-        <Input
+
+        <FormattedMessage id='Contact.FormNamePlaceholder'>
+          {msg => (<Input
           type="text"
           name="name"
-          placeholder="Name"
+          placeholder={msg}
           value={values.name}
           onChange={handleChange}
           onBlur={handleBlur}
-        />
+        />)}
+        </FormattedMessage>
         {errors.name && touched.name && <Msg danger>{errors.name}</Msg>}
 
         <Label htmlFor="email">
           <FormattedMessage id='Contact.FormEmail' defaultMessage='Email' />
         </Label>
-        <Input
+
+        <FormattedMessage id='Contact.FormNamePlaceholder'>
+          {msg => (<Input
           type="email"
           name="email"
-          placeholder="example@example.com"
+          placeholder={msg}
           value={values.email}
           onChange={handleChange}
           onBlur={handleBlur}
-        />
+        />)}
+        </FormattedMessage>
         {errors.email && touched.email && <Msg danger>{errors.email}</Msg>}
 
         <Label htmlFor="phone">
           <FormattedMessage id='Contact.FormPhone' defaultMessage='Phone' />
         </Label>
-        <Input
+
+        <FormattedMessage id='Contact.FormPhonePlaceholder'>
+          {msg => (<Input
           type="text"
           name="phone"
-          placeholder="064-1234-567"
+          placeholder={msg}
           value={values.phone}
           onChange={handleChange}
           onBlur={handleBlur}
-        />
+        />)}
+        </FormattedMessage>
         {errors.phone && touched.phone && <Msg danger>{errors.phone}</Msg>}
 
         <Label htmlFor="message">
           <FormattedMessage id='Contact.FormMessage' defaultMessage='Message' />
         </Label>
-        <Textarea
+
+        <FormattedMessage id='Contact.FormMessagePlaceholder'>
+          {msg => (<Textarea
           type="text"
           name="message"
-          placeholder="Your message"
+          placeholder={msg}
           value={values.message}
           onChange={handleChange}
           onBlur={handleBlur}
-        />
+        />)}
+        </FormattedMessage>
         {errors.message && touched.message && <Msg danger>{errors.message}</Msg>}
 
         <Button type="submit" onSubmit={handleSubmit} disabled={isSubmitting}>
