@@ -275,7 +275,9 @@ const ContactForm = () => (
     }}
     render={({ values, errors, touched, isSubmitting, handleChange, handleBlur, handleSubmit }) => (
       <Form onSubmit={handleSubmit}>
-        <Label htmlFor="name">Name</Label>
+        <Label htmlFor="name">
+          <FormattedMessage id='Contact.FormName' defaultMessage='Name' />
+        </Label>
         <Input
           type="text"
           name="name"
@@ -286,7 +288,9 @@ const ContactForm = () => (
         />
         {errors.name && touched.name && <Msg danger>{errors.name}</Msg>}
 
-        <Label htmlFor="email">Email</Label>
+        <Label htmlFor="email">
+          <FormattedMessage id='Contact.FormEmail' defaultMessage='Email' />
+        </Label>
         <Input
           type="email"
           name="email"
@@ -297,7 +301,9 @@ const ContactForm = () => (
         />
         {errors.email && touched.email && <Msg danger>{errors.email}</Msg>}
 
-        <Label htmlFor="phone">Phone</Label>
+        <Label htmlFor="phone">
+          <FormattedMessage id='Contact.FormPhone' defaultMessage='Phone' />
+        </Label>
         <Input
           type="text"
           name="phone"
@@ -308,7 +314,9 @@ const ContactForm = () => (
         />
         {errors.phone && touched.phone && <Msg danger>{errors.phone}</Msg>}
 
-        <Label htmlFor="message">Message</Label>
+        <Label htmlFor="message">
+          <FormattedMessage id='Contact.FormMessage' defaultMessage='Message' />
+        </Label>
         <Textarea
           type="text"
           name="message"
@@ -320,10 +328,12 @@ const ContactForm = () => (
         {errors.message && touched.message && <Msg danger>{errors.message}</Msg>}
 
         <Button type="submit" onSubmit={handleSubmit} disabled={isSubmitting}>
-          Submit
+          <FormattedMessage id='Contact.FormSubmit' defaultMessage='Submit' />
         </Button>
 
-        {isSubmitting && <Msg success>Thank you for contacting us!</Msg>}
+        {isSubmitting && <Msg success>
+          <FormattedMessage id='Contact.FormSuccess' defaultMessage='Thank you for contacting us!' />
+        </Msg>}
       </Form>
     )}
   />

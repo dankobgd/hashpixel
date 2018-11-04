@@ -173,14 +173,56 @@ const Icons = styled.div`
   }
 `;
 
+
+const LanguageWrapper = styled.div`
+  position: absolute;
+  top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+
+  & > * {
+    color: #fff;
+  }
+`;
+
+const EngButton = styled.a`
+  padding: 4px;
+  cursor: pointer;
+  border-right: 1px solid rgba(255, 255, 255, 0.7);
+
+  &:hover {
+    color: ${props => props.theme.cyan};
+  }
+`;
+
+const SrbButton = styled.a`
+  padding: 4px;
+  cursor: pointer;
+
+  &:hover {
+    color: ${props => props.theme.cyan};
+  }
+`;
+
+
 const Desktop = props => {
   const { isMenuOpen, position, handleEnter, handleLeave } = props.navigationUILogic;
+  const { setLocale } = props;
 
   return (
     <NavigationWrapper position={position}>
       <Nav isMenuOpen={isMenuOpen} position={position} onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
         <Outer>
           <Menu position={position}>
+
+
+            <LanguageWrapper>
+	            <EngButton onClick={() => setLocale('en')}>ENG</EngButton>
+	            <SrbButton onClick={() => setLocale('sr')}>SRB</SrbButton>
+            </LanguageWrapper>
+
             <Header>
               <Hash />
             </Header>

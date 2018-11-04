@@ -35,7 +35,7 @@ class App extends Component {
               <Route
                 exact
                 path="/"
-                component={FullPageWrapper}
+                render={() => <FullPageWrapper setLocale={this.setLocale} />}
               />
               <Route component={PageNotFound} />
             </Switch>
