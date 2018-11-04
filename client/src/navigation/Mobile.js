@@ -88,8 +88,47 @@ const Item = styled.li`
   }
 `;
 
+
+// LOCALE BUTTONS
+const LanguageWrapper = styled.div`
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+
+  & > * {
+    color: #fff;
+  }
+`;
+
+const Eng = styled.a`
+  padding: 0px 4px;
+  cursor: pointer;
+  border-right: 1px solid rgba(255, 255, 255, 0.7);
+  color: ${props => props.lang === 'en' ? props.theme.cyan : 'fff'};
+
+  &:hover {
+    color: ${props => props.lang === 'sr' && props.theme.grey};
+  }
+
+`;
+
+const Srb = styled.a`
+  padding: 0px 4px;
+  cursor: pointer;
+  color: ${props => props.lang === 'sr' ? props.theme.cyan : 'fff'};
+
+  &:hover {
+    color: ${props => props.lang === 'en' && props.theme.grey};
+  }
+`;
+
+
 const Mobile = props => {
-  const { navigationUILogic: { isMenuOpen, handleClick } } = props;
+  const { setLocale, lang, navigationUILogic: { isMenuOpen, handleClick } } = props;
 
   return (
     <>
@@ -98,6 +137,11 @@ const Mobile = props => {
       </ToggleBox>
 
       <Overlay isMenuOpen={isMenuOpen}>
+        <LanguageWrapper>
+          <Eng lang={lang} onClick={() => setLocale('en')}>ENG</Eng>
+          <Srb lang={lang} onClick={() => setLocale('sr')}>SRB</Srb>
+        </LanguageWrapper>
+
         <Nav>
           <List isMenuOpen={isMenuOpen}>
             {items.map((item, indx) => (

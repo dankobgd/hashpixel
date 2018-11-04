@@ -173,7 +173,7 @@ const Icons = styled.div`
   }
 `;
 
-
+// LOCALLE BUTONS
 const LanguageWrapper = styled.div`
   position: absolute;
   top: 1rem;
@@ -211,8 +211,7 @@ const Srb = styled.a`
 
 
 const Desktop = props => {
-  const { isMenuOpen, position, handleEnter, handleLeave } = props.navigationUILogic;
-  const { setLocale, lang } = props;
+  const { setLocale, lang, navigationUILogic: { isMenuOpen, position, handleEnter, handleLeave } } = props;
 
 
   return (

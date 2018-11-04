@@ -37,7 +37,7 @@ class Navigation extends Component {
     return ReactDOM.createPortal(
       <div>
         <Desktop fpState={fpState} fpApi={fpApi} footerUILogic={footerUILogic} navigationUILogic={navigationUILogic} setLocale={setLocale} lang={lang}/>
-        <Mobile fpState={fpState} fpApi={fpApi} footerUILogic={footerUILogic} navigationUILogic={navigationUILogic} setLocale={setLocale}/>
+        <Mobile fpState={fpState} fpApi={fpApi} footerUILogic={footerUILogic} navigationUILogic={navigationUILogic} setLocale={setLocale} lang={lang}/>
       </div>,
       document.getElementById('nav')
     );
