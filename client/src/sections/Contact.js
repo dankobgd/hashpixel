@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import styled, { css } from 'styled-components';
 import { Formik } from 'formik';
 import { Container, Section } from '../shared/style';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, injectIntl } from 'react-intl';
 
 
 const SectionWrapper = styled(Section)`
@@ -205,7 +205,7 @@ const LeftText = styled.div`
   }
 `;
 
-const ContactSection = () => (
+const ContactSection = ({ intl }) => (
   <SectionWrapper>
     <Container>
       <Outer>
@@ -219,7 +219,7 @@ const ContactSection = () => (
             </span>
           </LeftText>
 
-          <ContactForm />
+          <ContactForm intl={intl}/>
         </Content>
       </Outer>
     </Container>
@@ -266,7 +266,7 @@ function sendFormData(values, { setSubmitting, setErrors }) {
     .catch(err => console.log(err));
 }
 
-const ContactForm = () => (
+const ContactForm = ({ intl }) => (
   <Formik
     initialValues={{ name: '', email: '', phone: '', message: '' }}
     validationSchema={contactSchema}
@@ -275,79 +275,74 @@ const ContactForm = () => (
     }}
     render={({ values, errors, touched, isSubmitting, handleChange, handleBlur, handleSubmit }) => (
       <Form onSubmit={handleSubmit}>
-        <Label htmlFor="name">
-          <FormattedMessage id='Contact.FormName' defaultMessage='Name' />
-        </Label>
+      <Label htmlFor="name">
+        <FormattedMessage id='Contact.FormName' defaultMessage='Name' />
+      </Label>
 
-        <FormattedMessage id='Contact.FormNamePlaceholder'>
-          {msg => (<Input
-          type="text"
-          name="name"
-          placeholder={msg}
-          value={values.name}
-          onChange={handleChange}
-          onBlur={handleBlur}
-        />)}
-        </FormattedMessage>
-        {errors.name && touched.name && <Msg danger>{errors.name}</Msg>}
+      <Input
+        type="text"
+        name="name"
+        placeholder={intl.formatMessage({ id: 'Contact.FormNamePlaceholder' })}
+        value={values.name}
+        onChange={handleChange}
+        onBlur={handleBlur}
+      />
+      {errors.name && touched.name && <Msg danger>{errors.name}</Msg>}
 
-        <Label htmlFor="email">
-          <FormattedMessage id='Contact.FormEmail' defaultMessage='Email' />
-        </Label>
+      <Label htmlFor="email">
+        <FormattedMessage id='Contact.FormEmail' defaultMessage='Email' />
+      </Label>
 
-        <FormattedMessage id='Contact.FormNamePlaceholder'>
-          {msg => (<Input
-          type="email"
-          name="email"
-          placeholder={msg}
-          value={values.email}
-          onChange={handleChange}
-          onBlur={handleBlur}
-        />)}
-        </FormattedMessage>
-        {errors.email && touched.email && <Msg danger>{errors.email}</Msg>}
+      <Input
+        type="email"
+        name="email"
+        placeholder={intl.formatMessage({ id: 'Contact.FormEmailPlaceholder' })}
+        value={values.email}
+        onChange={handleChange}
+        onBlur={handleBlur}
+      />
+      {errors.email && touched.email && <Msg danger>{errors.email}</Msg>}
 
-        <Label htmlFor="phone">
-          <FormattedMessage id='Contact.FormPhone' defaultMessage='Phone' />
-        </Label>
+      <Label htmlFor="phone">
+        <FormattedMessage id='Contact.FormPhone' defaultMessage='Phone' />
+      </Label>
 
-        <FormattedMessage id='Contact.FormPhonePlaceholder'>
-          {msg => (<Input
-          type="text"
-          name="phone"
-          placeholder={msg}
-          value={values.phone}
-          onChange={handleChange}
-          onBlur={handleBlur}
-        />)}
-        </FormattedMessage>
-        {errors.phone && touched.phone && <Msg danger>{errors.phone}</Msg>}
+      <Input
+        type="text"
+        name="phone"
+        placeholder={intl.formatMessage({ id: 'Contact.FormPhonePlaceholder' })}
+        value={values.phone}
+        onChange={handleChange}
+        onBlur={handleBlur}
+      />
+      {errors.phone && touched.phone && <Msg danger>{errors.phone}</Msg>}
 
-        <Label htmlFor="message">
-          <FormattedMessage id='Contact.FormMessage' defaultMessage='Message' />
-        </Label>
+      <Label htmlFor="message">
+        <FormattedMessage id='Contact.FormMessage' defaultMessage='Message' />
+      </Label>
 
-        <FormattedMessage id='Contact.FormMessagePlaceholder'>
-          {msg => (<Textarea
-          type="text"
-          name="message"
-          placeholder={msg}
-          value={values.message}
-          onChange={handleChange}
-          onBlur={handleBlur}
-        />)}
-        </FormattedMessage>
-        {errors.message && touched.message && <Msg danger>{errors.message}</Msg>}
+      <Textarea
+        type="text"
+        name="message"
+        placeholder={intl.formatMessage({ id: 'Contact.FormMessagePlaceholder' })}
+        value={values.message}
+        onChange={handleChange}
+        onBlur={handleBlur}
+      />
+      {errors.message && touched.message && <Msg danger>{errors.message}</Msg>}
 
-        <Button type="submit" onSubmit={handleSubmit} disabled={isSubmitting}>
-          <FormattedMessage id='Contact.FormSubmit' defaultMessage='Submit' />
-        </Button>
+      <Button type="submit" onSubmit={handleSubmit} disabled={isSubmitting}>
+        <FormattedMessage id='Contact.FormSubmit' defaultMessage='Submit' />
+      </Button>
 
-        {isSubmitting && <Msg success>
-          <FormattedMessage id='Contact.FormSuccess' defaultMessage='Thank you for contacting us!' />
-        </Msg>}
-      </Form>
+      {isSubmitting && <Msg success>
+        <FormattedMessage id='Contact.FormSuccess' defaultMessage='Thank you for contacting us!' />
+      </Msg>}
+    </Form>
     )}
   />
 );
-export default ContactSection;
+
+
+
+export default injectIntl(ContactSection);
