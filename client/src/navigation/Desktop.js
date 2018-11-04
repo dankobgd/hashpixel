@@ -187,40 +187,42 @@ const LanguageWrapper = styled.div`
   }
 `;
 
-const EngButton = styled.a`
-  padding: 4px;
+const Eng = styled.a`
+  padding: 0px 4px;
   cursor: pointer;
   border-right: 1px solid rgba(255, 255, 255, 0.7);
+  color: ${props => props.lang === 'en' ? props.theme.cyan : 'fff'};
 
   &:hover {
-    color: ${props => props.theme.cyan};
+    color: ${props => props.lang === 'sr' && props.theme.grey};
   }
+
 `;
 
-const SrbButton = styled.a`
-  padding: 4px;
+const Srb = styled.a`
+  padding: 0px 4px;
   cursor: pointer;
+  color: ${props => props.lang === 'sr' ? props.theme.cyan : 'fff'};
 
   &:hover {
-    color: ${props => props.theme.cyan};
+    color: ${props => props.lang === 'en' && props.theme.grey};
   }
 `;
 
 
 const Desktop = props => {
   const { isMenuOpen, position, handleEnter, handleLeave } = props.navigationUILogic;
-  const { setLocale } = props;
+  const { setLocale, lang } = props;
+
 
   return (
     <NavigationWrapper position={position}>
       <Nav isMenuOpen={isMenuOpen} position={position} onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
         <Outer>
           <Menu position={position}>
-
-
             <LanguageWrapper>
-	            <EngButton onClick={() => setLocale('en')}>ENG</EngButton>
-	            <SrbButton onClick={() => setLocale('sr')}>SRB</SrbButton>
+	            <Eng lang={lang} onClick={() => setLocale('en')}>ENG</Eng>
+	            <Srb lang={lang} onClick={() => setLocale('sr')}>SRB</Srb>
             </LanguageWrapper>
 
             <Header>

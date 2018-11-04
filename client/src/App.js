@@ -20,8 +20,15 @@ class App extends Component {
     lang: 'en'
   }
 
+  componentDidMount() {
+    const lang = localStorage.getItem('locale');
+    this.setState({ lang });
+  }
+
+
   setLocale = lang => {
-    this.setState({ lang })
+    this.setState({ lang });
+    localStorage.setItem('locale', lang);
   }
 
   render() {
@@ -35,7 +42,7 @@ class App extends Component {
               <Route
                 exact
                 path="/"
-                render={() => <FullPageWrapper setLocale={this.setLocale} />}
+                render={() => <FullPageWrapper setLocale={this.setLocale} lang={lang} />}
               />
               <Route component={PageNotFound} />
             </Switch>
