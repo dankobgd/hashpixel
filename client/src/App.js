@@ -9,6 +9,7 @@ import { IntlProvider, addLocaleData } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import sr from 'react-intl/locale-data/sr';
 import localeMessages from './localeMessages.json';
+import SimpleSLider from './slider/Slider'
 
 
 addLocaleData(en);
@@ -44,6 +45,7 @@ class App extends Component {
                 path="/"
                 render={() => <FullPageWrapper setLocale={this.setLocale} lang={lang} />}
               />
+              <Route exact path="/slider" component={SimpleSLider} />
               <Route component={PageNotFound} />
             </Switch>
           </Router>
