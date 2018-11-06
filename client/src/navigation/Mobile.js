@@ -148,11 +148,11 @@ const Mobile = props => {
         <Nav>
           <List isMenuOpen={isMenuOpen}>
             {dfns.map((item, indx) => (
-              <Item key={item.page} onClick={() => {
+              <Item key={item.id} onClick={() => {
                 moveToSection(props, indx)
                 handleClick();
               }}>
-              <FormattedMessage id={item.id} defaultMessage={item.defaultMessage}/>
+                <FormattedMessage id={item.id} defaultMessage={item.defaultMessage}/>
               </Item>
             ))}
           </List>

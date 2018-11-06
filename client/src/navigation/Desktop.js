@@ -214,7 +214,7 @@ const Srb = styled.a`
 
 const Desktop = props => {
   const { setLocale, lang, navigationUILogic: { isMenuOpen, position, handleEnter, handleLeave } } = props;
-
+  const socials = ['fa fa-facebook', 'fa fa-instagram', 'fa fa-behance', 'fa fa-github', 'fa fa-linkedin'];
 
 
   return (
@@ -245,11 +245,7 @@ const Desktop = props => {
 
             <Footer>
               <Icons>
-                <i className="fa fa-facebook" />
-                <i className="fa fa-instagram" />
-                <i className="fa fa-behance" />
-                <i className="fa fa-github" />
-                <i className="fa fa-linkedin" />
+                {socials.map(icon => <i key={icon} className={icon}></i>)}
               </Icons>
             </Footer>
           </Menu>
