@@ -282,7 +282,7 @@ const ContactForm = ({ intl }) => (
       <Input
         type="text"
         name="name"
-        placeholder={intl.formatMessage({ id: 'Contact.FormNamePlaceholder' })}
+        placeholder={intl.formatMessage({ id: 'Contact.FormNamePlaceholder', defaultMessage: 'Name' })}
         value={values.name}
         onChange={handleChange}
         onBlur={handleBlur}
@@ -296,7 +296,7 @@ const ContactForm = ({ intl }) => (
       <Input
         type="email"
         name="email"
-        placeholder={intl.formatMessage({ id: 'Contact.FormEmailPlaceholder' })}
+        placeholder={intl.formatMessage({ id: 'Contact.FormEmailPlaceholder', defaultMessage: 'Email@example.xxx'  })}
         value={values.email}
         onChange={handleChange}
         onBlur={handleBlur}
@@ -310,7 +310,7 @@ const ContactForm = ({ intl }) => (
       <Input
         type="text"
         name="phone"
-        placeholder={intl.formatMessage({ id: 'Contact.FormPhonePlaceholder' })}
+        placeholder={intl.formatMessage({ id: 'Contact.FormPhonePlaceholder', defaultMessage: 'Your phone'  })}
         value={values.phone}
         onChange={handleChange}
         onBlur={handleBlur}
@@ -324,7 +324,7 @@ const ContactForm = ({ intl }) => (
       <Textarea
         type="text"
         name="message"
-        placeholder={intl.formatMessage({ id: 'Contact.FormMessagePlaceholder' })}
+        placeholder={intl.formatMessage({ id: 'Contact.FormMessagePlaceholder', defaultMessage: 'Leave a message'  })}
         value={values.message}
         onChange={handleChange}
         onBlur={handleBlur}
