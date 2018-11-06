@@ -1,5 +1,11 @@
 {
   "en": {
+    "Nav0": "Home",
+    "Nav1": "Who Are We",
+    "Nav2": "Meet Our Team",
+    "Nav3": "What We Do",
+    "Nav4": "Let's Work",
+    "Nav5": "Company Info",
     "Hero.Slogan": "Pixel your vision",
     "Hero.Scroll": "scroll",
     "About.Title": "Who Are We?",
@@ -40,8 +46,14 @@
     "PageNotFound.GoBack": "Go Back"
   },
   "sr": {
-    "Hero.Slogan": "Pikselom do vizije",
-    "Hero.Scroll": "skroluj",
+    "Nav0": "Početna",
+    "Nav1": "Ko Smo Mi",
+    "Nav2": "Upoznajte Naš Tim",
+    "Nav3": "Čime se bavimo",
+    "Nav4": "Hajde da radimo",
+    "Nav5": "Kontakt Informacije",
+    "Hero.Slogan": "Pixel your vision",
+    "Hero.Scroll": "scroll",
     "About.Title": "Ko smo mi?",
     "About.Subtext": "#Pixel je start-up osnovan 2018. godine od strane mladih IT stručnjaka sa misijom da na domaćem tržištu obezbedi najbolja i najnovija rešenja u oblasti IT tehnologija. Mi pretvaramo Vaše ideje u realnost na pravi način i u pravo vreme. Koristeći najsavremenije programe, inovativan pristup i adekvatne tehnologije odgovaramo na gotovo sve potrebe svojih klijenata pružajući im pomoć i podršku kroz:",
     "About.Quality": "Kvalitet",

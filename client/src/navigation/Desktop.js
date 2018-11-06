@@ -4,6 +4,8 @@ import items from './items';
 import Hash from '../images/Hash';
 import Hamburger from './Hamburger';
 import { moveToSection } from '../helpers'
+import { dfns } from '../navigation/items'
+import { FormattedMessage } from 'react-intl';
 
 const NavigationWrapper = styled.div`
   position: fixed;
@@ -214,6 +216,7 @@ const Desktop = props => {
   const { setLocale, lang, navigationUILogic: { isMenuOpen, position, handleEnter, handleLeave } } = props;
 
 
+
   return (
     <NavigationWrapper position={position}>
       <Nav isMenuOpen={isMenuOpen} position={position} onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
@@ -230,11 +233,13 @@ const Desktop = props => {
 
             <Main>
               <List>
-                {items.map((item, indx) => (
-                  <Item key={item.name} onClick={() => moveToSection(props, indx)}>
-                    <span>{item.page}</span>
-                  </Item>
-                ))}
+                {dfns.map((item, indx) => {
+                    return (
+                      <Item key={indx} onClick={() => moveToSection(props, indx)}>
+                        <FormattedMessage id={item.id} defaultMessage={item.defaultMessage}/>
+                      </Item>
+                    )
+                  })}
               </List>
             </Main>
 
