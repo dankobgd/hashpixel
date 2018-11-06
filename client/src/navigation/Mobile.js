@@ -3,6 +3,9 @@ import styled, { css } from 'styled-components';
 import Hamburger from './Hamburger';
 import items from './items';
 import { moveToSection } from '../helpers'
+import { dfns } from './items';
+import { FormattedMessage } from 'react-intl';
+
 
 const ToggleBox = styled.div`
   width: 60px;
@@ -144,11 +147,13 @@ const Mobile = props => {
 
         <Nav>
           <List isMenuOpen={isMenuOpen}>
-            {items.map((item, indx) => (
+            {dfns.map((item, indx) => (
               <Item key={item.page} onClick={() => {
                 moveToSection(props, indx)
                 handleClick();
-              }}>{item.page}</Item>
+              }}>
+              <FormattedMessage id={item.id} defaultMessage={item.defaultMessage}/>
+              </Item>
             ))}
           </List>
         </Nav>
