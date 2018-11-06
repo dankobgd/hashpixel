@@ -7,13 +7,6 @@ import data from './data';
 
 
 
-const StyledSlide = styled.div`
-  height: 500px;
-  width: 500px;
-  cursor: grab;
-  background-color: ${props => props.bg};
-`;
-
 const OuterWrapper = styled.div`
   transition: 500ms;
   opacity: 0;
@@ -27,63 +20,44 @@ const OuterWrapper = styled.div`
   `};
 `;
 
+const Single = styled.div`
+  height: 100vh;
+  background-color: darkred;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-
-function NextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "red" }}
-      onClick={onClick}
-    />
-  );
-}
-
-function PrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "green" }}
-      onClick={onClick}
-    />
-  );
-}
-
-
-
-class CustomSlide extends Component {
-  render() {
-    const { slide, index, bg, hide, ...props } = this.props;
-
-    return (
-      <>
-        <span onClick={hide}>QUIT</span>
-
-        <StyledSlide bg={bg} {...props}>
-          <h2>{slide.title}</h2>
-          <span>{slide.description}</span>
-          <img src={slide.imageUrl} alt=''/>
-        </StyledSlide>
-      </>
-    );
+  & > img {
+    max-width: 420px;
+    max-height: 320px;
+    object-fit: cover;
   }
+`;
+
+
+const Slide = ({ slide, hideSlider }) => {
+  return (
+  <Single>
+    <button onClick={hideSlider}>CLOSE</button>
+    <h1>{slide.title}</h1>
+    <span>{slide.description}</span>
+    <img src={slide.imageUrl} alt={slide.title}/>
+  </Single>
+  )
 }
+
 
 export default class SimpleSlider extends Component {
   state = {
-    slidesData: data,
+    slides: data,
     showSlider: false,
-    slideIndex: 0,
-    updateCount: 0
   }
 
   openSlider = (e) => {
-    const activeIndex = Number.parseInt(e.target.getAttribute('data-number'));
-    this.slider.slickGoTo(activeIndex)
-
-    this.setState({ showSlider: true, slideIndex: activeIndex })
+    const num = Number.parseInt(e.target.getAttribute('data-number'));
+    this.slider.slickGoTo(num);
+    this.setState({ showSlider: true })
   }
 
   hideSlider = () => {
@@ -92,45 +66,19 @@ export default class SimpleSlider extends Component {
 
 
   render() {
-    const { showSlider, slidesData, slideIndex } = this.state;
-
+    const { showSlider, slides } = this.state;
 
     const settings = {
       speed: 500,
       infinite: true,
       dots: true,
-      fade: true,
+      arrows: true,
+      fade: false,
       slidesToShow: 1,
       slidesToScroll: 1,
-      // afterChange: () => this.setState(state => ({ updateCount: state.updateCount + 1 })),
-      // beforeChange: (current, next) => this.setState({ slideIndex: next }),
-      nextArrow: <NextArrow />,
-      prevArrow: <PrevArrow />,
-      appendDots: dots => (
-        <div
-          style={{
-            backgroundColor: "#ddd",
-            borderRadius: "10px",
-            padding: "10px"
-          }}
-        >
-          <ul style={{ margin: "0px" }}> {dots} </ul>
-        </div>
-      ),
-      customPaging: i => (
-        <div
-          style={{
-            width: "30px",
-            color: "blue",
-            border: "1px blue solid"
-          }}
-        >
-          {i + 1}
-        </div>
-      )
+      swipeToSlide: true,
+      swipe: true,
     };
-
-
 
     return (
       <>
@@ -141,14 +89,12 @@ export default class SimpleSlider extends Component {
       <button style={{ width: '50px' }} onClick={this.openSlider} data-number='4'>5</button>
       <button style={{ width: '50px' }} onClick={this.openSlider} data-number='5'>6</button>
 
+
       <OuterWrapper showSlider={showSlider}>
         <Slider {...settings} ref={slider => (this.slider = slider)}>
-          <CustomSlide slide={slidesData[slideIndex]} hide={this.hideSlider} bg='green' index={1} />
-          <CustomSlide slide={slidesData[slideIndex]} hide={this.hideSlider} bg='orange' index={2} />
-          <CustomSlide slide={slidesData[slideIndex]} hide={this.hideSlider} bg='palevioletred' index={3} />
-          <CustomSlide slide={slidesData[slideIndex]} hide={this.hideSlider} bg='rebeccapurple' index={4} />
-          <CustomSlide slide={slidesData[slideIndex]} hide={this.hideSlider} bg='darkred' index={5} />
-          <CustomSlide slide={slidesData[slideIndex]} hide={this.hideSlider} bg='lightblue' index={6} />
+          {slides.map(slide => (
+            <Slide key={slides} slide={slide} hideSlider={this.hideSlider}/>
+          ))}
         </Slider>
       </OuterWrapper>
       </>

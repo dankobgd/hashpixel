@@ -1,8 +1,8 @@
 export  default [
-  { title: 'aaa', description: 'dsadauefgeqyfquefqutfqfe', imageUrl: 'https://loremflickr.com/320/240/cat' },
-  { title: 'bbb', description: 'dsadauefgeqyfquefqutfqfe', imageUrl: 'https://loremflickr.com/320/240/cat' },
-  { title: 'ccc', description: 'dsadauefgeqyfquefqutfqfe', imageUrl: 'https://loremflickr.com/320/240/cat' },
-  { title: 'ddd', description: 'dsadauefgeqyfquefqutfqfe', imageUrl: 'https://loremflickr.com/320/240/cat' },
-  { title: 'eee', description: 'dsadauefgeqyfquefqutfqfe', imageUrl: 'https://loremflickr.com/320/240/cat' },
-  { title: 'fff', description: 'dsadauefgeqyfquefqutfqfe', imageUrl: 'https://loremflickr.com/320/240/cat' },
+  { title: '1', description: 'First', imageUrl: 'https://via.placeholder.com/150' },
+  { title: '2', description: 'Second', imageUrl: 'https://via.placeholder.com/150' },
+  { title: '3', description: 'Third', imageUrl: 'https://via.placeholder.com/150' },
+  { title: '4', description: 'Fourth', imageUrl: 'https://via.placeholder.com/150' },
+  { title: '5', description: 'Fifth', imageUrl: 'https://via.placeholder.com/150' },
+  { title: '6', description: 'Sixth', imageUrl: 'https://via.placeholder.com/150' },
 ]
