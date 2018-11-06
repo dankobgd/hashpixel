@@ -57,7 +57,7 @@
     "Contact.FormPhone": "Telefon",
     "Contact.FormPhonePlaceholder": "Vaš telefon",
     "Contact.FormMessage": "Poruka",
-    "Contact.FormMessagePlaceholder": "Poruka",
+    "Contact.FormMessagePlaceholder": "Ostavite komentar",
     "Contact.FormSubmit": "Pošalji",
     "Contact.FormSuccess": "Uspešno ste poslali poruku",
     "Team.Title": "Upoznajte naš tim",
@@ -75,7 +75,7 @@
     "Services.SeoTitle": "SEO Optimizacija",
     "Services.SeoText": "Održavanje internet stranica, unapređenje i reorganizacija postojećih i osmišljavanje inovativnih strategija za poboljšanje deo su našeg širokog portfolija kada je u pitanju web development.",
     "PageNotFound.Title": "",
-    "PageNotFound.Paragraph": "Oppps, Ne možemo da pronađemo stranicu",
+    "PageNotFound.Paragraph": "Ups, Ne možemo da pronađemo stranicu",
     "PageNotFound.Small": "Nešto nije u redu ili stranica više ne postoji",
     "PageNotFound.GoBack": "Idi Nazad"
   }
