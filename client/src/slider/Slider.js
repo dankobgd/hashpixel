@@ -65,7 +65,7 @@ const DescriptionPart = styled.div`
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: flex-start;
   text-align: left;
   position: relative;
@@ -75,6 +75,16 @@ const DescriptionPart = styled.div`
   }
 `;
 
+
+const Text = styled.div``;
+
+const Arrows = styled.div`
+  padding: 2rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 
 const Slide = ({ slide, hideSlider, sliderAPI }) => {
@@ -87,12 +97,14 @@ const Slide = ({ slide, hideSlider, sliderAPI }) => {
           <img src={slide.imageUrl} alt={slide.title}/>
         </ImagePart>
         <DescriptionPart>
-          <h1>{slide.title}</h1>
-          <span>{slide.description}</span>
-
-          <ArrowLeft onClick={() => sliderAPI.slickPrev()}/>
-          <ArrowRight onClick={() => sliderAPI.slickNext()}/>
-
+          <Text>
+            <h1>{slide.title}</h1>
+            <span>{slide.description}</span>
+          </Text>
+          <Arrows>
+            <ArrowLeft onClick={() => sliderAPI.slickPrev()}/>
+            <ArrowRight onClick={() => sliderAPI.slickNext()}/>
+          </Arrows>
         </DescriptionPart>
       </Article>
       </Container>

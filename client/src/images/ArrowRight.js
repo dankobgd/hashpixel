@@ -3,9 +3,6 @@ import styled from 'styled-components'
 
 
 const Svg = styled.svg`
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
   z-index: 999;
   cursor: pointer;
   fill: ${props => props.theme.white};
