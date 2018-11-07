@@ -6,6 +6,8 @@ import styled, { css } from 'styled-components';
 import data from './data';
 import { Container } from '../shared/style';
 import Exit from '../images/Exit';
+import ArrowLeft from '../images/ArrowLeft';
+import ArrowRight from '../images/ArrowRight';
 
 
 const OuterWrapper = styled.div`
@@ -32,6 +34,7 @@ const Single = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 `;
 
 
@@ -65,6 +68,7 @@ const DescriptionPart = styled.div`
   justify-content: center;
   align-items: flex-start;
   text-align: left;
+  position: relative;
 
   & > span {
     line-height: 1.5;
@@ -73,7 +77,8 @@ const DescriptionPart = styled.div`
 
 
 
-const Slide = ({ slide, hideSlider }) => {
+const Slide = ({ slide, hideSlider, sliderAPI }) => {
+
   return (
     <Single>
       <Container>
@@ -84,6 +89,10 @@ const Slide = ({ slide, hideSlider }) => {
         <DescriptionPart>
           <h1>{slide.title}</h1>
           <span>{slide.description}</span>
+
+          <ArrowLeft onClick={() => sliderAPI.slickPrev()}/>
+          <ArrowRight onClick={() => sliderAPI.slickNext()}/>
+
         </DescriptionPart>
       </Article>
       </Container>
@@ -100,7 +109,7 @@ export default class SimpleSlider extends Component {
 
   openSlider = (e) => {
     const num = Number.parseInt(e.target.getAttribute('data-number'));
-    this.slider.slickGoTo(num);
+    this.sliderAPI.slickGoTo(num);
     this.setState({ showSlider: true })
   }
 
@@ -116,7 +125,7 @@ export default class SimpleSlider extends Component {
       speed: 500,
       infinite: true,
       dots: true,
-      arrows: true,
+      arrows: false,
       fade: false,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -137,9 +146,9 @@ export default class SimpleSlider extends Component {
       <OuterWrapper showSlider={showSlider}>
         <Exit onClick={this.hideSlider}/>
 
-        <Slider {...settings} ref={slider => (this.slider = slider)}>
+        <Slider {...settings} ref={slider => (this.sliderAPI = slider)}>
           {slides.map(slide => (
-            <Slide key={slides} slide={slide} hideSlider={this.hideSlider}/>
+            <Slide key={slides} slide={slide} hideSlider={this.hideSlider} sliderAPI={this.sliderAPI}/>
           ))}
         </Slider>
       </OuterWrapper>

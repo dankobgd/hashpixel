@@ -4,8 +4,15 @@ import styled from 'styled-components'
 
 const Svg = styled.svg`
   position: absolute;
-  top: 100%;
+  bottom: 2rem;
   left: 2rem;
+  z-index: 9999;
+  cursor: pointer;
+  fill: ${props => props.theme.white};
+
+  &:hover {
+    fill: ${props => props.theme.grey};
+  }
 `;
 
 const ArrowLeft = ({ onClick }) => (
