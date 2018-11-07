@@ -99,10 +99,14 @@ class ServicesSection extends Component {
   openSlider = (num) => {
     this.sliderAPI.slickGoTo(num);
     this.setState({ showSlider: true })
+    document.querySelector('.dots-list').style.display = 'none';
+    document.querySelector('#nav').style.display = 'none';
   }
 
   hideSlider = () => {
-    this.setState({ showSlider: false })
+    this.setState({ showSlider: false });
+    document.querySelector('.dots-list').style.display = 'flex';
+    document.querySelector('#nav').style.display = 'flex';
   }
 
   render() {
