@@ -4,7 +4,7 @@ import '../../node_modules/slick-carousel/slick/slick.css';
 import '../../node_modules/slick-carousel/slick/slick-theme.css';
 import styled, { css } from 'styled-components';
 import data from './data';
-
+import { Container } from '../shared/style';
 
 
 const OuterWrapper = styled.div`
@@ -12,6 +12,8 @@ const OuterWrapper = styled.div`
   opacity: 0;
   visibility: hidden;
   transform: translateY(-100%);
+  overflow: hidden;
+  position: relative;
 
   ${props => props.showSlider && css`
     opacity: 1;
@@ -21,29 +23,70 @@ const OuterWrapper = styled.div`
 `;
 
 const Single = styled.div`
+  cursor: grab;
   height: 100vh;
-  background-color: darkred;
+  width: 100vw;
+  background-color: ${props => props.theme.darker};
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+
+const Article = styled.article`
+  display: flex;
+  padding: 2rem;
+
+  @media screen and (max-width: 980px) {
+    flex-direction: column;
+  }
+
+  & > * {
+    flex-basis: 50%;
+  }
+`;
+
+const ImagePart = styled.div`
+  padding: 2rem;
 
   & > img {
-    max-width: 420px;
-    max-height: 320px;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
   }
 `;
 
+const DescriptionPart = styled.div`
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+
+  & > span {
+    line-height: 1.5;
+  }
+`;
+
+
 
 const Slide = ({ slide, hideSlider }) => {
   return (
-  <Single>
-    <button onClick={hideSlider}>CLOSE</button>
-    <h1>{slide.title}</h1>
-    <span>{slide.description}</span>
-    <img src={slide.imageUrl} alt={slide.title}/>
-  </Single>
+    <Single>
+      <Container>
+      <Article>
+        <ImagePart>
+          <img src={slide.imageUrl} alt={slide.title}/>
+        </ImagePart>
+        <DescriptionPart>
+          <h1>{slide.title}</h1>
+          <span>{slide.description}</span>
+        </DescriptionPart>
+      </Article>
+      </Container>
+    </Single>
   )
 }
 
@@ -91,6 +134,8 @@ export default class SimpleSlider extends Component {
 
 
       <OuterWrapper showSlider={showSlider}>
+        <button style={{ position: 'absolute', top: '2rem', left: '2rem', zIndex: '99' }} onClick={this.hideSlider}>CLOSE</button>
+
         <Slider {...settings} ref={slider => (this.slider = slider)}>
           {slides.map(slide => (
             <Slide key={slides} slide={slide} hideSlider={this.hideSlider}/>
