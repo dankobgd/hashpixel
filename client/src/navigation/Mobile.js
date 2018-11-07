@@ -78,7 +78,7 @@ const List = styled.ul`
 
 const Item = styled.li`
   color: ${props => props.theme.white};
-  font-size: 32px;
+  font-size: 26px;
   cursor: pointer;
   margin-top: 0.5rem;
 

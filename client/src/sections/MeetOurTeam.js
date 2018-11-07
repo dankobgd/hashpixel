@@ -3,23 +3,25 @@ import styled from 'styled-components';
 import { Container, Section } from '../shared/style';
 import { FormattedMessage } from 'react-intl';
 
+import img1 from '../images/img1.jpg';
+import img2 from '../images/img2.jpg';
+import img3 from '../images/img3.jpg';
+
+
 const team = [
   {
-    avatar:
-      'https://images.unsplash.com/photo-1529122581445-c5b6773d7cdf?ixlib=rb-0.3.5&s=d64a00f304a197ee56b0f6fe385da95e&auto=format&fit=crop&w=500&q=60',
-    name: 'Marko Markovic',
-    job: 'Programmer',
+    avatar: img1,
+    name: 'Boris Ristić',
+    job: 'CEO & Founder',
   },
   {
-    avatar:
-      'https://images.unsplash.com/photo-1493136289900-28660d718589?ixlib=rb-0.3.5&s=ff2a1eea7d9e9e574a43df1404fd9d07&auto=format&fit=crop&w=500&q=60',
-    name: 'Jelena Misic',
-    job: 'Web Designer',
+    avatar: img2,
+    name: 'Danko Petrović',
+    job: 'Web Developer',
   },
   {
-    avatar:
-      'https://images.unsplash.com/photo-1476983109555-18ebaf412d7c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c508869d7645131d98c453dd9ce0ae6&auto=format&fit=crop&w=500&q=60',
-    name: 'Ivana Ivanovic',
+    avatar: img3,
+    name: 'Nikola Mraković',
     job: 'Web Designer',
   },
 ];

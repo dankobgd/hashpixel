@@ -58,6 +58,16 @@ const Card = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0.825rem;
+  cursor: pointer;
+
+  & > svg {
+    transition: 500ms;
+  }
+
+  &:hover > svg {
+    transform: scale(1.1);
+    transition: 500ms;
+  }
 
   & > h1 {
     color: ${props => props.theme.primary};;
@@ -87,25 +97,25 @@ const ServicesSection = () => (
         <Card>
           <Design />
           <h1><FormattedMessage id='Services.DesignTitle' defaultMessage='Web Design' /></h1>
-          <span>
+          {/* <span>
           <FormattedMessage id='Services.DesignText' defaultMessage='In a fast, simple and quality way, we create accesible and interactive websites in accordance with Your needs.'/>
-          </span>
+          </span> */}
         </Card>
 
         <Card>
           <Identity />
           <h1><FormattedMessage id='Services.IdentityTitle' defaultMessage='Visual Identity'/></h1>
-          <span>
+          {/* <span>
             <FormattedMessage id='Services.IdentityText' defaultMessage='By using modern technologies, with the cooperation and consulting, we create ideal solution which will contribute to the recognition and authenticity of Your product.'/>
-          </span>
+          </span> */}
         </Card>
 
         <Card>
           <Development />
           <h1><FormattedMessage id='Services.DevelopmentTitle' defaultMessage='Web Development'/></h1>
-          <span>
+          {/* <span>
             <FormattedMessage id='Services.DevelopmentText' defaultMessage='Maintenance of internet pages, promotion and reorganization of existing ones and designing of the innovative strategies for improvement are the part of our large portfolio when it comes to web development.'/>
-          </span>
+          </span> */}
         </Card>
       </MainBox>
 
@@ -113,25 +123,25 @@ const ServicesSection = () => (
         <Card>
           <Hosting />
           <h1><FormattedMessage id='Services.HostingTitle' defaultMessage='Web Hosting'/></h1>
-          <span>
+          {/* <span>
             <FormattedMessage id='Services.HostingText' defaultMessage='Maintenance and setting up web pages on servers, creating an official e-mail, creating and maintaining database are just some of solutions we offer You when it comes to maintaining and upgrading Your everyday buisness.'/>
-          </span>
+          </span> */}
         </Card>
 
         <Card>
           <Marketing />
           <h1><FormattedMessage id='Services.MarketingTitle' defaultMessage='Digital Marketing'/></h1>
-          <span>
+          {/* <span>
             <FormattedMessage id='Services.MarketingText' defaultMessage='How to position your brand on market, how to maintain social media as well as which types of content and their ways of presentations are the most suitable today are just some of the questions that our team will gladly answer and offer adequate solution. '/>
-          </span>
+          </span> */}
         </Card>
 
         <Card>
           <Seo />
           <h1><FormattedMessage id='Services.SeoTitle' defaultMessage='SEO Optimization'/></h1>
-          <span>
+          {/* <span>
             <FormattedMessage id='Services.SeoText' defaultMessage='With the help from our modern technologies we offer You a chance to be among the first from your area of work that will answer the needs of your clients by taking the top positions at search results.'/>
-          </span>
+          </span> */}
         </Card>
       </MainBox>
     </Container>

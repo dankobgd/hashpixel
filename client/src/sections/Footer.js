@@ -125,20 +125,21 @@ const Square = styled.span`
 `;
 
 const Icons = styled.div`
-  & > i {
+  & > a {
     color: #fff;
     font-size: 32px;
     padding: 0.5rem;
     margin: 0 0.625rem;
     cursor: pointer;
+    text-decoration: none;
   }
 
-  & i:hover {
+  & a:hover {
     color: ${props => props.theme.cyan};
   }
 
   @media screen and (max-width: 400px) {
-    & > i {
+    & a i {
       margin: 0;
       padding: 0.6rem;
     }
@@ -183,57 +184,74 @@ const Squares = ({ num }) => {
   return <SquareWrapper>{boxes}</SquareWrapper>;
 };
 
-const Footer = ({ fpState, fpApi, isFooterOpen }) => (
-  <Wrapper isFooterOpen={isFooterOpen} isResponsive={fpState.isResponsive}>
-    <FooterHashBackground />
+const Footer = ({ fpState, fpApi, isFooterOpen }) => {
+  const socials = [
+    { icon: 'fa fa-facebook', link: 'https://www.facebook.com/hashpixel.xyz/' },
+    { icon: 'fa fa-instagram', link: 'https://www.instagram.com/hash_pixel/' },
+    { icon: 'fa fa-behance', link: 'https://www.behance.net/hespiksel40a2' },
+    { icon: 'fa fa-github', link: 'https://github.com/dankobgd/hashpixel' },
+    { icon: 'fa fa-linkedin', link: '#' },
+  ]
 
-    <BackToTop onClick={() => fpApi.moveTo(1)}>
-      <ArrowTop />
-    </BackToTop>
+  return (
+    <Wrapper isFooterOpen={isFooterOpen} isResponsive={fpState.isResponsive}>
+      <FooterHashBackground />
 
-    <Container>
-      <Info>
-        <LogoBox>
-          <Logo />
-        </LogoBox>
+      <BackToTop onClick={() => fpApi.moveTo(1)}>
+        <ArrowTop />
+      </BackToTop>
 
-        <MediaQuery query="(max-width: 400px)">
-          <Squares num={1} />
-        </MediaQuery>
-        <MediaQuery query="(min-width: 400px)">
-          <Squares num={4} />
-        </MediaQuery>
+      <Container>
+        <Info>
+          <LogoBox>
+            <Logo />
+          </LogoBox>
 
-        <InfoText>Boris@hashpixel.com</InfoText>
-        <MediaQuery query="(max-width: 400px)">
-          <Squares num={1} />
-        </MediaQuery>
-        <MediaQuery query="(min-width: 400px)">
-          <Squares num={3} />
-        </MediaQuery>
+          <MediaQuery query="(max-width: 400px)">
+            <Squares num={1} />
+          </MediaQuery>
+          <MediaQuery query="(min-width: 400px)">
+            <Squares num={4} />
+          </MediaQuery>
 
-        <InfoText>+381 555 333</InfoText>
-        <MediaQuery query="(max-width: 400px)">
-          <Squares num={1} />
-        </MediaQuery>
-        <MediaQuery query="(min-width: 400px)">
-          <Squares num={2} />
-        </MediaQuery>
+          <InfoText>Office@hashpixel.com</InfoText>
+          <MediaQuery query="(max-width: 400px)">
+            <Squares num={1} />
+          </MediaQuery>
+          <MediaQuery query="(min-width: 400px)">
+            <Squares num={3} />
+          </MediaQuery>
 
-        <Icons>
-          <i className="fa fa-facebook" />
-          <i className="fa fa-instagram" />
-          <i className="fa fa-behance" />
-          <i className="fa fa-github" />
-          <i className="fa fa-linkedin" />
-        </Icons>
+          <InfoText>+381 555 333</InfoText>
+          <MediaQuery query="(max-width: 400px)">
+            <Squares num={1} />
+          </MediaQuery>
+          <MediaQuery query="(min-width: 400px)">
+            <Squares num={2} />
+          </MediaQuery>
 
-        <LineSeparator />
-        <Copyright>©2018 HASH PIXEL</Copyright>
-      </Info>
-    </Container>
-  </Wrapper>
-);
+          <Icons>
+          {socials.map(({ icon, link }) => (
+            <a href={link} target='_blank' key={icon} className={icon}></a>
+          ))}
+          </Icons>
+
+
+          {/* <Icons>
+            <i className="fa fa-facebook" />
+            <i className="fa fa-instagram" />
+            <i className="fa fa-behance" />
+            <i className="fa fa-github" />
+            <i className="fa fa-linkedin" />
+          </Icons> */}
+
+          <LineSeparator />
+          <Copyright>©2018 Hashpixel, All rights reserved.</Copyright>
+        </Info>
+      </Container>
+    </Wrapper>
+  );
+}
 
 
 export default Footer;

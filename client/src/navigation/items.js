@@ -4,32 +4,32 @@ import {  defineMessages } from 'react-intl';
 
 const menuItems = [
   {
-    name: 'Home',
+    name: 'Hashpixel',
     page: 'Home',
     path: '/',
   },
   {
-    name: 'WhoAreWe',
+    name: 'About',
     page: 'Who Are We',
     path: '/about',
   },
   {
-    name: 'OurTeam',
+    name: 'Team',
     page: 'Meet Our Team',
     path: '/team',
   },
   {
-    name: 'WhatWeDo',
+    name: 'Services',
     page: 'What We Do',
     path: '/services',
   },
   {
-    name: "Let'sWork",
+    name: "Contact",
     page: "Let's Work",
     path: '/contact',
   },
   {
-    name: 'CompanyInfo',
+    name: 'Info',
     page: 'Company Info',
     path: '/info',
   },

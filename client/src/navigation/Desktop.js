@@ -155,20 +155,21 @@ const SideButton = styled.a`
 `;
 
 const Icons = styled.div`
-  & > i {
+  & > a {
     color: #fff;
     font-size: 18px;
     padding: 0.5rem;
     margin: 0 4px;
     cursor: pointer;
+    text-decoration: none;
   }
 
-  & i:hover {
+  & a:hover {
     color: ${props => props.theme.cyan};
   }
 
   @media screen and (max-width: 400px) {
-    & > i {
+    & > a {
       margin: 0;
       padding: 0.6rem;
     }
@@ -214,7 +215,13 @@ const Srb = styled.a`
 
 const Desktop = props => {
   const { setLocale, lang, navigationUILogic: { isMenuOpen, position, handleEnter, handleLeave } } = props;
-  const socials = ['fa fa-facebook', 'fa fa-instagram', 'fa fa-behance', 'fa fa-github', 'fa fa-linkedin'];
+  const socials = [
+    { icon: 'fa fa-facebook', link: 'https://www.facebook.com/hashpixel.xyz/' },
+    { icon: 'fa fa-instagram', link: 'https://www.instagram.com/hash_pixel/' },
+    { icon: 'fa fa-behance', link: 'https://www.behance.net/hespiksel40a2' },
+    { icon: 'fa fa-github', link: 'https://github.com/dankobgd/hashpixel' },
+    { icon: 'fa fa-linkedin', link: '#' },
+  ]
 
 
   return (
@@ -245,7 +252,9 @@ const Desktop = props => {
 
             <Footer>
               <Icons>
-                {socials.map(icon => <i key={icon} className={icon}></i>)}
+                {socials.map(({ icon, link }) => (
+                  <a href={link} target='_blank' key={icon} className={icon}></a>
+                ))}
               </Icons>
             </Footer>
           </Menu>
