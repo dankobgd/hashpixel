@@ -13,4 +13,5 @@ export default {
   scrollOverflow: true,
   scrollingSpeed: 600,
   responsiveWidth: 980,
+  normalScrollElements: '.slick-slider'
 };
