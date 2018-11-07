@@ -5,6 +5,7 @@ import '../../node_modules/slick-carousel/slick/slick-theme.css';
 import styled, { css } from 'styled-components';
 import data from './data';
 import { Container } from '../shared/style';
+import Exit from '../images/Exit';
 
 
 const OuterWrapper = styled.div`
@@ -134,7 +135,7 @@ export default class SimpleSlider extends Component {
 
 
       <OuterWrapper showSlider={showSlider}>
-        <button style={{ position: 'absolute', top: '2rem', left: '2rem', zIndex: '99' }} onClick={this.hideSlider}>CLOSE</button>
+        <Exit onClick={this.hideSlider}/>
 
         <Slider {...settings} ref={slider => (this.slider = slider)}>
           {slides.map(slide => (
