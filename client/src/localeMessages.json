@@ -43,7 +43,18 @@
     "PageNotFound.Title": "404",
     "PageNotFound.Paragraph": "oops, sorry we can't find the page!",
     "PageNotFound.Small": "Either something went wrong or the page doesn’t exist anymore",
-    "PageNotFound.GoBack": "Go Back"
+    "PageNotFound.GoBack": "Go Back",
+    "Error.NameShort": "Too short!",
+    "Error.NameLong": "Too long!",
+    "Error.NameRequired": "Name is required",
+    "Error.EmailInvalid": "Invalid Email address",
+    "Error.EmailRequired": "Name is required",
+    "Error.PhoneShort": "Min 7 digits",
+    "Error.PhoneLong": "Max 12 digits",
+    "Error.PhoneRequired": "Phone is required",
+    "Error.MessageShort": "Min 5 chars",
+    "Error.MessageLong": "Max 500 chars",
+    "Error.MessageRequired": "Message is requred"
   },
   "sr": {
     "Nav0": "Hash Pixel",
@@ -89,6 +100,17 @@
     "PageNotFound.Title": "",
     "PageNotFound.Paragraph": "Ups, Ne možemo da pronađemo stranicu",
     "PageNotFound.Small": "Nešto nije u redu ili stranica više ne postoji",
-    "PageNotFound.GoBack": "Idi Nazad"
+    "PageNotFound.GoBack": "Idi Nazad",
+    "Error.NameShort": "Min 3 slova",
+    "Error.NameLong": "Maksimum 40 slova",
+    "Error.NameRequired": "Ime je obavezno",
+    "Error.EmailInvalid": "Neispravna Imejl adresa",
+    "Error.EmailRequired": "Imejl je obavezan",
+    "Error.PhoneShort": "Minimum 7 brojeva",
+    "Error.PhoneLong": "Maksimum 12 brojeva",
+    "Error.PhoneRequired": "Telefon je obavezan",
+    "Error.MessageShort": "Minimum 5 slova",
+    "Error.MessageLong": "Maksimum 500 slova",
+    "Error.MessageRequired": "Poruka je ovavezna"
   }
 }

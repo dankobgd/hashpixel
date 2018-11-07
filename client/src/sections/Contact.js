@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import styled, { css } from 'styled-components';
 import { Formik } from 'formik';
 import { Container, Section } from '../shared/style';
-import { FormattedMessage, injectIntl } from 'react-intl';
+import { FormattedMessage, injectIntl, defineMessages } from 'react-intl';
 
 
 const SectionWrapper = styled(Section)`
@@ -226,22 +226,24 @@ const ContactSection = ({ intl }) => (
   </SectionWrapper>
 );
 
+
+
 const contactSchema = Yup.object().shape({
   name: Yup.string()
-    .min(3, 'Too Short!')
-    .max(40, 'Too Long!')
-    .required('Name is required'),
+    .min(3, <FormattedMessage id='Error.NameShort' defaultMessage='Too short!'/>)
+    .max(40, <FormattedMessage id='Error.NameLong' defaultMessage='Too long!'/>)
+    .required(<FormattedMessage id='Error.NameRequired' defaultMessage='Name is required'/>),
   email: Yup.string()
-    .email('Invalid email address')
-    .required('Email is required'),
+    .email(<FormattedMessage id='Error.EmailInvalid' defaultMessage='Invalid Email address'/>)
+    .required(<FormattedMessage id='Error.EmailRequired' defaultMessage='Email is required'/>),
   phone: Yup.string()
-    .min(7, 'Min 7 digits')
-    .max(12, 'Max 12 digits')
-    .required('Phone is required'),
+    .min(7, <FormattedMessage id='Error.PhoneShort' defaultMessage='Min 7 digits'/>)
+    .max(12, <FormattedMessage id='Error.PhoneLong' defaultMessage='Max 12 digits'/>)
+    .required(<FormattedMessage id='Error.PhoneRequired' defaultMessage='Phone is required'/>),
   message: Yup.string()
-    .min(5, 'Too Short!')
-    .max(300, 'Too Long!')
-    .required('Message is required'),
+    .min(5, <FormattedMessage id='Error.Messagehort' defaultMessage='Min 5 chars'/>)
+    .max(300, <FormattedMessage id='Error.MessageShort' defaultMessage='Max 300 chars'/>)
+    .required(<FormattedMessage id='Error.MessageRequired' defaultMessage='Message is required'/>),
 });
 
 function sendFormData(values, { setSubmitting, setErrors }) {
