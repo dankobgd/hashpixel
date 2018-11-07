@@ -17,8 +17,10 @@ const OuterWrapper = styled.div`
   transform: translateY(-100%);
   overflow: hidden;
   position: relative;
+  display: none;
 
   ${props => props.showSlider && css`
+    display: block;
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -116,22 +118,11 @@ const Slide = ({ slide, hideSlider, sliderAPI }) => {
 export default class SimpleSlider extends Component {
   state = {
     slides: data,
-    showSlider: false,
   }
-
-  openSlider = (e) => {
-    const num = Number.parseInt(e.target.getAttribute('data-number'));
-    this.sliderAPI.slickGoTo(num);
-    this.setState({ showSlider: true })
-  }
-
-  hideSlider = () => {
-    this.setState({ showSlider: false })
-  }
-
 
   render() {
-    const { showSlider, slides } = this.state;
+    const { slides } = this.state;
+    const { hideSlider, showSlider, setRef, sliderAPI } = this.props;
 
     const settings = {
       speed: 500,
@@ -146,25 +137,15 @@ export default class SimpleSlider extends Component {
     };
 
     return (
-      <>
-      <button style={{ width: '50px' }} onClick={this.openSlider} data-number='0'>1</button>
-      <button style={{ width: '50px' }} onClick={this.openSlider} data-number='1'>2</button>
-      <button style={{ width: '50px' }} onClick={this.openSlider} data-number='2'>3</button>
-      <button style={{ width: '50px' }} onClick={this.openSlider} data-number='3'>4</button>
-      <button style={{ width: '50px' }} onClick={this.openSlider} data-number='4'>5</button>
-      <button style={{ width: '50px' }} onClick={this.openSlider} data-number='5'>6</button>
-
-
       <OuterWrapper showSlider={showSlider}>
-        <Exit onClick={this.hideSlider}/>
+        <Exit onClick={hideSlider}/>
 
-        <Slider {...settings} ref={slider => (this.sliderAPI = slider)}>
+        <Slider {...settings} ref={slider => (setRef(slider))}>
           {slides.map(slide => (
-            <Slide key={slides} slide={slide} hideSlider={this.hideSlider} sliderAPI={this.sliderAPI}/>
+            <Slide key={slides} slide={slide} hideSlider={hideSlider} sliderAPI={sliderAPI}/>
           ))}
         </Slider>
       </OuterWrapper>
-      </>
     );
   }
 }
