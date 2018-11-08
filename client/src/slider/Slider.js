@@ -14,13 +14,14 @@ const OuterWrapper = styled.div`
   transition: 500ms;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-100%);
   overflow: hidden;
   position: relative;
-  display: none;
+  transform: translateY(-100%);
+  height: 0;
 
   ${props => props.showSlider && css`
-    display: block;
+    transition-delay: 100ms;
+    height: auto;
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
