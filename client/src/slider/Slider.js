@@ -8,6 +8,7 @@ import { Container } from '../shared/style';
 import Exit from '../images/Exit';
 import ArrowLeft from '../images/ArrowLeft';
 import ArrowRight from '../images/ArrowRight';
+import { FormattedMessage } from 'react-intl';
 
 
 const OuterWrapper = styled.div`
@@ -114,8 +115,8 @@ const Slide = ({ slide, hideSlider, sliderAPI }) => {
         </ImagePart>
         <DescriptionPart>
           <Text>
-            <h1>{slide.title}</h1>
-            <span>{slide.description}</span>
+            <h1><FormattedMessage id={slide.titleId} defaultMessage={slide.titleDefault}/></h1>
+            <span><FormattedMessage id={slide.spanId} defaultMessage={slide.spanDefault}/></span>
           </Text>
           <Arrows>
             <ArrowLeft onClick={() => sliderAPI.slickPrev()}/>
