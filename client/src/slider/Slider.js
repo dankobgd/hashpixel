@@ -93,7 +93,11 @@ const DescriptionPart = styled.div`
 `;
 
 
-const Text = styled.div``;
+const Text = styled.div`
+  & > span {
+    line-height: 2;
+  }
+`;
 
 const Arrows = styled.div`
   padding: 2rem 0;
