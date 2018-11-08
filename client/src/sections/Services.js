@@ -57,6 +57,7 @@ const StyledCardIcon = styled(CardIcon)`
   }
 `;
 
+
 class ServicesSection extends Component {
   state = {
     showSlider: false,

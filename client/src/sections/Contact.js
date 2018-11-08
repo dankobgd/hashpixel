@@ -197,11 +197,17 @@ const LeftText = styled.div`
   }
 `;
 
+const HeadingWhite = styled(Heading)`
+  color: ${props => props.theme.white};
+`;
+
 const ContactSection = ({ intl }) => (
   <SectionWrapper>
     <Container>
       <Outer>
-        <Heading><FormattedMessage id='Contact.MainTitle' defaultMessage="Let's work"/></Heading>
+        <HeadingWhite>
+          <FormattedMessage id='Contact.MainTitle' defaultMessage="Let's work"/>
+        </HeadingWhite>
 
         <Content1>
           <LeftText>

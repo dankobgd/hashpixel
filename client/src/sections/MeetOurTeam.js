@@ -150,12 +150,16 @@ const Image = styled.img`
   transition: opacity 0.35s ease;
 `;
 
+const HeadingWhite = styled(Heading)`
+  color: ${props => props.theme.white};
+`;
+
 const MeetOurTeamSection = () => (
   <SectionWrapper>
     <Container>
-      <Heading>
+      <HeadingWhite>
         <FormattedMessage id='Team.Title' defaultMessage='Meet Our Team'/>
-      </Heading>
+      </HeadingWhite>
 
       <Grid>
         {team.map(({ avatar, name, job }) => (
