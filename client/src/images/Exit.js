@@ -4,9 +4,6 @@ import styled from 'styled-components';
 const Svg = styled.svg`
   cursor: pointer;
   fill: ${props => props.theme.white};
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
   z-index: 999;
 
   &:hover {

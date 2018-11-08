@@ -11,21 +11,34 @@ import ArrowRight from '../images/ArrowRight';
 
 
 const OuterWrapper = styled.div`
-  transition: 500ms;
   opacity: 0;
   visibility: hidden;
   overflow: hidden;
   position: relative;
-  transform: translateY(-100%);
   height: 0;
+  transition: 500ms;
+  transform: translateY(-100%);
 
   ${props => props.showSlider && css`
-    transition-delay: 100ms;
     height: auto;
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    transition: 500ms;
+    transition-delay: 100ms;
   `};
+`;
+
+const Header = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+  margin-left: 5vmin;
+  margin-top: 5vmin;
 `;
 
 const Single = styled.div`
@@ -139,7 +152,9 @@ export default class SimpleSlider extends Component {
 
     return (
       <OuterWrapper showSlider={showSlider}>
-        <Exit onClick={hideSlider}/>
+        <Header>
+          <Exit onClick={hideSlider}/>
+        </Header>
 
         <Slider {...settings} ref={slider => (setRef(slider))}>
           {slides.map(slide => (
