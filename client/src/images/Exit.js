@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const Svg = styled.svg`
   cursor: pointer;
-  transition: 500ms;
   fill: ${props => props.theme.white};
   position: absolute;
   top: 2rem;
