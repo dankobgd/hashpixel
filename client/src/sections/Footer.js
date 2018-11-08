@@ -2,9 +2,9 @@ import React from 'react';
 import '../../node_modules/font-awesome/css/font-awesome.min.css';
 import styled, { css } from 'styled-components';
 import MediaQuery from 'react-responsive';
-import { Container } from '../shared/style';
 import Logo from '../images/Logo';
-import FooterHashBackground from './FooterHashBackground';
+import FooterHashBackground from '../images/FooterHashBackground';
+import { Container } from '../shared/common';
 
 
 const Wrapper = styled.footer`

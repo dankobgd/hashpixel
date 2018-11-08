@@ -4,7 +4,7 @@ import '../../node_modules/slick-carousel/slick/slick.css';
 import '../../node_modules/slick-carousel/slick/slick-theme.css';
 import styled, { css } from 'styled-components';
 import data from './data';
-import { Container } from '../shared/style';
+import { Container } from '../shared/common';
 import Exit from '../images/Exit';
 import ArrowLeft from '../images/ArrowLeft';
 import ArrowRight from '../images/ArrowRight';

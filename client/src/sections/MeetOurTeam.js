@@ -1,30 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container, Section } from '../shared/style';
 import { FormattedMessage } from 'react-intl';
+import { Container, Section, Heading, ContentWrapper, Content, Header } from '../shared/common';
+import team from './teamMembers'
 
-import img1 from '../images/img1.jpg';
-import img2 from '../images/img2.jpg';
-import img3 from '../images/img3.jpg';
-
-
-const team = [
-  {
-    avatar: img1,
-    name: 'Boris Ristić',
-    job: 'CEO & Founder',
-  },
-  {
-    avatar: img2,
-    name: 'Danko Petrović',
-    job: 'Web Developer',
-  },
-  {
-    avatar: img3,
-    name: 'Nikola Mraković',
-    job: 'Web Designer',
-  },
-];
 
 const SectionWrapper = styled(Section)`
   background: -webkit-radial-gradient(90% -20%, circle, rgba(29, 16, 124, 1), rgba(30, 6, 51, 1), transparent 100%),
@@ -171,19 +150,12 @@ const Image = styled.img`
   transition: opacity 0.35s ease;
 `;
 
-const Title = styled.h1`
-  font-size: 50px;
-  font-weight: 900;
-  color: #f8f8f8;
-  text-align: center;
-  text-transform: uppercase;
-  margin: 1rem 0;
-`;
-
 const MeetOurTeamSection = () => (
   <SectionWrapper>
     <Container>
-      <Title><FormattedMessage id='Team.Title' defaultMessage='Meet Our Team'/></Title>
+      <Heading>
+        <FormattedMessage id='Team.Title' defaultMessage='Meet Our Team'/>
+      </Heading>
 
       <Grid>
         {team.map(({ avatar, name, job }) => (

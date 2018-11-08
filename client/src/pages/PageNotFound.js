@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Triangle404Svg from './Triangle404Svg';
-import { Container } from '../shared/style';
 import { FormattedMessage } from 'react-intl'
+import { Container } from '../shared/common';
 
 const Wrapper = styled.div`
   background: #136a8a;

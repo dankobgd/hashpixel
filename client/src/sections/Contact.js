@@ -2,8 +2,8 @@ import React from 'react';
 import * as Yup from 'yup';
 import styled, { css } from 'styled-components';
 import { Formik } from 'formik';
-import { Container, Section } from '../shared/style';
 import { FormattedMessage, injectIntl, defineMessages } from 'react-intl';
+import { Container, Section, Heading, ContentWrapper, Content, Header } from '../shared/common';
 
 
 const SectionWrapper = styled(Section)`
@@ -132,15 +132,7 @@ const Outer = styled.div`
   }
 `;
 
-const MainTitle = styled.h1`
-  font-size: 45px;
-  color: #fff;
-  margin: 0.5rem;
-  text-align: center;
-  text-transform: uppercase;
-`;
-
-const Content = styled.div`
+const Content1 = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -209,9 +201,9 @@ const ContactSection = ({ intl }) => (
   <SectionWrapper>
     <Container>
       <Outer>
-        <MainTitle><FormattedMessage id='Contact.MainTitle' defaultMessage="Let's work"/></MainTitle>
+        <Heading><FormattedMessage id='Contact.MainTitle' defaultMessage="Let's work"/></Heading>
 
-        <Content>
+        <Content1>
           <LeftText>
             <h1><FormattedMessage id='Contact.ContentTitle' defaultMessage='Want to start a new project?'/></h1>
             <span>
@@ -220,7 +212,7 @@ const ContactSection = ({ intl }) => (
           </LeftText>
 
           <ContactForm intl={intl}/>
-        </Content>
+        </Content1>
       </Outer>
     </Container>
   </SectionWrapper>
