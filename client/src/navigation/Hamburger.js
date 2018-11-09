@@ -13,9 +13,15 @@ const Svg = styled.svg`
   transform: ${props => props.position === 'right' && 'rotate(-180deg)'};
   transform: ${props => props.horizontal && 'rotate(0deg)'};
   transform: ${props => props.vertical && 'rotate(90deg)'};
-
   z-index: 999;
+  transition: 500ms;
   ${props => (props.isMenuOpen && props.animated ? defaultPathCSS : animatedPathCSS)};
+  stroke: ${props => props.indx % 2 !== 0 ? props.theme.darkBlue : props.theme.cyan };
+  stroke: ${props => props.indx === 5 && props.theme.cyan };
+
+  @media screen and (max-width: 980px) {
+    stroke: ${props => props.theme.cyan };
+  }
 `;
 
 const Path = styled.path`
@@ -32,7 +38,6 @@ const Path = styled.path`
     stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
   stroke-width: 60px;
   stroke-linecap: round;
-  stroke: ${props => props.theme.cyan};
   stroke-dashoffset: 0px;
 `;
 
@@ -67,7 +72,19 @@ const animatedPathCSS = css`
   }
 `;
 const Hamburger = props => {
-  const { isMenuOpen, position, horizontal, vertical, animated } = props;
+  const { isMenuOpen, position, horizontal, vertical, animated, fpState } = props;
+
+  let indx = 0;
+
+  if (fpState) {
+    if (fpState.initialized && fpState.destination) {
+      indx = fpState.destination.index
+    } else {
+      indx = 0;
+    }
+  }
+
+
 
   return (
     <Svg
@@ -77,9 +94,10 @@ const Hamburger = props => {
       vertical={vertical}
       animated={animated}
       viewBox="0 0 800 600"
+      indx={indx}
     >
-      <PathTop d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" />
-      <PathMiddle d="M300,320 L540,320" />
+      <PathTop d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200"/>
+      <PathMiddle d="M300,320 L540,320"/>
       <PathBottom
         d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190"
         transform="translate(480, 320) scale(1, -1) translate(-480, -318)"

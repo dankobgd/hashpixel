@@ -37,13 +37,15 @@ class FullPageWrapper extends Component {
     return (
       <ReactFullpage
       {...fullpageOptions}
-      render={({ state, fullpageApi }) => (
+      render={({ state, fullpageApi }) => {
+        return (
           <>
             <Navigation fpState={state} fpApi={fullpageApi} footerUILogic={footerUILogic} setLocale={this.props.setLocale} lang={this.props.lang} />
             <Sections fpState={state} fpApi={fullpageApi} footerUILogic={footerUILogic} />
             <Bullets fpState={state} fpApi={fullpageApi} footerUILogic={footerUILogic} />
           </>
           )}
+        }
       />
     )
   }

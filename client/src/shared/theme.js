@@ -18,6 +18,7 @@ export const mainTheme = {
   cyan2: '#97d1d1',
   // gradients
   purple: '#2b193d',
+  darkBlue: '#00448d',
   pinkline: '#6d2e4c',
   gradientAngle: 'to right',
   gradientColor: '#14192b',

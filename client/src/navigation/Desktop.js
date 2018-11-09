@@ -141,7 +141,7 @@ const SideButton = styled.a`
   z-index: 999;
   cursor: pointer;
 
-  opacity: 0.5;
+  opacity: 1;
   visibility: visible;
   transition: 300ms;
   transition-delay: 100ms;
@@ -214,7 +214,8 @@ const Srb = styled.a`
 
 
 const Desktop = props => {
-  const { setLocale, lang, navigationUILogic: { isMenuOpen, position, handleEnter, handleLeave } } = props;
+  const { fpState, setLocale, lang, navigationUILogic: { isMenuOpen, position, handleEnter, handleLeave } } = props;
+
   const socials = [
     { icon: 'fa fa-facebook', link: 'https://www.facebook.com/hashpixel.xyz/' },
     { icon: 'fa fa-instagram', link: 'https://www.instagram.com/hash_pixel/' },
@@ -260,7 +261,7 @@ const Desktop = props => {
           </Menu>
 
           <SideButton isMenuOpen={isMenuOpen} position={position}>
-            <Hamburger isMenuOpen={isMenuOpen} position={position} vertical />
+            <Hamburger isMenuOpen={isMenuOpen} position={position} vertical fpState={fpState}/>
           </SideButton>
         </Outer>
       </Nav>
