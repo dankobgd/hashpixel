@@ -25,7 +25,7 @@ const menuItems = [
   },
   {
     name: "Contact",
-    page: "Let's Work",
+    page: "Let's Work Together",
     path: '/contact',
   },
   {
@@ -54,7 +54,7 @@ export const dfns = [
   }),
   defineMessages({
       id: 'Nav4',
-      defaultMessage: "Let's work"
+      defaultMessage: "Let's work together"
   }),
   defineMessages({
       id: 'Nav5',

@@ -214,7 +214,7 @@ const Footer = ({ fpState, fpApi, isFooterOpen }) => {
             <Squares num={4} />
           </MediaQuery>
 
-          <InfoText>Office@hashpixel.com</InfoText>
+          <InfoText>office@hashpixel.xyz</InfoText>
           <MediaQuery query="(max-width: 400px)">
             <Squares num={1} />
           </MediaQuery>
