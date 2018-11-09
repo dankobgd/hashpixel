@@ -8,7 +8,7 @@ import './App.css';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import sr from 'react-intl/locale-data/sr';
-import localeMessages from './localeMessages.json';
+import translations from './translations/translations.json';
 
 
 addLocaleData([...en, ...sr]);
@@ -24,7 +24,6 @@ class App extends Component {
     this.setState({ lang });
   }
 
-
   setLocale = lang => {
     this.setState({ lang });
     localStorage.setItem('locale', lang);
@@ -34,7 +33,7 @@ class App extends Component {
     const { lang } = this.state;
 
     return (
-      <IntlProvider locale='en-US' messages={localeMessages[lang]}>
+      <IntlProvider locale='en' messages={translations[lang]}>
         <ThemeProvider theme={mainTheme}>
           <Router>
             <Switch>
