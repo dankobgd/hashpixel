@@ -69,8 +69,6 @@ const Article = styled.article`
 `;
 
 const ImagePart = styled.div`
-  padding: 2rem;
-
   & > img {
     height: 100%;
     width: 100%;
@@ -113,21 +111,21 @@ const Slide = ({ slide, hideSlider, sliderAPI }) => {
   return (
     <Single>
       <Container>
-      <Article>
-        <ImagePart>
-          <img src={slide.imageUrl} alt={slide.title}/>
-        </ImagePart>
-        <DescriptionPart>
-          <Text>
-            <h1><FormattedMessage id={slide.titleId} defaultMessage={slide.titleDefault}/></h1>
-            <span><FormattedMessage id={slide.spanId} defaultMessage={slide.spanDefault}/></span>
-          </Text>
-          <Arrows>
-            <ArrowLeft onClick={() => sliderAPI.slickPrev()}/>
-            <ArrowRight onClick={() => sliderAPI.slickNext()}/>
-          </Arrows>
-        </DescriptionPart>
-      </Article>
+        <Article>
+          <ImagePart>
+            <img src={slide.imageUrl} alt={slide.title}/>
+          </ImagePart>
+          <DescriptionPart>
+            <Text>
+              <h1><FormattedMessage id={slide.titleId} defaultMessage={slide.titleDefault}/></h1>
+              <span><FormattedMessage id={slide.spanId} defaultMessage={slide.spanDefault}/></span>
+            </Text>
+            <Arrows>
+              <ArrowLeft onClick={() => sliderAPI.slickPrev()}/>
+              <ArrowRight onClick={() => sliderAPI.slickNext()}/>
+            </Arrows>
+          </DescriptionPart>
+        </Article>
       </Container>
     </Single>
   )
