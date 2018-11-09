@@ -106,6 +106,6 @@
     "Error.PhoneRequired": "Telefon je obavezan",
     "Error.MessageShort": "Minimum 5 slova",
     "Error.MessageLong": "Maksimum 500 slova",
-    "Error.MessageRequired": "Poruka je ovavezna"
+    "Error.MessageRequired": "Poruka je obavezna"
   }
 }
