@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import Hamburger from './Hamburger';
-import items from './items';
 import { moveToSection } from '../helpers'
 import { dfns } from './items';
 import { FormattedMessage } from 'react-intl';

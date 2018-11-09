@@ -2,8 +2,8 @@ import React from 'react';
 import * as Yup from 'yup';
 import styled, { css } from 'styled-components';
 import { Formik } from 'formik';
-import { FormattedMessage, injectIntl, defineMessages } from 'react-intl';
-import { Container, Section, Heading, ContentWrapper, Content, Header } from '../shared/common';
+import { FormattedMessage, injectIntl } from 'react-intl';
+import { Container, Section, Heading } from '../shared/common';
 
 
 const SectionWrapper = styled(Section)`
@@ -73,11 +73,6 @@ const Textarea = styled.textarea.attrs({
     box-shadow: 0 0 5px #6b99d5;
     border: 1px solid #6b99d5;
   }
-`;
-
-const Label = styled.label`
-  color: #fff;
-  margin: 0 auto 0.5rem 0;
 `;
 
 const Button = styled.button`

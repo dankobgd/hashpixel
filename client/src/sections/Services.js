@@ -6,10 +6,10 @@ import Development from './icons/Development';
 import Hosting from './icons/Hosting';
 import Seo from './icons/Seo';
 import Identity from './icons/Identity';
-import bgImage from '../images/bg-whatwedo.jpg'
+import bgImage from '../images/section_services.jpg'
 import { FormattedMessage } from 'react-intl';
 import SimpleSlider from '../slider/Slider';
-import { Container, Section, Heading, ContentWrapper, Content, Header, CardIcon } from '../shared/common';
+import { Container, Section, Heading, CardIcon } from '../shared/common';
 
 
 const SectionWrapper = styled(Section)`

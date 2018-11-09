@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
-import { Container, Section, Heading, ContentWrapper, Content, Header } from '../shared/common';
+import { Container, Section, Heading } from '../shared/common';
 import team from './teamMembers'
 
 

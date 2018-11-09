@@ -232,19 +232,11 @@ const Footer = ({ fpState, fpApi, isFooterOpen }) => {
 
           <Icons>
           {socials.map(({ icon, link }) => (
-            <a href={link} target='_blank' key={icon} className={icon}></a>
+            <a href={link} target='_blank' rel='noopener noreferrer' key={icon}>
+              <li className={icon}/>
+            </a>
           ))}
           </Icons>
-
-
-          {/* <Icons>
-            <i className="fa fa-facebook" />
-            <i className="fa fa-instagram" />
-            <i className="fa fa-behance" />
-            <i className="fa fa-github" />
-            <i className="fa fa-linkedin" />
-          </Icons> */}
-
           <LineSeparator />
           <Copyright>©2018 Hashpixel, All rights reserved.</Copyright>
         </Info>

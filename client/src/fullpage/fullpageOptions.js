@@ -1,7 +1,8 @@
 import items from '../navigation/items';
 
-// get menu items
+
 const anchors = items.map(item => item.name);
+
 
 export default {
   anchors,

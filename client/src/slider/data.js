@@ -1,9 +1,9 @@
-import Design from '../images/Design.png';
-import Identity from '../images/Identity.png';
-import Development from '../images/Development.png';
-import Hosting from '../images/Hosting.png';
-import Marketing from '../images/Marketing.png';
-import Seo from '../images/Seo.png';
+import Design from '../images/icon_slider_design.png';
+import Identity from '../images/icon_slider_identity.png';
+import Development from '../images/icon_slider_development.png';
+import Hosting from '../images/icon_slider_hosting.png';
+import Marketing from '../images/icon_slider_marketing.png';
+import Seo from '../images/icon_slider_seo.png';
 
 
 export default [

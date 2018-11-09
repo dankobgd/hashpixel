@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Quality from './icons/Quality';
 import Security from './icons/Security';
 import Simplicity from './icons/Simplicity';
-import bgImage from '../images/bg-whoarewe.jpg';
+import bgImage from '../images/section_about.jpg';
 import { FormattedMessage } from 'react-intl';
 import { Container, Section, Heading, ContentWrapper, Content, Header, CardIcon } from '../shared/common';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import Logo from '../images/Logo';
 import { Container, Section } from '../shared/common';
-import bgImage from '../images/bg-home.png'
+import bgImage from '../images/section_home.png'
 import { FormattedMessage } from 'react-intl';
 
 const SectionWrapper = styled(Section)`

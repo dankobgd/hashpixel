@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import items from './items';
 import Hash from '../images/Hash';
 import Hamburger from './Hamburger';
 import { moveToSection } from '../helpers'
@@ -254,7 +253,9 @@ const Desktop = props => {
             <Footer>
               <Icons>
                 {socials.map(({ icon, link }) => (
-                  <a href={link} target='_blank' key={icon} className={icon}></a>
+                  <a href={link} target='_blank' rel='noopener noreferrer' key={icon}>
+                    <li className={icon}/>
+                  </a>
                 ))}
               </Icons>
             </Footer>
