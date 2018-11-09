@@ -25,7 +25,9 @@ const DotsWrapper = styled.div`
     left: 14px;
     width: 20px;
     height: 20px;
-    background: #00bcd4;
+    transition: 500ms;
+    background-color: ${props => props.pageIndx % 2 !== 0 ? props.theme.darkBlue : props.theme.cyan };
+    background-color: ${props => props.pageIndx === 5 && props.theme.cyan };
     transform: translateY(-50%);
   }
 
@@ -130,7 +132,7 @@ class Bullets extends Component {
     /* eslint jsx-a11y/no-noninteractive-element-interactions: 0 */
     /* eslint jsx-a11y/anchor-is-valid: 0 */
     return ReactDOM.createPortal(
-      <DotsWrapper>
+      <DotsWrapper pageIndx={pageIndx}>
         <DotsList className="dots-list">
         {items.map((item, indx) => (
             <Item
