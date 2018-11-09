@@ -197,6 +197,15 @@ const LeftText = styled.div`
   }
 `;
 
+const RequiredFieldsMsg = styled.span`
+  color: #fff;
+  font-size: 16px;
+  margin-right: auto;
+  padding: 4px;
+  margin-bottom: 1rem;
+`;
+
+
 const HeadingWhite = styled(Heading)`
   color: ${props => props.theme.white};
 `;
@@ -234,10 +243,6 @@ const contactSchema = Yup.object().shape({
   email: Yup.string()
     .email(<FormattedMessage id='Error.EmailInvalid' defaultMessage='Invalid Email address'/>)
     .required(<FormattedMessage id='Error.EmailRequired' defaultMessage='Email is required'/>),
-  phone: Yup.string()
-    .min(7, <FormattedMessage id='Error.PhoneShort' defaultMessage='Min 7 digits'/>)
-    .max(12, <FormattedMessage id='Error.PhoneLong' defaultMessage='Max 12 digits'/>)
-    .required(<FormattedMessage id='Error.PhoneRequired' defaultMessage='Phone is required'/>),
   message: Yup.string()
     .min(5, <FormattedMessage id='Error.Messagehort' defaultMessage='Min 5 chars'/>)
     .max(300, <FormattedMessage id='Error.MessageShort' defaultMessage='Max 300 chars'/>)
@@ -275,70 +280,58 @@ const ContactForm = ({ intl }) => (
     }}
     render={({ values, errors, touched, isSubmitting, handleChange, handleBlur, handleSubmit }) => (
       <Form onSubmit={handleSubmit}>
-      <Label htmlFor="name">
-        <FormattedMessage id='Contact.FormName' defaultMessage='Name' />
-      </Label>
+        <RequiredFieldsMsg>
+          <FormattedMessage id='Contact.FormIndication' defaultMessage='* Indicates required field'/>
+        </RequiredFieldsMsg>
 
-      <Input
-        type="text"
-        name="name"
-        placeholder={intl.formatMessage({ id: 'Contact.FormNamePlaceholder', defaultMessage: 'Name' })}
-        value={values.name}
-        onChange={handleChange}
-        onBlur={handleBlur}
-      />
-      {errors.name && touched.name && <Msg danger>{errors.name}</Msg>}
+        <Input
+          type="text"
+          name="name"
+          placeholder={intl.formatMessage({ id: 'Contact.FormName', defaultMessage: '*Name' })}
+          value={values.name}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
+        {errors.name && touched.name && <Msg danger>{errors.name}</Msg>}
 
-      <Label htmlFor="email">
-        <FormattedMessage id='Contact.FormEmail' defaultMessage='Email' />
-      </Label>
+        <Input
+          type="email"
+          name="email"
+          placeholder={intl.formatMessage({ id: 'Contact.FormEmail', defaultMessage: '*Email' })}
+          value={values.email}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
+        {errors.email && touched.email && <Msg danger>{errors.email}</Msg>}
 
-      <Input
-        type="email"
-        name="email"
-        placeholder={intl.formatMessage({ id: 'Contact.FormEmailPlaceholder', defaultMessage: 'Email@example.xxx'  })}
-        value={values.email}
-        onChange={handleChange}
-        onBlur={handleBlur}
-      />
-      {errors.email && touched.email && <Msg danger>{errors.email}</Msg>}
+        <Input
+          type="text"
+          name="phone"
+          placeholder={intl.formatMessage({ id: 'Contact.FormPhone', defaultMessage: 'Phone' })}
+          value={values.phone}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
+        {errors.phone && touched.phone && <Msg danger>{errors.phone}</Msg>}
 
-      <Label htmlFor="phone">
-        <FormattedMessage id='Contact.FormPhone' defaultMessage='Phone' />
-      </Label>
+        <Textarea
+          type="text"
+          name="message"
+          placeholder={intl.formatMessage({ id: 'Contact.FormMessage', defaultMessage: '*Leave a message' })}
+          value={values.message}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
+        {errors.message && touched.message && <Msg danger>{errors.message}</Msg>}
 
-      <Input
-        type="text"
-        name="phone"
-        placeholder={intl.formatMessage({ id: 'Contact.FormPhonePlaceholder', defaultMessage: 'Your phone'  })}
-        value={values.phone}
-        onChange={handleChange}
-        onBlur={handleBlur}
-      />
-      {errors.phone && touched.phone && <Msg danger>{errors.phone}</Msg>}
+        <Button type="submit" onSubmit={handleSubmit} disabled={isSubmitting}>
+          <FormattedMessage id='Contact.FormSubmit' defaultMessage='Submit' />
+        </Button>
 
-      <Label htmlFor="message">
-        <FormattedMessage id='Contact.FormMessage' defaultMessage='Message' />
-      </Label>
-
-      <Textarea
-        type="text"
-        name="message"
-        placeholder={intl.formatMessage({ id: 'Contact.FormMessagePlaceholder', defaultMessage: 'Leave a message'  })}
-        value={values.message}
-        onChange={handleChange}
-        onBlur={handleBlur}
-      />
-      {errors.message && touched.message && <Msg danger>{errors.message}</Msg>}
-
-      <Button type="submit" onSubmit={handleSubmit} disabled={isSubmitting}>
-        <FormattedMessage id='Contact.FormSubmit' defaultMessage='Submit' />
-      </Button>
-
-      {isSubmitting && <Msg success>
-        <FormattedMessage id='Contact.FormSuccess' defaultMessage='Thank you for contacting us!' />
-      </Msg>}
-    </Form>
+        {isSubmitting && <Msg success>
+          <FormattedMessage id='Contact.FormSuccess' defaultMessage='Thank you for contacting us!' />
+        </Msg>}
+      </Form>
     )}
   />
 );
