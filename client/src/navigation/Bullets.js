@@ -95,8 +95,9 @@ const A = styled.a`
   width: 100%;
   height: 100%;
   outline: none;
-  background-color: rgba(100, 100, 100, 0.3);
-  border: 1px solid rgba(100, 100, 100, 0.2);
+  transition: background-color 500ms;
+  background-color: ${props => props.pageIndx % 2 !== 0 ? 'rgba(0, 0, 0, 0.3)' : 'rgba(255, 255, 255, 0.3)' };
+  background-color: ${props => props.pageIndx === 5 && 'rgba(255, 255, 255, 0.3)' };
   text-indent: -999em;
   cursor: pointer;
   position: absolute;
@@ -114,6 +115,17 @@ const A = styled.a`
 
 class Bullets extends Component {
   render() {
+    const { fpState } = this.props;
+    let pageIndx = 0;
+
+    if (fpState) {
+      if (fpState.initialized && fpState.destination) {
+        pageIndx = fpState.destination.index
+      } else {
+        pageIndx = 0;
+      }
+    }
+
     /* eslint jsx-a11y/click-events-have-key-events: 0 */
     /* eslint jsx-a11y/no-noninteractive-element-interactions: 0 */
     /* eslint jsx-a11y/anchor-is-valid: 0 */
@@ -126,7 +138,7 @@ class Bullets extends Component {
               data-menuanchor={item.name}
               onClick={() => moveToSection(this.props, indx)}
             >
-              <A>{item.name}</A>
+              <A pageIndx={pageIndx}>{item.name}</A>
             </Item>
           ))}
           <Item />
