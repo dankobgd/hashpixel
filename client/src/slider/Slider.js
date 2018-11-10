@@ -19,6 +19,7 @@ const OuterWrapper = styled.div`
   transition: 500ms;
   transform: translateY(-100%);
 
+
   ${props => props.showSlider && css`
     height: auto;
     opacity: 1;
@@ -45,6 +46,8 @@ const Single = styled.div`
   cursor: grab;
   height: 100vh;
   width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
   background-color: ${props => props.theme.darker};
   color: #fff;
   display: flex;

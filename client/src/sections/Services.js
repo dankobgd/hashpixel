@@ -72,12 +72,18 @@ class ServicesSection extends Component {
     this.setState({ showSlider: true })
     document.querySelector('.dots-list').style.display = 'none';
     document.querySelector('#nav').style.display = 'none';
+
+    document.querySelector('.normal-page-content').style.display = 'none';  // bit hacky way... fix later. add top level state
+    document.querySelector('body').style.overflow = 'hidden'; // bit hacky way... fix later. add top level state
   }
 
   hideSlider = () => {
     this.setState({ showSlider: false });
     document.querySelector('.dots-list').style.display = 'flex';
     document.querySelector('#nav').style.display = 'flex';
+
+    document.querySelector('.normal-page-content').style.display = 'block'; // bit hacky way... fix later. add top level state
+    document.querySelector('body').style.display = 'visible'; // bit hacky way... fix later. add top level state
   }
 
   render() {
@@ -85,6 +91,7 @@ class ServicesSection extends Component {
     <SectionWrapper>
       <SimpleSlider hideSlider={this.hideSlider} showSlider={this.state.showSlider} setRef={this.setRef} sliderAPI={this.sliderAPI} />
 
+    <div className='normal-page-content'>
       <Container style={{ maxWidth: '980px' }}>
         <TopBox>
           <Heading><FormattedMessage id='Services.Title' defaultMessage='What we do'/></Heading>
@@ -124,6 +131,7 @@ class ServicesSection extends Component {
           </StyledCardIcon>
         </MainBox>
       </Container>
+      </div>
     </SectionWrapper>
    )
   }
