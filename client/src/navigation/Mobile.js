@@ -4,6 +4,7 @@ import Hamburger from './Hamburger';
 import { moveToSection } from '../helpers';
 import { dfns } from './items';
 import { FormattedMessage } from 'react-intl';
+import { I18nConsumer } from '../locales/I18nContext';
 
 const ToggleBox = styled.div`
   width: 60px;
@@ -108,63 +109,65 @@ const Eng = styled.a`
   padding: 0px 4px;
   cursor: pointer;
   border-right: 1px solid rgba(255, 255, 255, 0.7);
-  color: ${props => (props.lang === 'en' ? props.theme.cyan : 'fff')};
+  color: ${props => (props.locale === 'en' ? props.theme.cyan : 'fff')};
 
   &:hover {
-    color: ${props => props.lang === 'sr' && props.theme.grey};
+    color: ${props => props.locale === 'sr' && props.theme.grey};
   }
 `;
 
 const Srb = styled.a`
   padding: 0px 4px;
   cursor: pointer;
-  color: ${props => (props.lang === 'sr' ? props.theme.cyan : 'fff')};
+  color: ${props => (props.locale === 'sr' ? props.theme.cyan : 'fff')};
 
   &:hover {
-    color: ${props => props.lang === 'en' && props.theme.grey};
+    color: ${props => props.locale === 'en' && props.theme.grey};
   }
 `;
 
 const Mobile = props => {
   const {
-    setLocale,
-    lang,
     navigationUILogic: { isMenuOpen, handleClick },
   } = props;
 
   return (
-    <>
-      <ToggleBox isMenuOpen={isMenuOpen} onClick={handleClick}>
-        <Hamburger isMenuOpen={isMenuOpen} horizontal animated />
-      </ToggleBox>
+    <I18nConsumer>
+      {({ changeLanguage, locale }) => (
+        <>
+          <ToggleBox isMenuOpen={isMenuOpen} onClick={handleClick}>
+            <Hamburger isMenuOpen={isMenuOpen} horizontal animated />
+          </ToggleBox>
 
-      <Overlay isMenuOpen={isMenuOpen}>
-        <LanguageWrapper>
-          <Eng lang={lang} onClick={() => setLocale('en')}>
-            ENG
-          </Eng>
-          <Srb lang={lang} onClick={() => setLocale('sr')}>
-            SRB
-          </Srb>
-        </LanguageWrapper>
+          <Overlay isMenuOpen={isMenuOpen}>
+            <LanguageWrapper>
+              <Eng locale={locale} onClick={() => changeLanguage('en')}>
+                ENG
+              </Eng>
+              <Srb locale={locale} onClick={() => changeLanguage('sr')}>
+                SRB
+              </Srb>
+            </LanguageWrapper>
 
-        <Nav>
-          <List isMenuOpen={isMenuOpen}>
-            {dfns.map((item, indx) => (
-              <Item
-                key={item.id}
-                onClick={() => {
-                  moveToSection(props, indx);
-                  handleClick();
-                }}
-              >
-                <FormattedMessage id={item.id} defaultMessage={item.defaultMessage} />
-              </Item>
-            ))}
-          </List>
-        </Nav>
-      </Overlay>
-    </>
+            <Nav>
+              <List isMenuOpen={isMenuOpen}>
+                {dfns.map((item, indx) => (
+                  <Item
+                    key={item.id}
+                    onClick={() => {
+                      moveToSection(props, indx);
+                      handleClick();
+                    }}
+                  >
+                    <FormattedMessage id={item.id} defaultMessage={item.defaultMessage} />
+                  </Item>
+                ))}
+              </List>
+            </Nav>
+          </Overlay>
+        </>
+      )}
+    </I18nConsumer>
   );
 };
 

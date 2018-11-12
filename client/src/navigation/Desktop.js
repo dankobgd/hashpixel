@@ -5,6 +5,7 @@ import Hamburger from './Hamburger';
 import { moveToSection } from '../helpers';
 import { dfns } from '../navigation/items';
 import { FormattedMessage } from 'react-intl';
+import { I18nConsumer } from '../locales/I18nContext';
 
 const NavigationWrapper = styled.div`
   position: fixed;
@@ -193,28 +194,26 @@ const Eng = styled.a`
   padding: 0px 4px;
   cursor: pointer;
   border-right: 1px solid rgba(255, 255, 255, 0.7);
-  color: ${props => (props.lang === 'en' ? props.theme.cyan : 'fff')};
+  color: ${props => (props.locale === 'en' ? props.theme.cyan : 'fff')};
 
   &:hover {
-    color: ${props => props.lang === 'sr' && props.theme.grey};
+    color: ${props => props.locale === 'sr' && props.theme.grey};
   }
 `;
 
 const Srb = styled.a`
   padding: 0px 4px;
   cursor: pointer;
-  color: ${props => (props.lang === 'sr' ? props.theme.cyan : 'fff')};
+  color: ${props => (props.locale === 'sr' ? props.theme.cyan : 'fff')};
 
   &:hover {
-    color: ${props => props.lang === 'en' && props.theme.grey};
+    color: ${props => props.locale === 'en' && props.theme.grey};
   }
 `;
 
 const Desktop = props => {
   const {
     fpState,
-    setLocale,
-    lang,
     navigationUILogic: { isMenuOpen, position, handleEnter, handleLeave },
   } = props;
 
@@ -227,52 +226,56 @@ const Desktop = props => {
   ];
 
   return (
-    <NavigationWrapper position={position}>
-      <Nav isMenuOpen={isMenuOpen} position={position} onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
-        <Outer>
-          <Menu position={position}>
-            <LanguageWrapper>
-              <Eng lang={lang} onClick={() => setLocale('en')}>
-                ENG
-              </Eng>
-              <Srb lang={lang} onClick={() => setLocale('sr')}>
-                SRB
-              </Srb>
-            </LanguageWrapper>
+    <I18nConsumer>
+      {({ changeLanguage, locale }) => (
+        <NavigationWrapper position={position}>
+          <Nav isMenuOpen={isMenuOpen} position={position} onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+            <Outer>
+              <Menu position={position}>
+                <LanguageWrapper>
+                  <Eng locale={locale} onClick={() => changeLanguage('en')}>
+                    ENG
+                  </Eng>
+                  <Srb locale={locale} onClick={() => changeLanguage('sr')}>
+                    SRB
+                  </Srb>
+                </LanguageWrapper>
 
-            <Header>
-              <Hash />
-            </Header>
+                <Header>
+                  <Hash />
+                </Header>
 
-            <Main>
-              <List>
-                {dfns.map((item, indx) => {
-                  return (
-                    <Item key={indx} onClick={() => moveToSection(props, indx)}>
-                      <FormattedMessage id={item.id} defaultMessage={item.defaultMessage} />
-                    </Item>
-                  );
-                })}
-              </List>
-            </Main>
+                <Main>
+                  <List>
+                    {dfns.map((item, indx) => {
+                      return (
+                        <Item key={indx} onClick={() => moveToSection(props, indx)}>
+                          <FormattedMessage id={item.id} defaultMessage={item.defaultMessage} />
+                        </Item>
+                      );
+                    })}
+                  </List>
+                </Main>
 
-            <Footer>
-              <Icons>
-                {socials.map(({ icon, link }) => (
-                  <a href={link} target="_blank" rel="noopener noreferrer" key={icon}>
-                    <li className={icon} />
-                  </a>
-                ))}
-              </Icons>
-            </Footer>
-          </Menu>
+                <Footer>
+                  <Icons>
+                    {socials.map(({ icon, link }) => (
+                      <a href={link} target="_blank" rel="noopener noreferrer" key={icon}>
+                        <li className={icon} />
+                      </a>
+                    ))}
+                  </Icons>
+                </Footer>
+              </Menu>
 
-          <SideButton isMenuOpen={isMenuOpen} position={position}>
-            <Hamburger isMenuOpen={isMenuOpen} position={position} vertical fpState={fpState} />
-          </SideButton>
-        </Outer>
-      </Nav>
-    </NavigationWrapper>
+              <SideButton isMenuOpen={isMenuOpen} position={position}>
+                <Hamburger isMenuOpen={isMenuOpen} position={position} vertical fpState={fpState} />
+              </SideButton>
+            </Outer>
+          </Nav>
+        </NavigationWrapper>
+      )}
+    </I18nConsumer>
   );
 };
 

@@ -32,26 +32,12 @@ class Navigation extends Component {
       handleClick: this.handleClick,
     };
 
-    const { fpState, fpApi, footerUILogic, setLocale, lang } = this.props;
+    const { fpState, fpApi, footerUILogic } = this.props;
 
     return ReactDOM.createPortal(
       <div>
-        <Desktop
-          fpState={fpState}
-          fpApi={fpApi}
-          footerUILogic={footerUILogic}
-          navigationUILogic={navigationUILogic}
-          setLocale={setLocale}
-          lang={lang}
-        />
-        <Mobile
-          fpState={fpState}
-          fpApi={fpApi}
-          footerUILogic={footerUILogic}
-          navigationUILogic={navigationUILogic}
-          setLocale={setLocale}
-          lang={lang}
-        />
+        <Desktop fpState={fpState} fpApi={fpApi} footerUILogic={footerUILogic} navigationUILogic={navigationUILogic} />
+        <Mobile fpState={fpState} fpApi={fpApi} footerUILogic={footerUILogic} navigationUILogic={navigationUILogic} />
       </div>,
       document.getElementById('nav')
     );

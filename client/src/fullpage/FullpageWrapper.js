@@ -40,13 +40,7 @@ class FullPageWrapper extends Component {
         render={({ state, fullpageApi }) => {
           return (
             <>
-              <Navigation
-                fpState={state}
-                fpApi={fullpageApi}
-                footerUILogic={footerUILogic}
-                setLocale={this.props.setLocale}
-                lang={this.props.lang}
-              />
+              <Navigation fpState={state} fpApi={fullpageApi} footerUILogic={footerUILogic} />
               <Sections fpState={state} fpApi={fullpageApi} footerUILogic={footerUILogic} />
               <Bullets fpState={state} fpApi={fullpageApi} footerUILogic={footerUILogic} />
             </>
