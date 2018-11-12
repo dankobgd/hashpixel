@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const Container = styled.div`
   padding: 15px;
   margin-right: auto;
@@ -21,7 +20,6 @@ export const Container = styled.div`
 export const Section = styled.section.attrs({
   className: 'section fp-responsive-auto-height',
 })``;
-
 
 // *********************************************************
 export const Heading = styled.h1`

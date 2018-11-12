@@ -1,5 +1,4 @@
-import {  defineMessages } from 'react-intl';
-
+import { defineMessages } from 'react-intl';
 
 const menuItems = [
   {
@@ -23,7 +22,7 @@ const menuItems = [
     path: '/services',
   },
   {
-    name: "Contact",
+    name: 'Contact',
     page: "Let's Work Together",
     path: '/contact',
   },
@@ -36,30 +35,29 @@ const menuItems = [
 
 export const dfns = [
   defineMessages({
-      id: 'Nav0',
-      defaultMessage: 'Home'
+    id: 'Nav0',
+    defaultMessage: 'Home',
   }),
   defineMessages({
-      id: 'Nav1',
-      defaultMessage: 'Who Are We'
+    id: 'Nav1',
+    defaultMessage: 'Who Are We',
   }),
   defineMessages({
-      id: 'Nav2',
-      defaultMessage: 'Meet Our Team'
+    id: 'Nav2',
+    defaultMessage: 'Meet Our Team',
   }),
   defineMessages({
-      id: 'Nav3',
-      defaultMessage: 'What We Do'
+    id: 'Nav3',
+    defaultMessage: 'What We Do',
   }),
   defineMessages({
-      id: 'Nav4',
-      defaultMessage: "Let's work together"
+    id: 'Nav4',
+    defaultMessage: "Let's work together",
   }),
   defineMessages({
-      id: 'Nav5',
-      defaultMessage: 'Company Info'
+    id: 'Nav5',
+    defaultMessage: 'Company Info',
   }),
 ];
-
 
 export default menuItems;

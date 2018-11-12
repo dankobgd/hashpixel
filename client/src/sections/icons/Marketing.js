@@ -3,20 +3,30 @@ import styled from 'styled-components';
 
 const Svg = styled.svg`
   & > path {
-    fill:url(#dm_1_);
+    fill: url(#dm_1_);
   }
 `;
 
 const Marketing = () => (
-<Svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="150px" height="150px"
-	 viewBox="0 0 350 348" style={{enableBackground:"new 0 0 350 348"}}>
-
-<linearGradient id="dm_1_" gradientUnits="userSpaceOnUse" x1="72.5357" y1="259.7551" x2="283.7113" y2="48.5796">
-	<stop  offset="0" style={{stopColor:"#1E0633"}}/>
-	<stop  offset="0.5" style={{stopColor:"#00448D"}}/>
-	<stop  offset="1" style={{stopColor:"#1E0633"}}/>
-</linearGradient>
-<path id="dm"  d="M296.6,149.2c-2.2,0-4-1.8-4-4v-3.6c0-2.2,1.8-4,4-4h29.1c2.2,0,4,1.8,4,4v3.6c0,2.2-1.8,4-4,4H296.6z
+  <Svg
+    version="1.1"
+    id="Layer_1"
+    xmlns="http://www.w3.org/2000/svg"
+    x="0px"
+    y="0px"
+    width="150px"
+    height="150px"
+    viewBox="0 0 350 348"
+    style={{ enableBackground: 'new 0 0 350 348' }}
+  >
+    <linearGradient id="dm_1_" gradientUnits="userSpaceOnUse" x1="72.5357" y1="259.7551" x2="283.7113" y2="48.5796">
+      <stop offset="0" style={{ stopColor: '#1E0633' }} />
+      <stop offset="0.5" style={{ stopColor: '#00448D' }} />
+      <stop offset="1" style={{ stopColor: '#1E0633' }} />
+    </linearGradient>
+    <path
+      id="dm"
+      d="M296.6,149.2c-2.2,0-4-1.8-4-4v-3.6c0-2.2,1.8-4,4-4h29.1c2.2,0,4,1.8,4,4v3.6c0,2.2-1.8,4-4,4H296.6z
 	 M297.6,113.2c0.7,0,1.4-0.2,2-0.5l25.3-14.5c1.8-1.1,2.4-3.5,1.5-5.4l-1.9-3.2c-0.7-1.3-2-2-3.4-2c-0.7,0-1.4,0.2-2,0.5l-25.3,14.5
 	c-1.9,1.2-2.5,3.5-1.5,5.4l1.9,3.2C295,112.5,296.2,113.2,297.6,113.2L297.6,113.2z M321,201c1.4,0,2.7-0.7,3.4-2l1.8-3.1
 	c0.5-0.9,0.7-2.1,0.4-3.2c-0.3-0.9-0.9-1.8-1.8-2.3l-25.4-14.5c-0.5-0.3-1.3-0.5-1.9-0.5c-1.4,0-2.7,0.7-3.5,2l-1.8,3.1
@@ -26,9 +36,9 @@ const Marketing = () => (
 	c0-6.2,5.1-11.3,11.3-11.3c3.6,0,6.4-2.6,6.4-6.2v-10.1c0-6.2,5.1-11.3,11.3-11.3C49.3,96.3,78.1,96.3,78.1,96.3z M252.7,75.4
 	c2.1,1.5,3.3,3.9,3.3,6.4v48.3l3,0.2c7.4,0.4,13.2,6.6,13.2,14.1s-5.8,13.6-13.2,14.1l-3,0.2V207c0,2.5-1.2,5-3.3,6.4
 	s-4.6,1.9-7.1,1.2c-55.4-17.8-124-21.4-145-22c-0.3,0-0.5-0.2-0.5-0.5v-95c0-0.3,0.2-0.5,0.5-0.5c21-0.7,89.6-4.2,145-22
-	c0.8-0.2,1.7-0.4,2.4-0.4C249.8,73.8,251.4,74.3,252.7,75.4z"/>
-</Svg>
-
+	c0.8-0.2,1.7-0.4,2.4-0.4C249.8,73.8,251.4,74.3,252.7,75.4z"
+    />
+  </Svg>
 );
 
 export default Marketing;

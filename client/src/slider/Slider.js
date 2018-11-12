@@ -9,7 +9,6 @@ import Exit from '../images/Exit';
 import Arrow from '../images/Arrow';
 import { FormattedMessage } from 'react-intl';
 
-
 const OuterWrapper = styled.div`
   opacity: 0;
   visibility: hidden;
@@ -19,15 +18,16 @@ const OuterWrapper = styled.div`
   transition: 500ms;
   transform: translateY(-100%);
 
-
-  ${props => props.showSlider && css`
-    height: auto;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    transition: 500ms;
-    transition-delay: 100ms;
-  `};
+  ${props =>
+    props.showSlider &&
+    css`
+      height: auto;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      transition: 500ms;
+      transition-delay: 100ms;
+    `};
 `;
 
 const Header = styled.div`
@@ -55,7 +55,6 @@ const Single = styled.div`
   align-items: center;
   position: relative;
 `;
-
 
 const Article = styled.article`
   display: flex;
@@ -92,7 +91,6 @@ const DescriptionPart = styled.div`
   }
 `;
 
-
 const Text = styled.div`
   & > span {
     line-height: 2;
@@ -107,37 +105,38 @@ const Arrows = styled.div`
   align-items: center;
 `;
 
-
 const Slide = ({ slide, hideSlider, sliderAPI }) => {
-
   return (
     <Single>
       <Container>
         <Article>
           <ImagePart>
-            <img src={slide.imageUrl} alt={slide.title}/>
+            <img src={slide.imageUrl} alt={slide.title} />
           </ImagePart>
           <DescriptionPart>
             <Text>
-              <h1><FormattedMessage id={slide.titleId} defaultMessage={slide.titleDefault}/></h1>
-              <span><FormattedMessage id={slide.spanId} defaultMessage={slide.spanDefault}/></span>
+              <h1>
+                <FormattedMessage id={slide.titleId} defaultMessage={slide.titleDefault} />
+              </h1>
+              <span>
+                <FormattedMessage id={slide.spanId} defaultMessage={slide.spanDefault} />
+              </span>
             </Text>
             <Arrows>
-              <Arrow type='left' onClick={() => sliderAPI.slickPrev()}/>
-              <Arrow type='right' onClick={() => sliderAPI.slickNext()}/>
+              <Arrow type="left" onClick={() => sliderAPI.slickPrev()} />
+              <Arrow type="right" onClick={() => sliderAPI.slickNext()} />
             </Arrows>
           </DescriptionPart>
         </Article>
       </Container>
     </Single>
-  )
-}
-
+  );
+};
 
 export default class SimpleSlider extends Component {
   state = {
     slides: data,
-  }
+  };
 
   render() {
     const { slides } = this.state;
@@ -158,12 +157,12 @@ export default class SimpleSlider extends Component {
     return (
       <OuterWrapper showSlider={showSlider}>
         <Header>
-          <Exit onClick={hideSlider}/>
+          <Exit onClick={hideSlider} />
         </Header>
 
-        <Slider {...settings} ref={slider => (setRef(slider))}>
+        <Slider {...settings} ref={slider => setRef(slider)}>
           {slides.map(slide => (
-            <Slide key={slides} slide={slide} hideSlider={hideSlider} sliderAPI={sliderAPI}/>
+            <Slide key={slides} slide={slide} hideSlider={hideSlider} sliderAPI={sliderAPI} />
           ))}
         </Slider>
       </OuterWrapper>

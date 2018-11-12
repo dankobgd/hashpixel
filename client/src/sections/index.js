@@ -6,8 +6,7 @@ import ServicesSection from './Services';
 import ContactSection from './Contact';
 import Footer from './Footer';
 import Empty from './Empty';
-import { toggleFooter } from '../helpers'
-
+import { toggleFooter } from '../helpers';
 
 export default class Sections extends Component {
   componentDidUpdate(prevProps) {
@@ -16,18 +15,22 @@ export default class Sections extends Component {
   }
 
   render() {
-    const { fpState, fpApi, footerUILogic: { isFooterOpen } } = this.props;
+    const {
+      fpState,
+      fpApi,
+      footerUILogic: { isFooterOpen },
+    } = this.props;
 
     return (
       <div style={{ position: 'relative' }}>
-        <HeroSection fpApi={fpApi}/>
+        <HeroSection fpApi={fpApi} />
         <AboutSection />
         <MeetOurTeamSection />
         <ServicesSection />
         <ContactSection />
         <Empty />
-        <Footer fpState={fpState} fpApi={fpApi} isFooterOpen={isFooterOpen}/>
+        <Footer fpState={fpState} fpApi={fpApi} isFooterOpen={isFooterOpen} />
       </div>
-    )
+    );
   }
 }

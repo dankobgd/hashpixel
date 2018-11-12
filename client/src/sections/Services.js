@@ -6,11 +6,10 @@ import Development from './icons/Development';
 import Hosting from './icons/Hosting';
 import Seo from './icons/Seo';
 import Identity from './icons/Identity';
-import bgImage from '../images/section_services.jpg'
+import bgImage from '../images/section_services.jpg';
 import { FormattedMessage } from 'react-intl';
 import SimpleSlider from '../slider/Slider';
 import { Container, Section, Heading, CardIcon } from '../shared/common';
-
 
 const SectionWrapper = styled(Section)`
   background-image: url(${bgImage});
@@ -48,7 +47,7 @@ const StyledCardIcon = styled(CardIcon)`
   cursor: pointer;
 
   & > svg {
-      transition: 500ms;
+    transition: 500ms;
   }
 
   &:hover > svg {
@@ -57,25 +56,24 @@ const StyledCardIcon = styled(CardIcon)`
   }
 `;
 
-
 class ServicesSection extends Component {
   state = {
     showSlider: false,
-  }
+  };
 
   setRef = node => {
     this.sliderAPI = node;
-  }
+  };
 
-  openSlider = (num) => {
+  openSlider = num => {
     this.sliderAPI.slickGoTo(num);
-    this.setState({ showSlider: true })
+    this.setState({ showSlider: true });
     document.querySelector('.dots-list').style.display = 'none';
     document.querySelector('#nav').style.display = 'none';
 
-    document.querySelector('.normal-page-content').style.display = 'none';  // bit hacky way... fix later. add top level state
+    document.querySelector('.normal-page-content').style.display = 'none'; // bit hacky way... fix later. add top level state
     document.querySelector('body').style.overflow = 'hidden'; // bit hacky way... fix later. add top level state
-  }
+  };
 
   hideSlider = () => {
     this.setState({ showSlider: false });
@@ -84,57 +82,76 @@ class ServicesSection extends Component {
 
     document.querySelector('.normal-page-content').style.display = 'block'; // bit hacky way... fix later. add top level state
     document.querySelector('body').style.display = 'visible'; // bit hacky way... fix later. add top level state
-  }
+  };
 
   render() {
-   return (
-    <SectionWrapper>
-      <SimpleSlider hideSlider={this.hideSlider} showSlider={this.state.showSlider} setRef={this.setRef} sliderAPI={this.sliderAPI} />
+    return (
+      <SectionWrapper>
+        <SimpleSlider
+          hideSlider={this.hideSlider}
+          showSlider={this.state.showSlider}
+          setRef={this.setRef}
+          sliderAPI={this.sliderAPI}
+        />
 
-    <div className='normal-page-content'>
-      <Container style={{ maxWidth: '980px' }}>
-        <TopBox>
-          <Heading><FormattedMessage id='Services.Title' defaultMessage='What we do'/></Heading>
-        </TopBox>
+        <div className="normal-page-content">
+          <Container style={{ maxWidth: '980px' }}>
+            <TopBox>
+              <Heading>
+                <FormattedMessage id="Services.Title" defaultMessage="What we do" />
+              </Heading>
+            </TopBox>
 
-        <MainBox>
-          <StyledCardIcon onClick={() => this.openSlider(0)}>
-            <Design/>
-            <h1><FormattedMessage id='Services.DesignTitle' defaultMessage='Web Design' /></h1>
-          </StyledCardIcon>
+            <MainBox>
+              <StyledCardIcon onClick={() => this.openSlider(0)}>
+                <Design />
+                <h1>
+                  <FormattedMessage id="Services.DesignTitle" defaultMessage="Web Design" />
+                </h1>
+              </StyledCardIcon>
 
-          <StyledCardIcon onClick={() => this.openSlider(1)}>
-            <Identity/>
-            <h1><FormattedMessage id='Services.IdentityTitle' defaultMessage='Visual Identity'/></h1>
-          </StyledCardIcon>
+              <StyledCardIcon onClick={() => this.openSlider(1)}>
+                <Identity />
+                <h1>
+                  <FormattedMessage id="Services.IdentityTitle" defaultMessage="Visual Identity" />
+                </h1>
+              </StyledCardIcon>
 
-          <StyledCardIcon onClick={() => this.openSlider(2)}>
-            <Development/>
-            <h1><FormattedMessage id='Services.DevelopmentTitle' defaultMessage='Web Development'/></h1>
-          </StyledCardIcon>
-        </MainBox>
+              <StyledCardIcon onClick={() => this.openSlider(2)}>
+                <Development />
+                <h1>
+                  <FormattedMessage id="Services.DevelopmentTitle" defaultMessage="Web Development" />
+                </h1>
+              </StyledCardIcon>
+            </MainBox>
 
-        <MainBox>
-          <StyledCardIcon onClick={() => this.openSlider(3)}>
-            <Hosting/>
-            <h1><FormattedMessage id='Services.HostingTitle' defaultMessage='Web Hosting'/></h1>
-          </StyledCardIcon>
+            <MainBox>
+              <StyledCardIcon onClick={() => this.openSlider(3)}>
+                <Hosting />
+                <h1>
+                  <FormattedMessage id="Services.HostingTitle" defaultMessage="Web Hosting" />
+                </h1>
+              </StyledCardIcon>
 
-          <StyledCardIcon onClick={() => this.openSlider(4)}>
-            <Marketing/>
-            <h1><FormattedMessage id='Services.MarketingTitle' defaultMessage='Digital Marketing'/></h1>
-          </StyledCardIcon>
+              <StyledCardIcon onClick={() => this.openSlider(4)}>
+                <Marketing />
+                <h1>
+                  <FormattedMessage id="Services.MarketingTitle" defaultMessage="Digital Marketing" />
+                </h1>
+              </StyledCardIcon>
 
-          <StyledCardIcon onClick={() => this.openSlider(5)}>
-            <Seo/>
-            <h1><FormattedMessage id='Services.SeoTitle' defaultMessage='SEO Optimization'/></h1>
-          </StyledCardIcon>
-        </MainBox>
-      </Container>
-      </div>
-    </SectionWrapper>
-   )
+              <StyledCardIcon onClick={() => this.openSlider(5)}>
+                <Seo />
+                <h1>
+                  <FormattedMessage id="Services.SeoTitle" defaultMessage="SEO Optimization" />
+                </h1>
+              </StyledCardIcon>
+            </MainBox>
+          </Container>
+        </div>
+      </SectionWrapper>
+    );
   }
-};
+}
 
 export default ServicesSection;

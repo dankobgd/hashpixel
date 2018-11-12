@@ -6,7 +6,6 @@ import Logo from '../images/Logo';
 import FooterHashBackground from '../images/FooterHashBackground';
 import { Container } from '../shared/common';
 
-
 const Wrapper = styled.footer`
   background: -webkit-linear-gradient(-90deg, rgba(30, 6, 51, 1) 0%, rgba(14, 6, 20, 1) 60%);
   background: -moz-linear-gradient(-90deg, rgba(30, 6, 51, 1) 0%, rgba(14, 6, 20, 1) 60%);
@@ -40,7 +39,8 @@ const Wrapper = styled.footer`
   }
 
   ${props =>
-    props.isFooterOpen && (!props.isResponsive) &&
+    props.isFooterOpen &&
+    !props.isResponsive &&
     css`
       transition: all 300ms;
       transform: translateY(-100%);
@@ -191,7 +191,7 @@ const Footer = ({ fpState, fpApi, isFooterOpen }) => {
     { icon: 'fa fa-behance', link: 'https://www.behance.net/hespiksel40a2' },
     { icon: 'fa fa-github', link: 'https://github.com/dankobgd/hashpixel' },
     { icon: 'fa fa-linkedin', link: '#' },
-  ]
+  ];
 
   return (
     <Wrapper isFooterOpen={isFooterOpen} isResponsive={fpState.isResponsive}>
@@ -231,11 +231,11 @@ const Footer = ({ fpState, fpApi, isFooterOpen }) => {
           </MediaQuery>
 
           <Icons>
-          {socials.map(({ icon, link }) => (
-            <a href={link} target='_blank' rel='noopener noreferrer' key={icon}>
-              <li className={icon}/>
-            </a>
-          ))}
+            {socials.map(({ icon, link }) => (
+              <a href={link} target="_blank" rel="noopener noreferrer" key={icon}>
+                <li className={icon} />
+              </a>
+            ))}
           </Icons>
           <LineSeparator />
           <Copyright>©2018 Hashpixel, All rights reserved.</Copyright>
@@ -243,7 +243,6 @@ const Footer = ({ fpState, fpApi, isFooterOpen }) => {
       </Container>
     </Wrapper>
   );
-}
-
+};
 
 export default Footer;

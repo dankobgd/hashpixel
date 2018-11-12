@@ -19,15 +19,15 @@ const DotsWrapper = styled.div`
   }
 
   li:last-child::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     left: 14px;
     width: 20px;
     height: 20px;
     transition: 500ms;
-    background-color: ${props => props.pageIndx % 2 !== 0 ? props.theme.darkBlue : props.theme.cyan };
-    background-color: ${props => props.pageIndx === 5 && props.theme.cyan };
+    background-color: ${props => (props.pageIndx % 2 !== 0 ? props.theme.darkBlue : props.theme.cyan)};
+    background-color: ${props => props.pageIndx === 5 && props.theme.cyan};
     transform: translateY(-50%);
   }
 
@@ -98,8 +98,8 @@ const A = styled.a`
   height: 100%;
   outline: none;
   transition: background-color 500ms;
-  background-color: ${props => props.pageIndx % 2 !== 0 ? 'rgba(0, 0, 0, 0.3)' : 'rgba(255, 255, 255, 0.3)' };
-  background-color: ${props => props.pageIndx === 5 && 'rgba(255, 255, 255, 0.3)' };
+  background-color: ${props => (props.pageIndx % 2 !== 0 ? 'rgba(0, 0, 0, 0.3)' : 'rgba(255, 255, 255, 0.3)')};
+  background-color: ${props => props.pageIndx === 5 && 'rgba(255, 255, 255, 0.3)'};
   text-indent: -999em;
   cursor: pointer;
   position: absolute;
@@ -108,12 +108,11 @@ const A = styled.a`
     outline: none;
   }
 
-  &:hover,:focus {
+  &:hover,
+  :focus {
     background-color: #fff;
   }
 `;
-
-
 
 class Bullets extends Component {
   render() {
@@ -122,7 +121,7 @@ class Bullets extends Component {
 
     if (fpState) {
       if (fpState.initialized && fpState.destination) {
-        pageIndx = fpState.destination.index
+        pageIndx = fpState.destination.index;
       } else {
         pageIndx = 0;
       }
@@ -134,12 +133,8 @@ class Bullets extends Component {
     return ReactDOM.createPortal(
       <DotsWrapper pageIndx={pageIndx}>
         <DotsList className="dots-list">
-        {items.map((item, indx) => (
-            <Item
-              key={item.name}
-              data-menuanchor={item.name}
-              onClick={() => moveToSection(this.props, indx)}
-            >
+          {items.map((item, indx) => (
+            <Item key={item.name} data-menuanchor={item.name} onClick={() => moveToSection(this.props, indx)}>
               <A pageIndx={pageIndx}>{item.name}</A>
             </Item>
           ))}

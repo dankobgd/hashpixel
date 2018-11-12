@@ -1,6 +1,10 @@
 // handles sidenav menu click logic
 export function moveToSection(obj, indx) {
-  const { fpState, fpApi, footerUILogic: { setFooterHidden, setFooterVisible } } = obj;
+  const {
+    fpState,
+    fpApi,
+    footerUILogic: { setFooterHidden, setFooterVisible },
+  } = obj;
   const index = indx + 1;
   const dest = { ...fpState.destination };
   const last = dest.isLast;
@@ -34,7 +38,7 @@ export function moveToSection(obj, indx) {
       fpApi.moveTo(index);
     } else if (index === 6) {
       setFooterVisible();
-      footerElm.scrollIntoView({ block: 'end',  behavior: 'smooth' });
+      footerElm.scrollIntoView({ block: 'end', behavior: 'smooth' });
     }
 
     if (last === true) {
@@ -42,7 +46,6 @@ export function moveToSection(obj, indx) {
     }
   }
 }
-
 
 // toggle footer logic
 export function toggleFooter(fpState, { setFooterVisible, setFooterHidden }) {

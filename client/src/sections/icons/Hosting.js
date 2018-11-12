@@ -3,20 +3,37 @@ import styled from 'styled-components';
 
 const Svg = styled.svg`
   & > path {
-    fill:url(#webhosting_1_);
+    fill: url(#webhosting_1_);
   }
 `;
 
 const Hosting = () => (
-<Svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="150px" height="150px"
-	 viewBox="0 0 350 348" style={{enableBackground:"new 0 0 350 348"}} >
-
-<linearGradient id="webhosting_1_" gradientUnits="userSpaceOnUse" x1="90.4703" y1="294.1984" x2="278.7594" y2="105.9093">
-	<stop  offset="0" style={{stopColor:"#1E0633"}}/>
-	<stop  offset="0.5" style={{stopColor:"#00448D"}}/>
-	<stop  offset="1" style={{stopColor:"#1E0633"}}/>
-</linearGradient>
-<path id="webhosting"  d="M252.7,211.8H105.5c-3.8,0-6.9,3.1-6.9,6.9V231c0,3.8,3.1,6.9,6.9,6.9h147.2
+  <Svg
+    version="1.1"
+    id="Layer_1"
+    xmlns="http://www.w3.org/2000/svg"
+    x="0px"
+    y="0px"
+    width="150px"
+    height="150px"
+    viewBox="0 0 350 348"
+    style={{ enableBackground: 'new 0 0 350 348' }}
+  >
+    <linearGradient
+      id="webhosting_1_"
+      gradientUnits="userSpaceOnUse"
+      x1="90.4703"
+      y1="294.1984"
+      x2="278.7594"
+      y2="105.9093"
+    >
+      <stop offset="0" style={{ stopColor: '#1E0633' }} />
+      <stop offset="0.5" style={{ stopColor: '#00448D' }} />
+      <stop offset="1" style={{ stopColor: '#1E0633' }} />
+    </linearGradient>
+    <path
+      id="webhosting"
+      d="M252.7,211.8H105.5c-3.8,0-6.9,3.1-6.9,6.9V231c0,3.8,3.1,6.9,6.9,6.9h147.2
 	c3.8,0,6.9-3.1,6.9-6.9v-12.3C259.6,214.9,256.5,211.8,252.7,211.8z M122.4,230.1c-2.9,0-5.3-2.4-5.3-5.3c0-2.9,2.4-5.3,5.3-5.3
 	s5.3,2.4,5.3,5.3C127.7,227.8,125.3,230.1,122.4,230.1z M243.4,228.6h-37.2v-7.4h37.2V228.6z M253.1,176.3H105.9
 	c-3.8,0-6.9,3.1-6.9,6.9v12.3c0,3.8,3.1,6.9,6.9,6.9h147.2c3.8,0,6.9-3.1,6.9-6.9v-12.3C260,179.4,256.9,176.3,253.1,176.3z
@@ -29,8 +46,9 @@ const Hosting = () => (
 	c0.1,0.7-0.1,1.4-0.6,1.9s-1.1,0.8-1.8,0.7c-1.4-0.1-2.5-0.1-3.6-0.1c-27.7,0-50.2,22.5-50.2,50.2c0,24.9,18.6,46.3,43.2,49.7
 	c0.1,0,0.1,0,0.2,0c3,0.6,6,0.9,9,0.9h8.1v4.6h-8.1c-3.3,0-6.6-0.3-9.9-1c-26.8-3.8-47.1-27.1-47.1-54.2c0-30.2,24.6-54.8,54.7-54.8
 	c0.4,0,0.8,0,1.2,0c0-0.8-0.1-1.5-0.1-2.2c0-22,17.9-39.9,39.9-39.9c8.7,0,17.2,2.9,24.1,8.1c12.6-27,39.5-44.3,69.5-44.3
-	c42.2,0,76.6,34.4,76.6,76.6c0,5.8-0.7,11.6-1.9,17.2C310.1,175.1,323.4,193.7,323.4,214.3z"/>
-</Svg>
+	c42.2,0,76.6,34.4,76.6,76.6c0,5.8-0.7,11.6-1.9,17.2C310.1,175.1,323.4,193.7,323.4,214.3z"
+    />
+  </Svg>
 );
 
 export default Hosting;

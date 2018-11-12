@@ -31,25 +31,30 @@ class FullPageWrapper extends Component {
     const footerUILogic = {
       isFooterOpen: this.state.isFooterOpen,
       setFooterVisible: this.setFooterVisible,
-      setFooterHidden: this.setFooterHidden
-    }
+      setFooterHidden: this.setFooterHidden,
+    };
 
     return (
       <ReactFullpage
-      {...fullpageOptions}
-      render={({ state, fullpageApi }) => {
-        return (
-          <>
-            <Navigation fpState={state} fpApi={fullpageApi} footerUILogic={footerUILogic} setLocale={this.props.setLocale} lang={this.props.lang} />
-            <Sections fpState={state} fpApi={fullpageApi} footerUILogic={footerUILogic} />
-            <Bullets fpState={state} fpApi={fullpageApi} footerUILogic={footerUILogic} />
-          </>
-          )}
-        }
+        {...fullpageOptions}
+        render={({ state, fullpageApi }) => {
+          return (
+            <>
+              <Navigation
+                fpState={state}
+                fpApi={fullpageApi}
+                footerUILogic={footerUILogic}
+                setLocale={this.props.setLocale}
+                lang={this.props.lang}
+              />
+              <Sections fpState={state} fpApi={fullpageApi} footerUILogic={footerUILogic} />
+              <Bullets fpState={state} fpApi={fullpageApi} footerUILogic={footerUILogic} />
+            </>
+          );
+        }}
       />
-    )
+    );
   }
 }
-
 
 export default FullPageWrapper;

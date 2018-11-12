@@ -5,7 +5,6 @@ import { Formik } from 'formik';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Container, Section, Heading } from '../shared/common';
 
-
 const SectionWrapper = styled(Section)`
   background: -webkit-radial-gradient(-0% 150%, circle, rgba(14, 6, 20, 1), transparent 100%),
     -webkit-radial-gradient(100% -30%, circle, rgba(0, 68, 141, 1), transparent 34%),
@@ -200,7 +199,6 @@ const RequiredFieldsMsg = styled.span`
   margin-bottom: 1rem;
 `;
 
-
 const HeadingWhite = styled(Heading)`
   color: ${props => props.theme.white};
 `;
@@ -210,38 +208,41 @@ const ContactSection = ({ intl }) => (
     <Container>
       <Outer>
         <HeadingWhite>
-          <FormattedMessage id='Contact.MainTitle' defaultMessage="Let's work"/>
+          <FormattedMessage id="Contact.MainTitle" defaultMessage="Let's work" />
         </HeadingWhite>
 
         <Content1>
           <LeftText>
-            <h1><FormattedMessage id='Contact.ContentTitle' defaultMessage='Want to start a new project?'/></h1>
+            <h1>
+              <FormattedMessage id="Contact.ContentTitle" defaultMessage="Want to start a new project?" />
+            </h1>
             <span>
-            <FormattedMessage id='Contact.ContentText' defaultMessage='If you want to make your idea into reality, fill the next form, and we will contact you as soon as possible. We look forward to our cooperation!'/>
+              <FormattedMessage
+                id="Contact.ContentText"
+                defaultMessage="If you want to make your idea into reality, fill the next form, and we will contact you as soon as possible. We look forward to our cooperation!"
+              />
             </span>
           </LeftText>
 
-          <ContactForm intl={intl}/>
+          <ContactForm intl={intl} />
         </Content1>
       </Outer>
     </Container>
   </SectionWrapper>
 );
 
-
-
 const contactSchema = Yup.object().shape({
   name: Yup.string()
-    .min(3, <FormattedMessage id='Error.NameShort' defaultMessage='Too short!'/>)
-    .max(40, <FormattedMessage id='Error.NameLong' defaultMessage='Too long!'/>)
-    .required(<FormattedMessage id='Error.NameRequired' defaultMessage='Name is required'/>),
+    .min(3, <FormattedMessage id="Error.NameShort" defaultMessage="Too short!" />)
+    .max(40, <FormattedMessage id="Error.NameLong" defaultMessage="Too long!" />)
+    .required(<FormattedMessage id="Error.NameRequired" defaultMessage="Name is required" />),
   email: Yup.string()
-    .email(<FormattedMessage id='Error.EmailInvalid' defaultMessage='Invalid Email address'/>)
-    .required(<FormattedMessage id='Error.EmailRequired' defaultMessage='Email is required'/>),
+    .email(<FormattedMessage id="Error.EmailInvalid" defaultMessage="Invalid Email address" />)
+    .required(<FormattedMessage id="Error.EmailRequired" defaultMessage="Email is required" />),
   message: Yup.string()
-    .min(5, <FormattedMessage id='Error.Messagehort' defaultMessage='Min 5 chars'/>)
-    .max(300, <FormattedMessage id='Error.MessageShort' defaultMessage='Max 300 chars'/>)
-    .required(<FormattedMessage id='Error.MessageRequired' defaultMessage='Message is required'/>),
+    .min(5, <FormattedMessage id="Error.Messagehort" defaultMessage="Min 5 chars" />)
+    .max(300, <FormattedMessage id="Error.MessageShort" defaultMessage="Max 300 chars" />)
+    .required(<FormattedMessage id="Error.MessageRequired" defaultMessage="Message is required" />),
 });
 
 function sendFormData(values, { setSubmitting, setErrors }) {
@@ -276,7 +277,7 @@ const ContactForm = ({ intl }) => (
     render={({ values, errors, touched, isSubmitting, handleChange, handleBlur, handleSubmit }) => (
       <Form onSubmit={handleSubmit}>
         <RequiredFieldsMsg>
-          <FormattedMessage id='Contact.FormIndication' defaultMessage='* Indicates required field'/>
+          <FormattedMessage id="Contact.FormIndication" defaultMessage="* Indicates required field" />
         </RequiredFieldsMsg>
 
         <Input
@@ -320,17 +321,17 @@ const ContactForm = ({ intl }) => (
         {errors.message && touched.message && <Msg danger>{errors.message}</Msg>}
 
         <Button type="submit" onSubmit={handleSubmit} disabled={isSubmitting}>
-          <FormattedMessage id='Contact.FormSubmit' defaultMessage='Submit' />
+          <FormattedMessage id="Contact.FormSubmit" defaultMessage="Submit" />
         </Button>
 
-        {isSubmitting && <Msg success>
-          <FormattedMessage id='Contact.FormSuccess' defaultMessage='Thank you for contacting us!' />
-        </Msg>}
+        {isSubmitting && (
+          <Msg success>
+            <FormattedMessage id="Contact.FormSuccess" defaultMessage="Thank you for contacting us!" />
+          </Msg>
+        )}
       </Form>
     )}
   />
 );
-
-
 
 export default injectIntl(ContactSection);

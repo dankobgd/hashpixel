@@ -16,11 +16,11 @@ const Svg = styled.svg`
   z-index: 999;
   transition: stroke 500ms;
   ${props => (props.isMenuOpen && props.animated ? defaultPathCSS : animatedPathCSS)};
-  stroke: ${props => props.pageIndx % 2 !== 0 ? props.theme.darkBlue : props.theme.cyan };
-  stroke: ${props => props.pageIndx === 5 && props.theme.cyan };
+  stroke: ${props => (props.pageIndx % 2 !== 0 ? props.theme.darkBlue : props.theme.cyan)};
+  stroke: ${props => props.pageIndx === 5 && props.theme.cyan};
 
   @media screen and (max-width: 980px) {
-    stroke: ${props => props.theme.cyan };
+    stroke: ${props => props.theme.cyan};
   }
 `;
 
@@ -78,13 +78,11 @@ const Hamburger = props => {
 
   if (fpState) {
     if (fpState.initialized && fpState.destination) {
-      pageIndx = fpState.destination.index
+      pageIndx = fpState.destination.index;
     } else {
       pageIndx = 0;
     }
   }
-
-
 
   return (
     <Svg
@@ -96,8 +94,8 @@ const Hamburger = props => {
       viewBox="0 0 800 600"
       pageIndx={pageIndx}
     >
-      <PathTop d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200"/>
-      <PathMiddle d="M300,320 L540,320"/>
+      <PathTop d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" />
+      <PathMiddle d="M300,320 L540,320" />
       <PathBottom
         d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190"
         transform="translate(480, 320) scale(1, -1) translate(-480, -318)"

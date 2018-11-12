@@ -1,8 +1,6 @@
 import items from '../navigation/items';
 
-
 const anchors = items.map(item => item.name);
-
 
 export default {
   anchors,
@@ -14,5 +12,5 @@ export default {
   scrollOverflow: true,
   scrollingSpeed: 600,
   responsiveWidth: 980,
-  normalScrollElements: '.slick-slider'
+  normalScrollElements: '.slick-slider',
 };

@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import { Container, Section, Heading } from '../shared/common';
-import team from './teamMembers'
-
+import team from './teamMembers';
 
 const SectionWrapper = styled(Section)`
   background: -webkit-radial-gradient(90% -20%, circle, rgba(29, 16, 124, 1), rgba(30, 6, 51, 1), transparent 100%),
@@ -158,7 +157,7 @@ const MeetOurTeamSection = () => (
   <SectionWrapper>
     <Container>
       <HeadingWhite>
-        <FormattedMessage id='Team.Title' defaultMessage='Meet Our Team'/>
+        <FormattedMessage id="Team.Title" defaultMessage="Meet Our Team" />
       </HeadingWhite>
 
       <Grid>
