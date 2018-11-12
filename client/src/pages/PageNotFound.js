@@ -65,7 +65,7 @@ const Svg = styled.svg`
 
   & > * {
     stroke-width: 5;
-    stroke-color: transparent;
+    stroke: transparent;
   }
 `;
 
