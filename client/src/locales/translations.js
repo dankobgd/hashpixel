@@ -3,6 +3,6 @@ import rs from './rs.json';
 import flattenMessages from './flattenMessages';
 
 export default {
-  en: flattenMessages(en),
-  sr: flattenMessages(rs),
+  'en-US': flattenMessages(en),
+  'sr-RS': flattenMessages(rs),
 };

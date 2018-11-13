@@ -194,20 +194,20 @@ const Eng = styled.a`
   padding: 0px 4px;
   cursor: pointer;
   border-right: 1px solid rgba(255, 255, 255, 0.7);
-  color: ${props => (props.locale === 'en' ? props.theme.cyan : 'fff')};
+  color: ${props => (props.locale === 'en-US' ? props.theme.cyan : 'fff')};
 
   &:hover {
-    color: ${props => props.locale === 'sr' && props.theme.grey};
+    color: ${props => props.locale === 'sr-RS' && props.theme.grey};
   }
 `;
 
 const Srb = styled.a`
   padding: 0px 4px;
   cursor: pointer;
-  color: ${props => (props.locale === 'sr' ? props.theme.cyan : 'fff')};
+  color: ${props => (props.locale === 'sr-RS' ? props.theme.cyan : 'fff')};
 
   &:hover {
-    color: ${props => props.locale === 'en' && props.theme.grey};
+    color: ${props => props.locale === 'en-US' && props.theme.grey};
   }
 `;
 
@@ -233,10 +233,10 @@ const Desktop = props => {
             <Outer>
               <Menu position={position}>
                 <LanguageWrapper>
-                  <Eng locale={locale} onClick={() => changeLanguage('en')}>
+                  <Eng locale={locale} onClick={() => changeLanguage('en-US')}>
                     ENG
                   </Eng>
-                  <Srb locale={locale} onClick={() => changeLanguage('sr')}>
+                  <Srb locale={locale} onClick={() => changeLanguage('sr-RS')}>
                     SRB
                   </Srb>
                 </LanguageWrapper>

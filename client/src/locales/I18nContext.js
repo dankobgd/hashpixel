@@ -29,7 +29,7 @@ class I18nProviderWrapper extends Component {
   };
 
   state = {
-    locale: 'en',
+    locale: 'en-US',
     translations,
     changeLanguage: this.changeLanguage,
   };
@@ -40,7 +40,7 @@ class I18nProviderWrapper extends Component {
 
     return (
       <Provider value={this.state}>
-        <IntlProvider locale={locale} messages={translations[locale]} defaultLocale="en">
+        <IntlProvider locale={locale} messages={translations[locale]} defaultLocale={locale}>
           {children}
         </IntlProvider>
       </Provider>
