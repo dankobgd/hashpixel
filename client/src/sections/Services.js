@@ -56,6 +56,20 @@ const StyledCardIcon = styled(CardIcon)`
   }
 `;
 
+function toggleFocusedTask({ focusedTask = false }) {
+  if (focusedTask) {
+    document.querySelector('.dots-list').style.display = 'none';
+    document.querySelector('#nav').style.display = 'none';
+    document.querySelector('.normal-page-content').style.display = 'none';
+    document.querySelector('body').style.overflow = 'hidden';
+  } else {
+    document.querySelector('.dots-list').style.display = 'flex';
+    document.querySelector('#nav').style.display = 'flex';
+    document.querySelector('.normal-page-content').style.display = 'block';
+    document.querySelector('body').style.display = 'visible';
+  }
+}
+
 class ServicesSection extends Component {
   state = {
     showSlider: false,
@@ -68,20 +82,12 @@ class ServicesSection extends Component {
   openSlider = num => {
     this.sliderAPI.slickGoTo(num);
     this.setState({ showSlider: true });
-    document.querySelector('.dots-list').style.display = 'none';
-    document.querySelector('#nav').style.display = 'none';
-
-    document.querySelector('.normal-page-content').style.display = 'none'; // bit hacky way... fix later. add top level state
-    document.querySelector('body').style.overflow = 'hidden'; // bit hacky way... fix later. add top level state
+    toggleFocusedTask({ focusedTask: true });
   };
 
   hideSlider = () => {
     this.setState({ showSlider: false });
-    document.querySelector('.dots-list').style.display = 'flex';
-    document.querySelector('#nav').style.display = 'flex';
-
-    document.querySelector('.normal-page-content').style.display = 'block'; // bit hacky way... fix later. add top level state
-    document.querySelector('body').style.display = 'visible'; // bit hacky way... fix later. add top level state
+    toggleFocusedTask({ focusedTask: false });
   };
 
   render() {
