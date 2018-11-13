@@ -101,8 +101,12 @@ const Arrows = styled.div`
   padding: 2rem 0;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+
+  & > * {
+    margin-right: 2em;
+  }
 `;
 
 const Slide = ({ slide, sliderAPI }) => {
