@@ -12,9 +12,15 @@ addLocaleData([...en, ...sr]);
 
 class I18nProviderWrapper extends Component {
   componentDidMount() {
-    const lang = localStorage.getItem('language');
-    this.setState({ locale: lang });
+    this.useDefaultLocale();
   }
+
+  useDefaultLocale = () => {
+    const lang = localStorage.getItem('language');
+    if (lang !== null) {
+      this.setState({ locale: lang });
+    }
+  };
 
   changeLanguage = lang => {
     this.setState({ locale: lang });
@@ -30,6 +36,8 @@ class I18nProviderWrapper extends Component {
   render() {
     const { children } = this.props;
     const { locale } = this.state;
+
+    console.log('locale: ', locale);
     return (
       <Provider value={this.state}>
         <IntlProvider locale={locale} messages={translations[locale]} defaultLocale="en">
