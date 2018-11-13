@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import Hash from '../images/Hash';
 import Hamburger from './Hamburger';
 import { moveToSection } from '../helpers';
-import { dfns } from '../navigation/items';
+import { menuItems } from '../navigation/items';
 import { FormattedMessage } from 'react-intl';
 import { I18nConsumer } from '../locales/I18nContext';
 
@@ -247,7 +247,7 @@ const Desktop = props => {
 
                 <Main>
                   <List>
-                    {dfns.map((item, indx) => {
+                    {menuItems.map((item, indx) => {
                       return (
                         <Item key={indx} onClick={() => moveToSection(props, indx)}>
                           <FormattedMessage id={item.id} defaultMessage={item.defaultMessage} />

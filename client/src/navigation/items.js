@@ -1,6 +1,6 @@
 import { defineMessages } from 'react-intl';
 
-const menuItems = [
+const menuData = [
   {
     name: 'Hashpixel',
     page: 'Home',
@@ -33,7 +33,7 @@ const menuItems = [
   },
 ];
 
-export const dfns = [
+export const menuItems = [
   defineMessages({
     id: 'Navigation.item0',
     defaultMessage: 'Home',
@@ -60,4 +60,4 @@ export const dfns = [
   }),
 ];
 
-export default menuItems;
+export default menuData;

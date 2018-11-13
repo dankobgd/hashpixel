@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import Hamburger from './Hamburger';
 import { moveToSection } from '../helpers';
-import { dfns } from './items';
+import { menuItems } from './items';
 import { FormattedMessage } from 'react-intl';
 import { I18nConsumer } from '../locales/I18nContext';
 
@@ -151,7 +151,7 @@ const Mobile = props => {
 
             <Nav>
               <List isMenuOpen={isMenuOpen}>
-                {dfns.map((item, indx) => (
+                {menuItems.map((item, indx) => (
                   <Item
                     key={item.id}
                     onClick={() => {

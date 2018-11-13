@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
-import items from './items';
+import menuData from './items';
 import { moveToSection } from '../helpers';
 
 const DotsWrapper = styled.div`
@@ -133,7 +133,7 @@ class Bullets extends Component {
     return ReactDOM.createPortal(
       <DotsWrapper pageIndx={pageIndx}>
         <DotsList className="dots-list">
-          {items.map((item, indx) => (
+          {menuData.map((item, indx) => (
             <Item key={item.name} data-menuanchor={item.name} onClick={() => moveToSection(this.props, indx)}>
               <A pageIndx={pageIndx}>{item.name}</A>
             </Item>

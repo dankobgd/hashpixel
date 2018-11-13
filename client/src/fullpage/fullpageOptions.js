@@ -1,6 +1,6 @@
-import items from '../navigation/items';
+import menuData from '../navigation/items';
 
-const anchors = items.map(item => item.name);
+const anchors = menuData.map(item => item.name);
 
 export default {
   anchors,
