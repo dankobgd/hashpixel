@@ -105,7 +105,7 @@ const Arrows = styled.div`
   align-items: center;
 `;
 
-const Slide = ({ slide, hideSlider, sliderAPI }) => {
+const Slide = ({ slide, sliderAPI }) => {
   return (
     <Single>
       <Container>
