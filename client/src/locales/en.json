@@ -1,0 +1,70 @@
+{
+  "Navigation": {
+    "item0": "Hash Pixel",
+    "item1": "Who Are We",
+    "item2": "Meet Our Team",
+    "item3": "What We Do",
+    "item4": "Let's Work together",
+    "item5": "Company Info"
+  },
+  "Hero": {
+    "Slogan": "Pixel your vision",
+    "Scroll": "scroll"
+  },
+  "About": {
+    "Title": "Who Are We?",
+    "Subtext": "#Pixel is a start-up founded in 2018. by young IT experts with the mission of providing the best new solutions in the area of IT. We turn Your ideas into reality in the right way at the right time. By using modern programs, innovative approach and adequate technologies, we answer on just about every need of our clients, offering them help and support through:",
+    "Quality": "Quality",
+    "Security": "Security",
+    "Simplicity": "Simplicity"
+  },
+  "Contact": {
+    "FormIndication": "* Indicates required field",
+    "MainTitle": "Let's Work Together",
+    "ContentTitle": "Want to start a new project?",
+    "ContentText": "If you want to make your idea into reality, fill the next form, and we will contact you as soon as possible. We look forward to our cooperation!",
+    "FormName": "*Name",
+    "FormEmail": "*Email",
+    "FormPhone": "Phone",
+    "FormMessage": "*Leave a message",
+    "FormSubmit": "Submit",
+    "FormSuccess": "Thank you for contacting us!"
+  },
+  "Team": {
+    "Title": "Meet Our Team"
+  },
+  "Services": {
+    "Title": "What we do",
+    "DesignTitle": "Web Design",
+    "DesignText": "In a fast, simple and quality way, we create accesible and interactive websites in accordance with Your needs.",
+    "IdentityTitle": "Visual identity",
+    "IdentityText": "By using modern technologies, with the cooperation and consulting, we create ideal solution which will contribute to the recognition and authenticity of Your product.",
+    "DevelopmentTitle": "Web development",
+    "DevelopmentText": "Maintenance of internet pages, promotion and reorganization of existing ones and designing of the innovative strategies for improvement are the part of our large portfolio when it comes to web development.",
+    "HostingTitle": "Web hosting",
+    "HostingText": "Maintenance and setting up web pages on servers, creating an official e-mail, creating and maintaining database are just some of solutions we offer You when it comes to maintaining and upgrading Your everyday buisness.",
+    "MarketingTitle": "Digital Marketing",
+    "MarketingText": "How to position your brand on market, how to maintain social media as well as which types of content and their ways of presentations are the most suitable today are just some of the questions that our team will gladly answer and offer adequate solution. ",
+    "SeoTitle": "SEO Optimization",
+    "SeoText": "With the help from our modern technologies we offer You a chance to be among the first from your area of work that will answer the needs of your clients by taking the top positions at search results."
+  },
+  "PageNotFound": {
+    "Title": "404",
+    "Paragraph": "oops, sorry we can't find the page!",
+    "Small": "Either something went wrong or the page doesn’t exist anymore",
+    "GoBack": "Go Back"
+  },
+  "Error": {
+    "NameShort": "Too short!",
+    "NameLong": "Too long!",
+    "NameRequired": "Name is required",
+    "EmailInvalid": "Invalid Email address",
+    "EmailRequired": "Name is required",
+    "PhoneShort": "Min 7 digits",
+    "PhoneLong": "Max 12 digits",
+    "PhoneRequired": "Phone is required",
+    "MessageShort": "Min 5 chars",
+    "MessageLong": "Max 500 chars",
+    "MessageRequired": "Message is requred"
+  }
+}

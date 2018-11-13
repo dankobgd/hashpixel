@@ -35,27 +35,27 @@ const menuItems = [
 
 export const dfns = [
   defineMessages({
-    id: 'Nav0',
+    id: 'Navigation.item0',
     defaultMessage: 'Home',
   }),
   defineMessages({
-    id: 'Nav1',
+    id: 'Navigation.item1',
     defaultMessage: 'Who Are We',
   }),
   defineMessages({
-    id: 'Nav2',
+    id: 'Navigation.item2',
     defaultMessage: 'Meet Our Team',
   }),
   defineMessages({
-    id: 'Nav3',
+    id: 'Navigation.item3',
     defaultMessage: 'What We Do',
   }),
   defineMessages({
-    id: 'Nav4',
+    id: 'Navigation.item4',
     defaultMessage: "Let's work together",
   }),
   defineMessages({
-    id: 'Nav5',
+    id: 'Navigation.item5',
     defaultMessage: 'Company Info',
   }),
 ];

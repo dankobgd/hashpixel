@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { IntlProvider, addLocaleData } from 'react-intl';
-import translations from './translations.json';
+import translations from './translations';
 import en from 'react-intl/locale-data/en';
 import sr from 'react-intl/locale-data/sr';
 const { Provider, Consumer } = React.createContext();
@@ -38,7 +38,6 @@ class I18nProviderWrapper extends Component {
     const { children } = this.props;
     const { locale } = this.state;
 
-    console.log('locale: ', locale);
     return (
       <Provider value={this.state}>
         <IntlProvider locale={locale} messages={translations[locale]} defaultLocale="en">

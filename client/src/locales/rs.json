@@ -1,0 +1,71 @@
+{
+  "Navigation": {
+    "item0": "Hash Pixel",
+    "item1": "Ko Smo Mi",
+    "item2": "Upoznajte Naš Tim",
+    "item3": "Čime se bavimo",
+    "item4": "Hajde da radimo",
+    "item5": "Kontakt Informacije"
+  },
+  "Hero": {
+    "Slogan": "Pixel your vision",
+    "Scroll": "scroll"
+  },
+  "About": {
+    "Title": "Ko smo mi?",
+    "Subtext": "#Pixel je start-up osnovan 2018. godine od strane mladih IT stručnjaka sa misijom da na domaćem tržištu obezbedi najbolja i najnovija rešenja u oblasti IT tehnologija. Mi pretvaramo Vaše ideje u realnost na pravi način i u pravo vreme. Koristeći najsavremenije programe, inovativan pristup i adekvatne tehnologije odgovaramo na gotovo sve potrebe svojih klijenata pružajući im pomoć i podršku kroz:",
+    "Quality": "Kvalitet",
+    "Security": "Sigurnost",
+    "Simplicity": "Jednostavnost"
+  },
+  "Contact": {
+    "FormIndication": "* Označava obavezno polje",
+    "MainTitle": "Hajde da radimo",
+    "ContentTitle": "Želite li da započnete projekat?",
+    "ContentText": "Ukoliko želite da Vašu ideju pretvorimo u realnost, popunite sledeću formu, a mi ćemo Vam se javiti u najkraćem mogućem roku. Radujemo se zajedničkoj saradnji! Radujemo se zajedničkoj saradnji!",
+    "FormName": "*Ime",
+    "FormEmail": "*Imejl",
+    "FormPhone": "Telefon",
+    "FormMessage": "*Ostavite poruku",
+    "FormMessagePlaceholder": "Komentar",
+    "FormSubmit": "Pošalji",
+    "FormSuccess": "Uspešno ste poslali poruku"
+  },
+  "Team": {
+    "Title": "Upoznajte naš tim"
+  },
+  "Services": {
+    "Title": "Čime se bavimo",
+    "DesignTitle": "Web Dizajn",
+    "DesignText": "Na brz, jednostavan i kvalitetan način kreiramo sajtove pristupačnog i interaktivnog sadražaja u skladu sa Vašim potrebama.",
+    "IdentityTitle": "Vizuelni identitet",
+    "IdentityText": "Koristeći najsavremenije tehnologije, uz saradnju i konsultacije zajednički stvaramo idejno rešenje koje će doprineti prepoznatljivosti i autentičnosti Vašeg proizvoda.",
+    "DevelopmentTitle": "Web development",
+    "DevelopmentText": "Održavanje internet stranica, unapređenje i reorganizacija postojećih i osmišljavanje inovativnih strategija za poboljšanje deo su našeg širokog portfolija kada je u pitanju web development.",
+    "HostingTitle": "Web hosting",
+    "HostingText": "Održavanje internet stranica, unapređenje i reorganizacija postojećih i osmišljavanje inovativnih strategija za poboljšanje deo su našeg širokog portfolija kada je u pitanju web development.",
+    "MarketingTitle": "Digialni marketing",
+    "MarketingText": "Održavanje internet stranica, unapređenje i reorganizacija postojećih i osmišljavanje inovativnih strategija za poboljšanje deo su našeg širokog portfolija kada je u pitanju web development.",
+    "SeoTitle": "SEO Optimizacija",
+    "SeoText": "Održavanje internet stranica, unapređenje i reorganizacija postojećih i osmišljavanje inovativnih strategija za poboljšanje deo su našeg širokog portfolija kada je u pitanju web development."
+  },
+  "PageNotFound": {
+    "Title": "404",
+    "Paragraph": "Ups, Ne možemo da pronađemo stranicu",
+    "Small": "Nešto nije u redu ili stranica više ne postoji",
+    "GoBack": "Idi Nazad"
+  },
+  "Error": {
+    "NameShort": "Min 3 slova",
+    "NameLong": "Max 40 slova",
+    "NameRequired": "Ime je obavezno",
+    "EmailInvalid": "Neispravna Imejl adresa",
+    "EmailRequired": "Imejl je obavezan",
+    "PhoneShort": "Min 7 brojeva",
+    "PhoneLong": "Max 12 brojeva",
+    "PhoneRequired": "Telefon je obavezan",
+    "MessageShort": "Min 5 slova",
+    "MessageLong": "Max 500 slova",
+    "MessageRequired": "Poruka je obavezna"
+  }
+}
