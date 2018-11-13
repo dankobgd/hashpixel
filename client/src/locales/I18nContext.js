@@ -7,18 +7,19 @@ const { Provider, Consumer } = React.createContext();
 
 addLocaleData([...en, ...sr]);
 
-// fix later do check for navigator lang...
-// const language = (navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage;
-
 class I18nProviderWrapper extends Component {
   componentDidMount() {
     this.useDefaultLocale();
   }
 
   useDefaultLocale = () => {
-    const lang = localStorage.getItem('language');
-    if (lang !== null) {
-      this.setState({ locale: lang });
+    const browserLang = (navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage;
+    const pickedLang = localStorage.getItem('language');
+
+    if (pickedLang === null) {
+      this.setState({ locale: browserLang });
+    } else {
+      this.setState({ locale: pickedLang });
     }
   };
 
