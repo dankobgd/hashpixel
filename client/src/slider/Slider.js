@@ -58,6 +58,16 @@ const Article = styled.article`
   @media screen and (max-width: 980px) {
     flex-direction: column;
     padding: 0;
+
+    & > * {
+      width: 60%;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    & > * {
+      width: 70%;
+    }
   }
 
   @media screen and (max-width: 600px) {
@@ -96,6 +106,7 @@ const DescriptionPart = styled.div`
 
   @media screen and (max-width: 980px) {
     padding: 0;
+    line-height: 1;
   }
 `;
 

@@ -60,12 +60,12 @@ function toggleFocusedTask({ focusedTask = false }) {
   if (focusedTask) {
     document.querySelector('.dots-list').style.display = 'none';
     document.querySelector('#nav').style.display = 'none';
-    document.querySelector('.normal-page-content').style.display = 'none';
+    document.querySelector('.services-screen').style.display = 'none';
     document.querySelector('body').style.overflow = 'hidden';
   } else {
     document.querySelector('.dots-list').style.display = 'flex';
     document.querySelector('#nav').style.display = 'flex';
-    document.querySelector('.normal-page-content').style.display = 'block';
+    document.querySelector('.services-screen').style.display = 'block';
     document.querySelector('body').style.display = 'visible';
   }
 }
@@ -100,7 +100,7 @@ class ServicesSection extends Component {
           sliderAPI={this.sliderAPI}
         />
 
-        <div className="normal-page-content">
+        <div className="services-screen">
           <Container style={{ maxWidth: '980px' }}>
             <TopBox>
               <Heading>
