@@ -7,6 +7,12 @@ import bgImage from '../images/section_about.jpg';
 import { FormattedMessage } from 'react-intl';
 import { Container, Section, Heading, ContentWrapper, Content, Header } from '../shared/common';
 
+const cardData = [
+  { id: 'About.Quality', defaultMessage: 'Quality', icon: <Quality /> },
+  { id: 'About.Security', defaultMessage: 'Security', icon: <Security /> },
+  { id: 'About.Simplicity', defaultMessage: 'Simplicity', icon: <Simplicity /> },
+];
+
 const SectionWrapper = styled(Section)`
   background-image: url(${bgImage});
   background-position: center center;
@@ -94,26 +100,14 @@ const AboutSection = () => (
           </TopBox>
 
           <MainBox>
-            <CardIcon>
-              <Quality />
-              <h1>
-                <FormattedMessage id="About.Quality" defaultMessage="Quality" />
-              </h1>
-            </CardIcon>
-
-            <CardIcon>
-              <Security />
-              <h1>
-                <FormattedMessage id="About.Security" defaultMessage="Security" />
-              </h1>
-            </CardIcon>
-
-            <CardIcon>
-              <Simplicity />
-              <h1>
-                <FormattedMessage id="About.Simplicity" defaultMessage="Simplicity" />
-              </h1>
-            </CardIcon>
+            {cardData.map(({ id, defaultMessage, icon }) => (
+              <CardIcon key={id}>
+                {icon}
+                <h1>
+                  <FormattedMessage id={id} defaultMessage={defaultMessage} />
+                </h1>
+              </CardIcon>
+            ))}
           </MainBox>
         </Content>
       </ContentWrapper>

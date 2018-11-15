@@ -11,6 +11,15 @@ import { FormattedMessage } from 'react-intl';
 import SimpleSlider from '../slider/Slider';
 import { Container, Section, Heading, ContentWrapper, Content, Header } from '../shared/common';
 
+const cardData = [
+  { id: 'Services.DesignTitle', defaultMessage: 'Web Design', icon: <Design /> },
+  { id: 'Services.IdentityTitle', defaultMessage: 'Visual Identity', icon: <Identity /> },
+  { id: 'Services.DevelopmentTitle', defaultMessage: 'Web Development', icon: <Development /> },
+  { id: 'Services.HostingTitle', defaultMessage: 'Web Hosting', icon: <Hosting /> },
+  { id: 'Services.MarketingTitle', defaultMessage: 'Digital Marketing', icon: <Marketing /> },
+  { id: 'Services.SeoTitle', defaultMessage: 'Seo Optimization', icon: <Seo /> },
+];
+
 const SectionWrapper = styled(Section)`
   background-image: url(${bgImage});
   background-position: center center;
@@ -124,47 +133,14 @@ class ServicesSection extends Component {
 
               <Content>
                 <MainBox>
-                  <CardIcon onClick={() => this.openSlider(0)}>
-                    <Design />
-                    <h1>
-                      <FormattedMessage id="Services.DesignTitle" defaultMessage="Web Design" />
-                    </h1>
-                  </CardIcon>
-
-                  <CardIcon onClick={() => this.openSlider(1)}>
-                    <Identity />
-                    <h1>
-                      <FormattedMessage id="Services.IdentityTitle" defaultMessage="Visual Identity" />
-                    </h1>
-                  </CardIcon>
-
-                  <CardIcon onClick={() => this.openSlider(2)}>
-                    <Development />
-                    <h1>
-                      <FormattedMessage id="Services.DevelopmentTitle" defaultMessage="Web Development" />
-                    </h1>
-                  </CardIcon>
-
-                  <CardIcon onClick={() => this.openSlider(3)}>
-                    <Hosting />
-                    <h1>
-                      <FormattedMessage id="Services.HostingTitle" defaultMessage="Web Hosting" />
-                    </h1>
-                  </CardIcon>
-
-                  <CardIcon onClick={() => this.openSlider(4)}>
-                    <Marketing />
-                    <h1>
-                      <FormattedMessage id="Services.MarketingTitle" defaultMessage="Digital Marketing" />
-                    </h1>
-                  </CardIcon>
-
-                  <CardIcon onClick={() => this.openSlider(5)}>
-                    <Seo />
-                    <h1>
-                      <FormattedMessage id="Services.SeoTitle" defaultMessage="SEO Optimization" />
-                    </h1>
-                  </CardIcon>
+                  {cardData.map((card, index) => (
+                    <CardIcon key={card.id} onClick={() => this.openSlider(index)}>
+                      {card.icon}
+                      <h1>
+                        <FormattedMessage id={card.id} defaultMessage={card.defaultMessage} />
+                      </h1>
+                    </CardIcon>
+                  ))}
                 </MainBox>
               </Content>
             </ContentWrapper>
