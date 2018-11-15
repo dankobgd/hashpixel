@@ -54,27 +54,3 @@ export const Content = styled.div`
   align-items: center;
   text-align: center;
 `;
-
-export const CardIcon = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0.825rem;
-
-  & > h1 {
-    color: ${props => props.theme.primary};
-    margin: 0;
-    font-size: 26px;
-    font-weight: 600;
-    text-align: center;
-  }
-
-  & > span {
-    color: ${props => props.theme.primary};
-    padding: 0.5rem;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 400;
-  }
-`;

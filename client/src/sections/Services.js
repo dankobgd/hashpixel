@@ -9,7 +9,7 @@ import Identity from './icons/Identity';
 import bgImage from '../images/section_services.jpg';
 import { FormattedMessage } from 'react-intl';
 import SimpleSlider from '../slider/Slider';
-import { Container, Section, Heading, CardIcon } from '../shared/common';
+import { Container, Section, Heading } from '../shared/common';
 
 const SectionWrapper = styled(Section)`
   background-image: url(${bgImage});
@@ -32,10 +32,6 @@ const MainBox = styled.div`
   align-items: center;
   flex-wrap: wrap;
 
-  & > div {
-    flex: 1;
-  }
-
   @media screen and (max-width: 800px) {
     & > div {
       flex-basis: auto;
@@ -43,16 +39,41 @@ const MainBox = styled.div`
   }
 `;
 
-const StyledCardIcon = styled(CardIcon)`
+const CardIcon = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   cursor: pointer;
+  padding: 0.825rem;
+  width: 300px;
+  flex-grow: 1;
+  flex: 1 1 calc(100% / 3);
+
+  &:hover > svg {
+    transform: scale(1.1);
+    transition: 500ms;
+  }
 
   & > svg {
     transition: 500ms;
   }
 
-  &:hover > svg {
-    transform: scale(1.1);
-    transition: 500ms;
+  & > h1 {
+    color: ${props => props.theme.primary};
+    margin: 0;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  & > span {
+    color: ${props => props.theme.primary};
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
   }
 `;
 
@@ -109,49 +130,47 @@ class ServicesSection extends Component {
             </TopBox>
 
             <MainBox>
-              <StyledCardIcon onClick={() => this.openSlider(0)}>
+              <CardIcon onClick={() => this.openSlider(0)}>
                 <Design />
                 <h1>
                   <FormattedMessage id="Services.DesignTitle" defaultMessage="Web Design" />
                 </h1>
-              </StyledCardIcon>
+              </CardIcon>
 
-              <StyledCardIcon onClick={() => this.openSlider(1)}>
+              <CardIcon onClick={() => this.openSlider(1)}>
                 <Identity />
                 <h1>
                   <FormattedMessage id="Services.IdentityTitle" defaultMessage="Visual Identity" />
                 </h1>
-              </StyledCardIcon>
+              </CardIcon>
 
-              <StyledCardIcon onClick={() => this.openSlider(2)}>
+              <CardIcon onClick={() => this.openSlider(2)}>
                 <Development />
                 <h1>
                   <FormattedMessage id="Services.DevelopmentTitle" defaultMessage="Web Development" />
                 </h1>
-              </StyledCardIcon>
-            </MainBox>
+              </CardIcon>
 
-            <MainBox>
-              <StyledCardIcon onClick={() => this.openSlider(3)}>
+              <CardIcon onClick={() => this.openSlider(3)}>
                 <Hosting />
                 <h1>
                   <FormattedMessage id="Services.HostingTitle" defaultMessage="Web Hosting" />
                 </h1>
-              </StyledCardIcon>
+              </CardIcon>
 
-              <StyledCardIcon onClick={() => this.openSlider(4)}>
+              <CardIcon onClick={() => this.openSlider(4)}>
                 <Marketing />
                 <h1>
                   <FormattedMessage id="Services.MarketingTitle" defaultMessage="Digital Marketing" />
                 </h1>
-              </StyledCardIcon>
+              </CardIcon>
 
-              <StyledCardIcon onClick={() => this.openSlider(5)}>
+              <CardIcon onClick={() => this.openSlider(5)}>
                 <Seo />
                 <h1>
                   <FormattedMessage id="Services.SeoTitle" defaultMessage="SEO Optimization" />
                 </h1>
-              </StyledCardIcon>
+              </CardIcon>
             </MainBox>
           </Container>
         </div>
