@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
-import { Container, Section, Heading } from '../shared/common';
+import { Container, Section, Heading, ContentWrapper, Content, Header } from '../shared/common';
 import team from './teamMembers';
 
 const SectionWrapper = styled(Section)`
@@ -156,23 +156,28 @@ const HeadingWhite = styled(Heading)`
 const MeetOurTeamSection = () => (
   <SectionWrapper>
     <Container>
-      <HeadingWhite>
-        <FormattedMessage id="Team.Title" defaultMessage="Meet Our Team" />
-      </HeadingWhite>
-
-      <Grid>
-        {team.map(({ avatar, name, job }) => (
-          <Member key={avatar}>
-            <Figure>
-              <Image src={avatar} alt={name} />
-              <Figcaption>
-                <h2>{name}</h2>
-                <p>{job}</p>
-              </Figcaption>
-            </Figure>
-          </Member>
-        ))}
-      </Grid>
+      <ContentWrapper>
+        <Header>
+          <HeadingWhite>
+            <FormattedMessage id="Team.Title" defaultMessage="Meet Our Team" />
+          </HeadingWhite>
+        </Header>
+        <Content>
+          <Grid>
+            {team.map(({ avatar, name, job }) => (
+              <Member key={avatar}>
+                <Figure>
+                  <Image src={avatar} alt={name} />
+                  <Figcaption>
+                    <h2>{name}</h2>
+                    <p>{job}</p>
+                  </Figcaption>
+                </Figure>
+              </Member>
+            ))}
+          </Grid>
+        </Content>
+      </ContentWrapper>
     </Container>
   </SectionWrapper>
 );

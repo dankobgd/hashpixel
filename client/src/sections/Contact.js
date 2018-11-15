@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import styled, { css } from 'styled-components';
 import { Formik } from 'formik';
 import { FormattedMessage, injectIntl } from 'react-intl';
-import { Container, Section, Heading } from '../shared/common';
+import { Container, Section, Heading, ContentWrapper, Header } from '../shared/common';
 
 const SectionWrapper = styled(Section)`
   background: -webkit-radial-gradient(-0% 150%, circle, rgba(14, 6, 20, 1), transparent 100%),
@@ -115,18 +115,7 @@ const Msg = styled.span`
     `};
 `;
 
-const Outer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  @media screen and (min-width: 980px) {
-    margin: 0 2rem;
-  }
-`;
-
-const Content1 = styled.div`
+const Content = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -194,9 +183,8 @@ const LeftText = styled.div`
 const RequiredFieldsMsg = styled.span`
   color: #fff;
   font-size: 16px;
-  margin-right: auto;
   padding: 4px;
-  margin-bottom: 1rem;
+  margin: 2rem auto 1rem 0;
 `;
 
 const HeadingWhite = styled(Heading)`
@@ -206,12 +194,14 @@ const HeadingWhite = styled(Heading)`
 const ContactSection = ({ intl }) => (
   <SectionWrapper>
     <Container>
-      <Outer>
-        <HeadingWhite>
-          <FormattedMessage id="Contact.MainTitle" defaultMessage="Let's work" />
-        </HeadingWhite>
+      <ContentWrapper>
+        <Header>
+          <HeadingWhite>
+            <FormattedMessage id="Contact.MainTitle" defaultMessage="Let's work" />
+          </HeadingWhite>
+        </Header>
 
-        <Content1>
+        <Content>
           <LeftText>
             <h1>
               <FormattedMessage id="Contact.ContentTitle" defaultMessage="Want to start a new project?" />
@@ -225,8 +215,8 @@ const ContactSection = ({ intl }) => (
           </LeftText>
 
           <ContactForm intl={intl} />
-        </Content1>
-      </Outer>
+        </Content>
+      </ContentWrapper>
     </Container>
   </SectionWrapper>
 );

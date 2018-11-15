@@ -45,6 +45,10 @@ export const ContentWrapper = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  @media screen and (max-width: 980px) {
+    padding: 100px 0;
+  }
 `;
 
 export const Content = styled.div`
