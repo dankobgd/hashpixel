@@ -79,16 +79,16 @@ const CardIcon = styled.div`
 `;
 
 function toggleFocusedTask({ focusedTask = false }) {
-  if (focusedTask) {
+  if (focusedTask === true) {
     document.querySelector('.dots-list').style.display = 'none';
     document.querySelector('#nav').style.display = 'none';
     document.querySelector('.services-screen').style.display = 'none';
     document.querySelector('body').style.overflow = 'hidden';
-  } else {
+  } else if (focusedTask === false) {
     document.querySelector('.dots-list').style.display = 'flex';
     document.querySelector('#nav').style.display = 'flex';
     document.querySelector('.services-screen').style.display = 'block';
-    document.querySelector('body').style.display = 'visible';
+    document.querySelector('body').style.overflow = 'visible';
   }
 }
 
