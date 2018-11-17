@@ -85,18 +85,20 @@ const CardIcon = styled.div`
 `;
 
 // ***********************************************************************************************
-const IconHolder = styled(Header)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-right: auto;
-  margin-left: 5vmin;
-  margin-top: 5vmin;
-`;
-
 const Slider = styled.div`
   position: relative;
-  display: ${props => (props.showSlider ? 'block' : 'none')};
+  height: 0;
+
+  ${props =>
+    props.showSlider
+      ? css`
+          display: block;
+          height: 100%;
+        `
+      : css`
+          display: none;
+          height: 0;
+        `};
 `;
 
 const PageContent = styled.div`
@@ -204,6 +206,14 @@ const Arrows = styled.div`
   @media screen and (max-width: 980px) {
     justify-content: space-between;
   }
+`;
+const IconHolder = styled(Header)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: 5vmin;
+  margin-top: 5vmin;
 `;
 
 const Slide = ({ slide }) => {
