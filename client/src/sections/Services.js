@@ -242,6 +242,18 @@ const Slide = ({ slide, fpApi }) => {
   );
 };
 
+function showNavElements() {
+  document.querySelector('.dots-list').style.display = 'none';
+  document.querySelector('#nav').style.display = 'none';
+  document.querySelector('body').style.overflow = 'hidden';
+}
+
+function hideNavElements() {
+  document.querySelector('.dots-list').style.display = 'flex';
+  document.querySelector('#nav').style.display = 'flex';
+  document.querySelector('body').style.overflow = 'visible';
+}
+
 class ServicesSection extends Component {
   state = {
     showSlider: false,
@@ -249,11 +261,13 @@ class ServicesSection extends Component {
 
   openSlider = (fpApi, index) => {
     this.setState({ showSlider: true }, () => {
+      showNavElements();
       fpApi.moveTo('Services', index);
     });
   };
 
   hideSlider = () => {
+    hideNavElements();
     this.setState({ showSlider: false });
   };
 
