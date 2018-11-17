@@ -86,18 +86,16 @@ const CardIcon = styled.div`
 
 // ***********************************************************************************************
 const Slider = styled.div`
+  display: none;
   position: relative;
-  height: 0;
 
   ${props =>
     props.showSlider
       ? css`
           display: block;
-          height: 100%;
         `
       : css`
           display: none;
-          height: 0;
         `};
 `;
 
@@ -216,7 +214,7 @@ const IconHolder = styled(Header)`
   margin-top: 5vmin;
 `;
 
-const Slide = ({ slide }) => {
+const Slide = ({ slide, fpApi }) => {
   return (
     <div className="slide">
       <SingleItem>
@@ -234,8 +232,8 @@ const Slide = ({ slide }) => {
               </span>
             </Text>
             <Arrows>
-              <Arrow type="left" onClick={() => {}} />
-              <Arrow type="right" onClick={() => {}} />
+              <Arrow type="left" onClick={() => fpApi.moveSlideLeft()} />
+              <Arrow type="right" onClick={() => fpApi.moveSlideRight()} />
             </Arrows>
           </DescriptionPart>
         </Article>
@@ -271,7 +269,7 @@ class ServicesSection extends Component {
           </IconHolder>
 
           {slideData.map(slide => (
-            <Slide key={slide.titleId} slide={slide} />
+            <Slide key={slide.titleId} slide={slide} fpApi={fpApi} />
           ))}
         </Slider>
 
