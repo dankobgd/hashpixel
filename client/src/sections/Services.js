@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Marketing from './icons/Marketing';
 import Design from './icons/Design';
 import Development from './icons/Development';
@@ -8,8 +8,10 @@ import Seo from './icons/Seo';
 import Identity from './icons/Identity';
 import bgImage from '../images/section_services.jpg';
 import { FormattedMessage } from 'react-intl';
-import SimpleSlider from '../slider/Slider';
 import { Container, Section, Heading, ContentWrapper, Content, Header } from '../shared/common';
+import Arrow from '../images/Arrow';
+
+import slideData from '../slider/data';
 
 const cardData = [
   { id: 'Services.DesignTitle', defaultMessage: 'Web Design', icon: <Design /> },
@@ -25,6 +27,9 @@ const SectionWrapper = styled(Section)`
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const MainBox = styled.div`
@@ -78,51 +83,172 @@ const CardIcon = styled.div`
   }
 `;
 
-function toggleFocusedTask({ focusedTask = false }) {
-  if (focusedTask === true) {
-    document.querySelector('.dots-list').style.display = 'none';
-    document.querySelector('#nav').style.display = 'none';
-    document.querySelector('.services-screen').style.display = 'none';
-    document.querySelector('body').style.overflow = 'hidden';
-  } else if (focusedTask === false) {
-    document.querySelector('.dots-list').style.display = 'flex';
-    document.querySelector('#nav').style.display = 'flex';
-    document.querySelector('.services-screen').style.display = 'block';
-    document.querySelector('body').style.overflow = 'visible';
+// ***********************************************************************************************
+const Slider = styled.div`
+  display: ${props => (props.showSlider ? 'block' : 'none')};
+`;
+
+const PageContent = styled.div`
+  display: ${props => (props.showSlider ? 'none' : 'block')};
+`;
+
+const SingleItem = styled.div`
+  cursor: grab;
+  background-color: ${props => props.theme.darker};
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  padding: 1rem;
+
+  @media screen and (max-width: 980px) {
+    padding: 0;
   }
-}
+`;
+
+const Article = styled.article`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+  & > * {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 980px) {
+    flex-direction: column;
+    padding: 0;
+
+    & > * {
+      width: 60%;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    & > * {
+      width: 70%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    & > * {
+      width: 80%;
+    }
+  }
+`;
+
+const ImagePart = styled.div`
+  padding: 1rem;
+
+  & > img {
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: 980px) {
+    padding: 0;
+  }
+`;
+
+const DescriptionPart = styled.div`
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  text-align: left;
+  position: relative;
+
+  & > span {
+    line-height: 1.5;
+  }
+
+  @media screen and (max-width: 980px) {
+    padding: 0;
+    line-height: 1;
+  }
+`;
+
+const Text = styled.div`
+  & > span {
+    line-height: 2;
+  }
+`;
+
+const Arrows = styled.div`
+  padding: 2rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  & > * {
+    margin-right: 2em;
+  }
+
+  @media screen and (max-width: 980px) {
+    justify-content: space-between;
+  }
+`;
+
+const Slide = ({ slide }) => {
+  return (
+    <div className="slide">
+      <SingleItem>
+        <Article>
+          <ImagePart>
+            <img src={slide.imageUrl} alt={slide.title} />
+          </ImagePart>
+          <DescriptionPart>
+            <Text>
+              <h1>
+                <FormattedMessage id={slide.titleId} defaultMessage={slide.titleDefault} />
+              </h1>
+              <span>
+                <FormattedMessage id={slide.spanId} defaultMessage={slide.spanDefault} />
+              </span>
+            </Text>
+            <Arrows>
+              <Arrow type="left" onClick={() => {}} />
+              <Arrow type="right" onClick={() => {}} />
+            </Arrows>
+          </DescriptionPart>
+        </Article>
+      </SingleItem>
+    </div>
+  );
+};
 
 class ServicesSection extends Component {
   state = {
     showSlider: false,
   };
 
-  setRef = node => {
-    this.sliderAPI = node;
-  };
-
   openSlider = num => {
-    this.sliderAPI.slickGoTo(num);
+    // go to num
     this.setState({ showSlider: true });
-    toggleFocusedTask({ focusedTask: true });
   };
 
   hideSlider = () => {
     this.setState({ showSlider: false });
-    toggleFocusedTask({ focusedTask: false });
   };
 
   render() {
+    const { showSlider } = this.state;
+
     return (
       <SectionWrapper>
-        <SimpleSlider
-          hideSlider={this.hideSlider}
-          showSlider={this.state.showSlider}
-          setRef={this.setRef}
-          sliderAPI={this.sliderAPI}
-        />
+        <Slider showSlider={showSlider}>
+          {slideData.map(slide => (
+            <Slide key={slide.titleId} slide={slide} />
+          ))}
+        </Slider>
 
-        <div className="services-screen">
+        <PageContent showSlider={showSlider}>
           <Container style={{ maxWidth: '980px' }}>
             <ContentWrapper>
               <Header>
@@ -145,7 +271,7 @@ class ServicesSection extends Component {
               </Content>
             </ContentWrapper>
           </Container>
-        </div>
+        </PageContent>
       </SectionWrapper>
     );
   }
