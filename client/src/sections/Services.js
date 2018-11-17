@@ -10,6 +10,7 @@ import bgImage from '../images/section_services.jpg';
 import { FormattedMessage } from 'react-intl';
 import { Container, Section, Heading, ContentWrapper, Content, Header } from '../shared/common';
 import Arrow from '../images/Arrow';
+import Exit from '../images/Exit';
 
 import slideData from '../slider/data';
 
@@ -84,7 +85,17 @@ const CardIcon = styled.div`
 `;
 
 // ***********************************************************************************************
+const IconHolder = styled(Header)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: 5vmin;
+  margin-top: 5vmin;
+`;
+
 const Slider = styled.div`
+  position: relative;
   display: ${props => (props.showSlider ? 'block' : 'none')};
 `;
 
@@ -243,6 +254,10 @@ class ServicesSection extends Component {
     return (
       <SectionWrapper>
         <Slider showSlider={showSlider}>
+          <IconHolder>
+            <Exit onClick={this.hideSlider} />
+          </IconHolder>
+
           {slideData.map(slide => (
             <Slide key={slide.titleId} slide={slide} />
           ))}
