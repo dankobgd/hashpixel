@@ -26,7 +26,7 @@ export default class Sections extends Component {
         <HeroSection fpApi={fpApi} />
         <AboutSection />
         <MeetOurTeamSection />
-        <ServicesSection />
+        <ServicesSection fpApi={fpApi} />
         <ContactSection />
         <Empty />
         <Footer fpState={fpState} fpApi={fpApi} isFooterOpen={isFooterOpen} />

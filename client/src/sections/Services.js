@@ -239,9 +239,10 @@ class ServicesSection extends Component {
     showSlider: false,
   };
 
-  openSlider = num => {
-    // go to num
-    this.setState({ showSlider: true });
+  openSlider = (fpApi, index) => {
+    this.setState({ showSlider: true }, () => {
+      fpApi.moveTo('Services', index);
+    });
   };
 
   hideSlider = () => {
@@ -250,6 +251,7 @@ class ServicesSection extends Component {
 
   render() {
     const { showSlider } = this.state;
+    const { fpApi } = this.props;
 
     return (
       <SectionWrapper>
@@ -275,7 +277,7 @@ class ServicesSection extends Component {
               <Content>
                 <MainBox>
                   {cardData.map((card, index) => (
-                    <CardIcon key={card.id} onClick={() => this.openSlider(index)}>
+                    <CardIcon key={card.id} onClick={() => this.openSlider(fpApi, index)}>
                       {card.icon}
                       <h1>
                         <FormattedMessage id={card.id} defaultMessage={card.defaultMessage} />
