@@ -35,5 +35,6 @@ module.exports.validateBody = (schema) => {
 module.exports.contactSchema = Joi.object().keys({
   name: Joi.string().min(3).required(),
   email: Joi.string().max(50).email().required(),
+  phone: Joi.string(),
   message: Joi.string().min(5).max(500).required(),
 })
