@@ -1,7 +1,10 @@
-const EmailService = require('../services/EmailService');
+const { sendUserContactConfirmationEmail, recieveContactEmail } = require('../services/mailer');
+
 
 
 module.exports.contact_post = (req, res, next) => {
-  const mailer = new EmailService(req.body);
-  mailer.sendEmail();
+  const { body } = req;
+  console.log('BODY', body);
+  sendUserContactConfirmationEmail(body);
+  recieveContactEmail(body);
 }

@@ -229,6 +229,7 @@ const contactSchema = Yup.object().shape({
   email: Yup.string()
     .email(<FormattedMessage id="Error.EmailInvalid" defaultMessage="Invalid Email address" />)
     .required(<FormattedMessage id="Error.EmailRequired" defaultMessage="Email is required" />),
+  phone: Yup.string(),
   message: Yup.string()
     .min(5, <FormattedMessage id="Error.Messagehort" defaultMessage="Min 5 chars" />)
     .max(300, <FormattedMessage id="Error.MessageShort" defaultMessage="Max 300 chars" />)
@@ -236,7 +237,7 @@ const contactSchema = Yup.object().shape({
 });
 
 function sendFormData(values, { setSubmitting, setErrors }) {
-  fetch('/contact', {
+  fetch('http://localhost:5000/contact', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
